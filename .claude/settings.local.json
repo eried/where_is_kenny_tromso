@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter --version:*)",
+      "Bash(flutter create:*)",
+      "Bash(flutter pub get:*)",
+      "WebFetch(domain:www.myinstants.com)",
+      "Bash(flutter analyze:*)",
+      "Bash(flutter build:*)",
+      "WebSearch"
+    ]
+  }
+}

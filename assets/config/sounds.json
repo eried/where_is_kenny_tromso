@@ -1,0 +1,88 @@
+{
+  "sounds": [
+    {
+      "id": "omg_killed_kenny",
+      "file": "omg_you_killed_kenny.mp3",
+      "label": "Oh My God!",
+      "icon": "warning"
+    },
+    {
+      "id": "bastards",
+      "file": "bastards.mp3",
+      "label": "You Bastards!",
+      "icon": "rage"
+    },
+    {
+      "id": "beeped",
+      "file": "they_killed_kenny_beeped.mp3",
+      "label": "They Killed Kenny... *bleep*",
+      "icon": "block"
+    },
+    {
+      "id": "french",
+      "file": "they_killed_kenny_french.mp3",
+      "label": "Ils Ont Tué Kenny!",
+      "icon": "language"
+    },
+    {
+      "id": "kenny_crying",
+      "file": "kenny_crying.mp3",
+      "label": "Kenny Cries",
+      "icon": "crying"
+    },
+    {
+      "id": "kenny_dies",
+      "file": "kenny_dies.mp3",
+      "label": "Kenny Dies",
+      "icon": "heart"
+    },
+    {
+      "id": "woohoo",
+      "file": "woohoo.mp3",
+      "label": "Woohoo!",
+      "icon": "celebration"
+    },
+    {
+      "id": "wtf",
+      "file": "wtf_you_doing.mp3",
+      "label": "What Are You Doing?!",
+      "icon": "question"
+    },
+    {
+      "id": "eeeeeer",
+      "file": "eeeeeer.mp3",
+      "label": "Mmmph Mmmph!",
+      "icon": "voice"
+    },
+    {
+      "id": "you_guys",
+      "file": "you_guys.mp3",
+      "label": "You Guys!",
+      "icon": "group"
+    },
+    {
+      "id": "diddled",
+      "file": "diddled.mp3",
+      "label": "Diddled",
+      "icon": "music"
+    },
+    {
+      "id": "dios_mio",
+      "file": "dios_mio.mp3",
+      "label": "¡Dios Mío!",
+      "icon": "spanish"
+    },
+    {
+      "id": "intro",
+      "file": "intro_theme.mp3",
+      "label": "Intro Theme",
+      "icon": "play"
+    },
+    {
+      "id": "mormonen",
+      "file": "mormonen.mp3",
+      "label": "Mormons",
+      "icon": "church"
+    }
+  ]
+}

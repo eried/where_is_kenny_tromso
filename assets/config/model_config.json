@@ -1,0 +1,76 @@
+{
+  "mainModel": "kenny.glb",
+  "name": "Kenny McCormick Statue",
+  "parts": [
+    {
+      "id": "head",
+      "name": "Head",
+      "filename": "head.glb",
+      "description": "Kenny's iconic hooded head with hidden face. Printed in 23 pieces due to size.",
+      "order": 0,
+      "metadata": {
+        "pieces": "28 parts",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "neck",
+      "name": "Neck",
+      "filename": "neck.glb",
+      "description": "Connects the head to the body with reinforcement pegs.",
+      "order": 1,
+      "metadata": {
+        "pieces": "1 part",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "body_left",
+      "name": "Body Left",
+      "filename": "body_left.glb",
+      "description": "Left half of Kenny's parka body.",
+      "order": 2,
+      "metadata": {
+        "pieces": "1 part",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "body_right",
+      "name": "Body Right",
+      "filename": "body_right.glb",
+      "description": "Right half of Kenny's parka body.",
+      "order": 3,
+      "metadata": {
+        "pieces": "1 part",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "legs",
+      "name": "Legs",
+      "filename": "legs.glb",
+      "description": "Kenny's legs, split into 7 printable sections.",
+      "order": 4,
+      "metadata": {
+        "pieces": "7 parts",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "connectors",
+      "name": "Connectors",
+      "filename": "connectors.glb",
+      "description": "Dowel connectors and pegs for joining parts together.",
+      "order": 5,
+      "metadata": {
+        "pieces": "11 parts",
+        "material": "Dark Blue ABS"
+      }
+    }
+  ],
+  "totalWeight": "14 kg",
+  "totalParts": "45+ pieces",
+  "printTime": "2 weeks",
+  "printer": "BambuLab H2D"
+}
