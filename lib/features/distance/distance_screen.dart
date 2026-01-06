@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import '../../services/location_service.dart';
 import '../../services/audio_service.dart';
 import '../../services/unit_converter.dart';
@@ -22,7 +23,7 @@ class _DistanceScreenState extends State<DistanceScreen> {
   StreamSubscription<DistanceInfo>? _distanceSubscription;
 
   DistanceInfo? _currentDistance;
-  String? _error;
+  LocationError? _error;
   bool _isLoading = true;
   late UnitSystem _unitSystem;
   late bool _soundEnabled;
@@ -89,7 +90,14 @@ class _DistanceScreenState extends State<DistanceScreen> {
       },
       onError: (error) {
         setState(() {
-          _error = error.toString();
+          if (error is LocationError) {
+            _error = error;
+          } else {
+            _error = LocationError(
+              LocationErrorType.permissionDenied,
+              error.toString(),
+            );
+          }
           _isLoading = false;
         });
       },
@@ -188,6 +196,74 @@ class _DistanceScreenState extends State<DistanceScreen> {
     );
   }
 
+  IconData _getErrorIcon(LocationErrorType type) {
+    switch (type) {
+      case LocationErrorType.serviceDisabled:
+        return Icons.gps_off;
+      case LocationErrorType.permissionDenied:
+        return Icons.location_off;
+      case LocationErrorType.permissionDeniedForever:
+        return Icons.block;
+      case LocationErrorType.reducedAccuracy:
+        return Icons.gps_not_fixed;
+    }
+  }
+
+  String _getErrorTitle(LocationErrorType type) {
+    switch (type) {
+      case LocationErrorType.serviceDisabled:
+        return 'GPS is Off';
+      case LocationErrorType.permissionDenied:
+        return 'Location Access Needed';
+      case LocationErrorType.permissionDeniedForever:
+        return 'Location Blocked';
+      case LocationErrorType.reducedAccuracy:
+        return 'Precise Location Needed';
+    }
+  }
+
+  IconData _getActionIcon(LocationErrorType type) {
+    switch (type) {
+      case LocationErrorType.serviceDisabled:
+        return Icons.settings;
+      case LocationErrorType.permissionDenied:
+        return Icons.my_location;
+      case LocationErrorType.permissionDeniedForever:
+        return Icons.settings;
+      case LocationErrorType.reducedAccuracy:
+        return Icons.settings;
+    }
+  }
+
+  String _getActionLabel(LocationErrorType type) {
+    switch (type) {
+      case LocationErrorType.serviceDisabled:
+        return 'Enable GPS';
+      case LocationErrorType.permissionDenied:
+        return 'Grant Permission';
+      case LocationErrorType.permissionDeniedForever:
+        return 'Open Settings';
+      case LocationErrorType.reducedAccuracy:
+        return 'Open Settings';
+    }
+  }
+
+  Future<void> _handleErrorAction(LocationErrorType type) async {
+    switch (type) {
+      case LocationErrorType.serviceDisabled:
+        await Geolocator.openLocationSettings();
+        break;
+      case LocationErrorType.permissionDenied:
+        // Try requesting permission again
+        _startTracking();
+        break;
+      case LocationErrorType.permissionDeniedForever:
+      case LocationErrorType.reducedAccuracy:
+        await Geolocator.openAppSettings();
+        break;
+    }
+  }
+
   @override
   void dispose() {
     _distanceSubscription?.cancel();
@@ -234,30 +310,53 @@ class _DistanceScreenState extends State<DistanceScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.location_off, size: 64, color: Colors.red),
+              Icon(
+                _getErrorIcon(_error!.type),
+                size: 64,
+                color: _error!.type == LocationErrorType.reducedAccuracy
+                    ? Colors.orange
+                    : Colors.red,
+              ),
               const SizedBox(height: 16),
               Text(
-                'Oh my God, we lost Kenny!',
+                _getErrorTitle(_error!.type),
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall
                     ?.copyWith(color: Colors.white),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 8),
               Text(
-                _error!,
+                _error!.message,
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white70),
               ),
               const SizedBox(height: 24),
+              // Primary action button
               ElevatedButton.icon(
-                onPressed: _startTracking,
-                icon: const Icon(Icons.refresh),
-                label: const Text('Try Again'),
+                onPressed: () => _handleErrorAction(_error!.type),
+                icon: Icon(_getActionIcon(_error!.type)),
+                label: Text(_getActionLabel(_error!.type)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 ),
               ),
+              // Secondary action for settings-related errors
+              if (_error!.type == LocationErrorType.permissionDeniedForever ||
+                  _error!.type == LocationErrorType.reducedAccuracy) ...[
+                const SizedBox(height: 12),
+                TextButton.icon(
+                  onPressed: _startTracking,
+                  icon: const Icon(Icons.refresh, size: 18),
+                  label: const Text('Check Again'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white70,
+                  ),
+                ),
+              ],
             ],
           ),
         ),

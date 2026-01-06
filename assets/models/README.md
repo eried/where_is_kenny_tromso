@@ -13,12 +13,12 @@ The statue was printed in 45+ pieces due to its size. Parts are organized by bod
 - `headfrontpegs.stl` - Connection pegs (6 parts)
 
 ### Body
-- `left.stl` - Left body half
-- `right.stl` - Right body half
-- `neck.stl` - Neck connector
+- `left.stl` - Kenny's left arm and glove; uses pegs for attaching
+- `right.stl` - Kenny's right arm and glove; uses pegs for attaching
+- `neck.stl` - Designed to connect head and body; optimized for printability
 
 ### Legs (7 pieces)
-- `legs.stl` - Split into printable sections (A_A_A_A through B_B_A_B)
+- `legs.stl` - Includes the torso, legs, and feet all together
 
 ### Connectors & Base
 - `bigpeg.stl` - Large connection pegs (3 variants)

@@ -7,7 +7,30 @@
       "WebFetch(domain:www.myinstants.com)",
       "Bash(flutter analyze:*)",
       "Bash(flutter build:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(dir:*)",
+      "Bash(dart run:*)",
+      "Bash(where:*)",
+      "Bash(del \"D:\\\\GitHub\\\\where_is_kenny_tromso\\\\CONVERT_ICON_INSTRUCTIONS.txt\")",
+      "Bash(python scripts/regenerate_icons.py:*)",
+      "Bash(python -c:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(flutter clean:*)",
+      "Bash(keytool:*)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "mcp__plugin_playwright_playwright__browser_tabs",
+      "mcp__plugin_playwright_playwright__browser_type",
+      "Bash(test:*)",
+      "Bash(\"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\jbr\\\\bin\\\\keytool.exe\":*)",
+      "Bash(\"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\jbr\\\\bin\\\\jarsigner.exe\" -verify -verbose -certs \"build\\\\app\\\\outputs\\\\bundle\\\\release\\\\app-release.aab\")",
+      "mcp__plugin_playwright_playwright__browser_file_upload",
+      "mcp__plugin_playwright_playwright__browser_wait_for",
+      "mcp__plugin_playwright_playwright__browser_run_code",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "WebFetch(domain:www.nordlys.no)"
     ]
   }
 }

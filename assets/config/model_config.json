@@ -6,29 +6,29 @@
       "id": "head",
       "name": "Head",
       "filename": "head.glb",
-      "description": "Kenny's iconic hooded head with hidden face. Printed in 23 pieces due to size.",
+      "description": "Kenny's inner head structure. Printed in 18 pieces.",
       "order": 0,
       "metadata": {
-        "pieces": "28 parts",
-        "material": "Dark Blue ABS"
+        "pieces": "18 parts",
+        "material": "Orange ABS"
+      }
+    },
+    {
+      "id": "parka_hood",
+      "name": "Parka Hood",
+      "filename": "parka_hood.glb",
+      "description": "The iconic orange parka hood front pieces.",
+      "order": 1,
+      "metadata": {
+        "pieces": "2 parts",
+        "material": "Orange ABS"
       }
     },
     {
       "id": "neck",
       "name": "Neck",
       "filename": "neck.glb",
-      "description": "Connects the head to the body with reinforcement pegs.",
-      "order": 1,
-      "metadata": {
-        "pieces": "1 part",
-        "material": "Dark Blue ABS"
-      }
-    },
-    {
-      "id": "body_left",
-      "name": "Body Left",
-      "filename": "body_left.glb",
-      "description": "Left half of Kenny's parka body.",
+      "description": "Connects head and body.",
       "order": 2,
       "metadata": {
         "pieces": "1 part",
@@ -36,10 +36,10 @@
       }
     },
     {
-      "id": "body_right",
-      "name": "Body Right",
-      "filename": "body_right.glb",
-      "description": "Right half of Kenny's parka body.",
+      "id": "arm_left",
+      "name": "Arm Left",
+      "filename": "body_left.glb",
+      "description": "Kenny's left arm and glove.",
       "order": 3,
       "metadata": {
         "pieces": "1 part",
@@ -47,13 +47,24 @@
       }
     },
     {
-      "id": "legs",
-      "name": "Legs",
-      "filename": "legs.glb",
-      "description": "Kenny's legs, split into 7 printable sections.",
+      "id": "arm_right",
+      "name": "Arm Right",
+      "filename": "body_right.glb",
+      "description": "Kenny's right arm and glove.",
       "order": 4,
       "metadata": {
-        "pieces": "7 parts",
+        "pieces": "1 part",
+        "material": "Dark Blue ABS"
+      }
+    },
+    {
+      "id": "legs",
+      "name": "Legs & Torso",
+      "filename": "legs.glb",
+      "description": "Torso, legs, and feet.",
+      "order": 5,
+      "metadata": {
+        "pieces": "8 parts",
         "material": "Dark Blue ABS"
       }
     },
@@ -61,8 +72,8 @@
       "id": "connectors",
       "name": "Connectors",
       "filename": "connectors.glb",
-      "description": "Dowel connectors and pegs for joining parts together.",
-      "order": 5,
+      "description": "Dowels and pegs for joining parts.",
+      "order": 6,
       "metadata": {
         "pieces": "11 parts",
         "material": "Dark Blue ABS"

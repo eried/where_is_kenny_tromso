@@ -10,6 +10,57 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Navigate after showing icon - give it time to load and display
+    Timer(const Duration(milliseconds: 800), () {
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => widget.nextScreen),
+        );
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Simple splash with app icon - no animations
+    return Scaffold(
+      backgroundColor: const Color(0xFF1a1a2e),
+      body: Center(
+        child: Image.asset(
+          'assets/images/app_icon.png',
+          width: 150,
+          height: 150,
+          errorBuilder: (context, error, stackTrace) {
+            // Fallback if image fails to load
+            return Container(
+              width: 150,
+              height: 150,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.orange,
+              ),
+              child: const Icon(
+                Icons.help_outline,
+                size: 80,
+                color: Colors.white,
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+/* ============================================================
+   ORIGINAL ANIMATED SPLASH - COMMENTED OUT FOR FASTER START
+   ============================================================
+
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
@@ -158,6 +209,8 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
+
+============================================================ */
 
 /// Custom painter for Kenny's hooded face silhouette
 class KennyHoodPainter extends CustomPainter {

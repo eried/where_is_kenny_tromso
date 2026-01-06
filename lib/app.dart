@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'features/distance/distance_screen.dart';
 import 'features/soundboard/soundboard_screen.dart';
 import 'features/model_viewer/model_viewer_screen.dart';
-import 'features/splash/splash_screen.dart';
+// import 'features/splash/splash_screen.dart'; // COMMENTED OUT - Using native splash only
 import 'shared/theme/app_theme.dart';
 
 class WhereIsKennyApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class WhereIsKennyApp extends StatelessWidget {
       title: 'Where Is Kenny?',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: SplashScreen(nextScreen: const MainNavigationScreen()),
+      home: const MainNavigationScreen(), // Direct to main screen - no in-app splash
     );
   }
 }

@@ -43,23 +43,27 @@ dev_dependencies:
   flutter_native_splash: ^2.4.5
 
 # App icon configuration
+# Using sharp-edged version to prevent blur from anti-aliased edges
 flutter_launcher_icons:
   android: true
   ios: true
   remove_alpha_ios: true
   web:
     generate: true
-  image_path: "assets/images/app_icon.png"
+  image_path: "assets/images/kenny_splash_icon.png"
   adaptive_icon_background: "#FF6B35"
-  adaptive_icon_foreground: "assets/images/app_icon_foreground.png"
+  adaptive_icon_foreground: "assets/images/kenny_splash_icon.png"
 
-# Splash screen configuration
+# Splash screen configuration (native - shows before app loads)
+# Using sharp-edged icon for crisp display
 flutter_native_splash:
-  color: "#FF6B35"
-  android_12:
-    color: "#FF6B35"
-    image: "assets/images/splash_icon.png"
-    icon_background_color: "#FF6B35"
+  color: "#1a1a2e"  # Dark background (matches app theme)
+  image: "assets/images/kenny_splash_icon.png"
+  android_gravity: center  # Center image without fill scaling
+  ios_content_mode: center  # iOS: center without scaling
+  web_image_mode: center  # Web: center the image
+  fullscreen: true
+  android: true
   ios: true
   web: true
 

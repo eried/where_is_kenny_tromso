@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatefulWidget {
@@ -152,28 +153,14 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              'The mystery was solved when the artist came forward: ',
-              style: TextStyle(
-                fontSize: 15,
-                height: 1.6,
-                color: Colors.white.withValues(alpha: 0.85),
-              ),
-            ),
-            GestureDetector(
-              onTap: () => _launchUrl('https://www.ried.cl'),
-              child: const Text(
-                'Erwin Ried',
-                style: TextStyle(
-                  fontSize: 15,
-                  height: 1.6,
-                  color: Colors.orange,
-                  decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Text(
-              ', a Chilean software engineer living in Tromsø.\n\n'
+              'The mystery was solved when the artist came forward: Erwin Ried, '
+              'a Chilean software engineer living in Tromsø.\n\n'
+              'However, Kenny had to "come out" earlier than planned when a local newspaper '
+              'discovered an old Reddit post about the statue\'s construction. The post sparked '
+              'an unexpected cultural divide – Americans criticized the idea of placing '
+              'a statue in pristine nature, while Norwegians embraced it with enthusiasm. '
+              'Some Norwegians even argued that Kenny "beriker naturen" (enriches nature), '
+              'adding character to the mountain landscape.\n\n'
               'When asked why Kenny, Erwin explained:\n'
               '"South Park is my favorite series! And I feel Kenny and Tromsø are a good '
               'match. He\'s going to love the snow, the northern lights (nordlys) and more."\n\n'
@@ -199,26 +186,13 @@ class _AboutScreenState extends State<AboutScreen> {
               '• Weather-resistant construction\n'
               '• Carried up the mountain by two people\n\n'
               'The statue was designed to withstand the harsh Arctic conditions, '
-              'from freezing winters to midnight sun summers.',
+              'from freezing winters to midnight sun summers.\n\n'
+              'See Credits section below for 3D model and printing details.',
               style: TextStyle(
                 fontSize: 15,
                 height: 1.6,
                 color: Colors.white.withValues(alpha: 0.85),
               ),
-            ),
-            const SizedBox(height: 16),
-            _buildCreditLink(
-              icon: Icons.view_in_ar,
-              label: 'Original 3D Model',
-              name: 'JHN_K on Cults3D',
-              url: 'https://cults3d.com/en/3d-model/art/kenny-mccormick-south-park',
-            ),
-            const SizedBox(height: 8),
-            _buildCreditLink(
-              icon: Icons.print,
-              label: 'Printed by',
-              name: 'Erwin Ried on MakerWorld',
-              url: 'https://makerworld.com/en/@eried',
             ),
             const SizedBox(height: 24),
 
@@ -259,6 +233,26 @@ class _AboutScreenState extends State<AboutScreen> {
             _buildSection('In the News', ''),
             const SizedBox(height: 12),
             _buildNewsLink(
+              'Nordlys',
+              'Mysteriet er løst: Jeg tror Kenny kommer til å elske Tromsø',
+              'https://www.nordlys.no/mysteriet-er-lost-jeg-tror-kenny-kommer-til-a-elske-tromso/s/5-34-2194006',
+            ),
+            _buildNewsLink(
+              'Nordlys',
+              'Hvem har gjort dette? – Jeg lo hele veien ned',
+              'https://www.nordlys.no/hvem-har-gjort-dette-jeg-lo-hele-veien-ned/s/5-34-2193691',
+            ),
+            _buildNewsLink(
+              'iTromsø',
+              'Sjekk hvem som dukket opp på en fjelltopp på Kvaløya',
+              'https://www.itromso.no/nyheter/i/0V1KjG/sjekk-hvem-som-dukket-opp-paa-en-fjelltopp-paa-kvaloeya',
+            ),
+            _buildNewsLink(
+              'iTromsø',
+              'Har skapt kontrovers: Nå svarer kunstneren på kritikken',
+              'https://www.itromso.no/nyheter/i/QMVxpW/fjellskulptur-i-plast-skaper-kontrovers-visuell-forurensning',
+            ),
+            _buildNewsLink(
               'Dagbladet',
               'Dukket opp - ler fortsatt',
               'https://www.dagbladet.no/nyheter/dukket-opp-ler-fortsatt/83374210',
@@ -273,20 +267,75 @@ class _AboutScreenState extends State<AboutScreen> {
               'South Park-statue på Finnlandsfjellet',
               'https://www.nyhetssaker.no/artikler/2dd7d44e-1a9a-4901-82c1-416dd9e1167f',
             ),
+            _buildNewsLink(
+              'Reddit',
+              'Discussion about Kenny statue',
+              'https://www.reddit.com/search/?q=kenny+tromso',
+            ),
             const SizedBox(height: 24),
 
             // Tag Kenny Online
             _buildSection('Tag Kenny Online', ''),
             const SizedBox(height: 12),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                _buildInstagramTag('#WhereIsKenny'),
-                _buildInstagramTag('#KennyTromsø'),
-                _buildInstagramTag('#Finnlandsfjellet'),
-                _buildInstagramTag('#SouthPark'),
-              ],
+            Center(
+              child: GestureDetector(
+                onTap: () async {
+                  const hashtags = '#WhereIsKenny #KennyTromsø #Finnlandsfjellet #SouthPark #Tromso';
+                  await Clipboard.setData(const ClipboardData(text: hashtags));
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Hashtags copied to clipboard!'),
+                        backgroundColor: Colors.green,
+                        behavior: SnackBarBehavior.floating,
+                        duration: const Duration(seconds: 2),
+                      ),
+                    );
+                  }
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.purple.withValues(alpha: 0.3),
+                        Colors.pink.withValues(alpha: 0.3),
+                        Colors.orange.withValues(alpha: 0.3),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      color: Colors.pink.withValues(alpha: 0.5),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.copy, color: Colors.pink.withValues(alpha: 0.9), size: 18),
+                      const SizedBox(width: 10),
+                      const Text(
+                        '#WhereIsKenny #KennyTromsø #Finnlandsfjellet #SouthPark #Tromso',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Center(
+              child: Text(
+                'Tap to copy all hashtags',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white.withValues(alpha: 0.5),
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
             ),
             const SizedBox(height: 32),
 
@@ -311,7 +360,7 @@ class _AboutScreenState extends State<AboutScreen> {
               icon: Icons.brush,
               label: 'App & Statue',
               name: 'Erwin Ried',
-              url: 'https://www.ried.cl',
+              url: 'https://ried.cl',
             ),
             const SizedBox(height: 8),
             _buildCreditLink(

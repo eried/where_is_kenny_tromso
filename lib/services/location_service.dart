@@ -4,37 +4,72 @@ import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import '../config/constants.dart';
 
+enum LocationErrorType {
+  serviceDisabled,
+  permissionDenied,
+  permissionDeniedForever,
+  reducedAccuracy,
+}
+
+class LocationError {
+  final LocationErrorType type;
+  final String message;
+
+  LocationError(this.type, this.message);
+
+  @override
+  String toString() => message;
+}
+
 class LocationService {
   StreamSubscription<Position>? _positionSubscription;
   final _distanceController = StreamController<DistanceInfo>.broadcast();
 
   Stream<DistanceInfo> get distanceStream => _distanceController.stream;
 
-  Future<bool> checkAndRequestPermission() async {
+  Future<LocationError?> checkAndRequestPermission() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return false;
+      return LocationError(
+        LocationErrorType.serviceDisabled,
+        'Enable location to find Kenny',
+      );
     }
 
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        return false;
+        return LocationError(
+          LocationErrorType.permissionDenied,
+          'We need location access to locate Kenny',
+        );
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      return false;
+      return LocationError(
+        LocationErrorType.permissionDeniedForever,
+        'Grant location permission in settings',
+      );
     }
 
-    return true;
+    // Check for precise location (whileInUse vs always doesn't matter, but reduced accuracy does)
+    final accuracyStatus = await Geolocator.getLocationAccuracy();
+    if (accuracyStatus == LocationAccuracyStatus.reduced) {
+      return LocationError(
+        LocationErrorType.reducedAccuracy,
+        'Enable precise location for accurate distance',
+      );
+    }
+
+    return null;
   }
 
   Future<void> startTracking() async {
-    final hasPermission = await checkAndRequestPermission();
-    if (!hasPermission) {
-      _distanceController.addError('Location permission denied');
+    final error = await checkAndRequestPermission();
+    if (error != null) {
+      _distanceController.addError(error);
       return;
     }
 

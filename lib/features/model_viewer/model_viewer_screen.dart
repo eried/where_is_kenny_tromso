@@ -166,7 +166,7 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                 ),
                 const SizedBox(width: 6),
                 Text(
-                  'Inspect',
+                  'Parts',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 13,
@@ -293,8 +293,9 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                 ),
 
                 // 3D Model View of the Part
+                // Increased flex so the 3D view gets more space
                 Expanded(
-                  flex: 3,
+                  flex: 19,
                   child: GestureDetector(
                     onTap: () {}, // Prevent tap from closing
                     child: Container(
@@ -323,15 +324,39 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                               disableZoom: false,
                               backgroundColor: const Color(0xFF0f0f1a),
                               cameraOrbit: '0deg 75deg 105%',
-                              relatedJs: _wireframeEnabled ? '''
+                              loading: _wireframeEnabled ? Loading.eager : Loading.auto,
+                              relatedJs: '''
                                 (function() {
                                   const mv = document.querySelector('model-viewer');
+                                  const STORAGE_KEY = 'kenny_camera_orbit_${part.id}';
+
+                                  // Save camera position on every camera change
+                                  mv.addEventListener('camera-change', function() {
+                                    try {
+                                      const orbit = mv.getCameraOrbit();
+                                      const orbitStr = orbit.theta + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
+                                      localStorage.setItem(STORAGE_KEY, orbitStr);
+                                    } catch(e) {}
+                                  });
+
+                                  // Restore camera position on load
+                                  function restoreCamera() {
+                                    try {
+                                      const saved = localStorage.getItem(STORAGE_KEY);
+                                      if (saved) {
+                                        mv.cameraOrbit = saved;
+                                      }
+                                    } catch(e) {}
+                                  }
+
+                                  ${_wireframeEnabled ? '''
                                   function enableWireframe() {
                                     try {
                                       const symbols = Object.getOwnPropertySymbols(mv);
                                       for (const sym of symbols) {
                                         const val = mv[sym];
                                         if (val && val.scene) {
+                                          let applied = false;
                                           val.scene.traverse((obj) => {
                                             if (obj.isMesh && obj.material) {
                                               obj.material.wireframe = true;
@@ -339,31 +364,70 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                               if (obj.material.color && obj.material.color.setRGB) {
                                                 obj.material.color.setRGB(0, 0.9, 1);
                                               }
+                                              applied = true;
                                             }
                                           });
-                                          // Force render update
-                                          if (val.renderer) {
-                                            val.renderer.render(val.scene, val.camera);
+
+                                          if (applied) {
+                                            // Force multiple redraws to ensure wireframe shows
+                                            if (val.renderer && val.camera) {
+                                              val.renderer.render(val.scene, val.camera);
+                                            }
+
+                                            // Trigger model-viewer's internal render
+                                            mv.requestUpdate();
+
+                                            // Force camera nudge to trigger render
+                                            const orbit = mv.getCameraOrbit();
+                                            const epsilon = 0.0001;
+                                            mv.cameraOrbit = (orbit.theta + epsilon) + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
+
+                                            // Restore after a tiny delay
+                                            setTimeout(function() {
+                                              mv.cameraOrbit = orbit.theta + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
+                                            }, 10);
+
+                                            return true;
                                           }
-                                          // Trigger model-viewer to re-render
-                                          mv.dispatchEvent(new CustomEvent('camera-change'));
-                                          break;
                                         }
                                       }
-                                      // Also try nudging the camera slightly to force redraw
-                                      const orbit = mv.getCameraOrbit();
-                                      mv.cameraOrbit = orbit.theta + 0.001 + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
-                                      setTimeout(() => {
-                                        mv.cameraOrbit = orbit.theta + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
-                                      }, 50);
-                                    } catch(e) { console.error('Wireframe:', e); }
+                                    } catch(e) { console.error('Wireframe error:', e); }
+                                    return false;
                                   }
-                                  mv.addEventListener('load', enableWireframe);
-                                  setTimeout(enableWireframe, 300);
-                                  setTimeout(enableWireframe, 600);
-                                  setTimeout(enableWireframe, 1000);
+
+                                  // Keep trying until wireframe is applied and rendered
+                                  let attempts = 0;
+                                  function tryWireframe() {
+                                    attempts++;
+                                    if (enableWireframe()) {
+                                      // Keep forcing redraws for a bit to ensure it shows
+                                      for (let i = 0; i < 5; i++) {
+                                        setTimeout(function() {
+                                          const orbit = mv.getCameraOrbit();
+                                          mv.cameraOrbit = (orbit.theta + 0.0001) + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
+                                          setTimeout(function() {
+                                            mv.cameraOrbit = orbit.theta + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
+                                          }, 5);
+                                        }, i * 50);
+                                      }
+                                    } else if (attempts < 100) {
+                                      requestAnimationFrame(tryWireframe);
+                                    }
+                                  }
+
+                                  mv.addEventListener('load', function() {
+                                    restoreCamera();
+                                    setTimeout(tryWireframe, 10);
+                                  });
+
+                                  // Start trying immediately
+                                  tryWireframe();
+                                  ''' : '''
+                                  mv.addEventListener('load', restoreCamera);
+                                  setTimeout(restoreCamera, 300);
+                                  '''}
                                 })();
-                              ''' : null,
+                              ''',
                             ),
                             // Wireframe toggle inside 3D viewer
                             Positioned(
@@ -376,54 +440,41 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                   });
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                                   decoration: BoxDecoration(
                                     color: _wireframeEnabled
                                         ? Colors.cyan.withValues(alpha: 0.9)
                                         : Colors.black.withValues(alpha: 0.6),
-                                    shape: BoxShape.circle,
+                                    borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
                                       color: _wireframeEnabled
                                           ? Colors.cyan
                                           : Colors.white.withValues(alpha: 0.3),
                                     ),
                                   ),
-                                  child: Icon(
-                                    Icons.grid_4x4,
-                                    color: Colors.white,
-                                    size: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // Wireframe indicator
-                            if (_wireframeEnabled)
-                              Positioned(
-                                top: 12,
-                                left: 12,
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                                  decoration: BoxDecoration(
-                                    color: Colors.cyan.withValues(alpha: 0.9),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Icon(Icons.grid_4x4, color: Colors.white, size: 14),
-                                      SizedBox(width: 4),
-                                      Text(
+                                      Icon(
+                                        Icons.grid_4x4,
+                                        color: Colors.white,
+                                        size: 16,
+                                      ),
+                                      const SizedBox(width: 6),
+                                      const Text(
                                         'Wireframe',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 11,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 0.5,
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
+                            ),
                           ],
                         ),
                       ),
@@ -432,8 +483,9 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                 ),
 
                 // Part Details
+                // Reduced height (about 40% smaller than before)
                 Expanded(
-                  flex: 2,
+                  flex: 6,
                   child: GestureDetector(
                     onTap: () {}, // Prevent tap from closing
                     child: Container(
@@ -452,15 +504,17 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                           children: [
                             // Description
                             if (part.description != null) ...[
-                              Text(
-                                part.description!,
-                                style: TextStyle(
-                                  color: Colors.white.withValues(alpha: 0.85),
-                                  fontSize: 14,
-                                  height: 1.5,
+                                Text(
+                                  part.description!,
+                                  style: TextStyle(
+                                    color: Colors.white.withValues(alpha: 0.85),
+                                    fontSize: 13,
+                                    height: 1.4,
+                                  ),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
-                              ),
-                              const SizedBox(height: 16),
+                                const SizedBox(height: 8),
                             ],
 
                             // Metadata
@@ -507,7 +561,7 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                             // File info
                             const SizedBox(height: 8),
                             Text(
-                              'File: ${part.filename}',
+                              part.filename,
                               style: TextStyle(
                                 color: Colors.white.withValues(alpha: 0.3),
                                 fontSize: 11,
