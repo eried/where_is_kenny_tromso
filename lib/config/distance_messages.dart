@@ -212,7 +212,7 @@ class DistanceMessages {
     "You're now part of the story!",
     "Kenny's been waiting for you!",
     "The journey was worth it!",
-    "Don't forget to leave a stone!",
+    "Don't forget to take a photo!",
     "Kenny: *happy muffled sounds*",
     "You made the pilgrimage!",
     "LEGENDARY!",

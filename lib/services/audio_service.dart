@@ -5,7 +5,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 
 class AudioService {
-  final Map<String, AudioPlayer> _players = {};
+  // Track active sound players for each sound (allow up to 5 simultaneous instances)
+  final Map<String, List<AudioPlayer>> _activePlayers = {};
+  final Map<String, DateTime> _lastPlayTime = {};
+  static const int _maxSimultaneousSounds = 5;
+  static const Duration _cooldownDuration = Duration(seconds: 1);
+
   AudioPlayer? _beepPlayer;
   Timer? _beepTimer;
   bool _isBeeping = false;
@@ -26,6 +31,22 @@ class AudioService {
   Future<void> _initBeepPlayer() async {
     _beepPlayer = AudioPlayer();
     _beepPlayer!.setReleaseMode(ReleaseMode.stop);
+    // Set audio context to mix with other audio without interrupting
+    await _beepPlayer!.setAudioContext(
+      AudioContext(
+        iOS: AudioContextIOS(
+          category: AVAudioSessionCategory.playback,
+          options: {AVAudioSessionOptions.mixWithOthers},
+        ),
+        android: AudioContextAndroid(
+          isSpeakerphoneOn: false,
+          stayAwake: false,
+          contentType: AndroidContentType.music,
+          usageType: AndroidUsageType.media,
+          audioFocus: AndroidAudioFocus.gainTransientMayDuck, // Duck other audio briefly, don't interrupt
+        ),
+      ),
+    );
 
     // Listen for playback completion to properly reset flag
     _beepPlayer!.onPlayerComplete.listen((_) {
@@ -109,19 +130,74 @@ class AudioService {
     return wavData.buffer.asUint8List();
   }
 
-  /// Initialize a player for a specific sound
-  Future<void> preloadSound(String soundId, String assetPath) async {
-    final player = AudioPlayer();
-    await player.setSource(AssetSource(assetPath));
-    _players[soundId] = player;
-  }
+  /// Play a sound from the soundboard - supports multiple simultaneous instances with cooldown
+  Future<void> playSound(String soundId, String assetPath) async {
+    // Check cooldown - prevent same sound from playing more than once per second
+    final now = DateTime.now();
+    final lastPlayed = _lastPlayTime[soundId];
+    if (lastPlayed != null && now.difference(lastPlayed) < _cooldownDuration) {
+      debugPrint('Sound $soundId is on cooldown');
+      return; // Still in cooldown, ignore this play request
+    }
 
-  /// Play a sound from the soundboard
-  Future<void> playSound(String soundId) async {
-    final player = _players[soundId];
-    if (player != null) {
-      await player.stop();
-      await player.resume();
+    // Update last play time
+    _lastPlayTime[soundId] = now;
+
+    // Initialize list if needed
+    _activePlayers[soundId] ??= [];
+
+    // Clean up completed players
+    _activePlayers[soundId]!.removeWhere((player) {
+      if (player.state == PlayerState.completed || player.state == PlayerState.stopped) {
+        player.dispose();
+        return true;
+      }
+      return false;
+    });
+
+    // Limit simultaneous sounds
+    if (_activePlayers[soundId]!.length >= _maxSimultaneousSounds) {
+      // Stop and dispose oldest player
+      final oldestPlayer = _activePlayers[soundId]!.removeAt(0);
+      await oldestPlayer.stop();
+      await oldestPlayer.dispose();
+    }
+
+    // Create new player for this sound instance
+    final player = AudioPlayer();
+
+    // Configure to mix with other audio
+    await player.setAudioContext(
+      AudioContext(
+        iOS: AudioContextIOS(
+          category: AVAudioSessionCategory.playback,
+          options: {AVAudioSessionOptions.mixWithOthers},
+        ),
+        android: AudioContextAndroid(
+          isSpeakerphoneOn: false,
+          stayAwake: false,
+          contentType: AndroidContentType.music,
+          usageType: AndroidUsageType.media,
+          audioFocus: AndroidAudioFocus.none, // Don't request focus, just mix
+        ),
+      ),
+    );
+
+    _activePlayers[soundId]!.add(player);
+
+    // Auto-cleanup when complete
+    player.onPlayerComplete.listen((_) async {
+      _activePlayers[soundId]?.remove(player);
+      await player.dispose();
+    });
+
+    // Play the sound
+    try {
+      await player.play(AssetSource(assetPath));
+    } catch (e) {
+      debugPrint('Error playing sound $soundId: $e');
+      _activePlayers[soundId]?.remove(player);
+      await player.dispose();
     }
   }
 
@@ -129,6 +205,23 @@ class AudioService {
   Future<void> playSoundFromAsset(String assetPath) async {
     final player = AudioPlayer();
     try {
+      // Configure to mix with other audio
+      await player.setAudioContext(
+        AudioContext(
+          iOS: AudioContextIOS(
+            category: AVAudioSessionCategory.playback,
+            options: {AVAudioSessionOptions.mixWithOthers},
+          ),
+          android: AudioContextAndroid(
+            isSpeakerphoneOn: false,
+            stayAwake: false,
+            contentType: AndroidContentType.music,
+            usageType: AndroidUsageType.media,
+            audioFocus: AndroidAudioFocus.none,
+          ),
+        ),
+      );
+
       await player.play(AssetSource(assetPath));
       // Auto-dispose after playback
       player.onPlayerComplete.listen((_) {
@@ -305,10 +398,15 @@ class AudioService {
   void dispose() {
     stopProximityBeep();
     _beepPlayer?.dispose();
-    for (final player in _players.values) {
-      player.dispose();
+
+    // Dispose all active sound players
+    for (final playerList in _activePlayers.values) {
+      for (final player in playerList) {
+        player.dispose();
+      }
     }
-    _players.clear();
+    _activePlayers.clear();
+    _lastPlayTime.clear();
     _beepCache.clear();
   }
 }

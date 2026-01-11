@@ -10,73 +10,73 @@
       "order": 0,
       "metadata": {
         "pieces": "18 parts",
-        "material": "Orange ABS"
+        "material": "ABS"
       }
     },
     {
       "id": "parka_hood",
       "name": "Parka Hood",
       "filename": "parka_hood.glb",
-      "description": "The iconic orange parka hood front pieces.",
+      "description": "The iconic parka hood printed in two pieces and attached with small dowels.",
       "order": 1,
       "metadata": {
         "pieces": "2 parts",
-        "material": "Orange ABS"
+        "material": "ABS"
       }
     },
     {
       "id": "neck",
       "name": "Neck",
       "filename": "neck.glb",
-      "description": "Connects head and body.",
+      "description": "Connects head and body. Sits inside the body which was filled with rocks for stability.",
       "order": 2,
       "metadata": {
         "pieces": "1 part",
-        "material": "Dark Blue ABS"
+        "material": "ABS"
       }
     },
     {
       "id": "arm_left",
       "name": "Arm Left",
       "filename": "body_left.glb",
-      "description": "Kenny's left arm and glove.",
+      "description": "Kenny's left arm and glove. Fixed to the body with 2 plastic dowels.",
       "order": 3,
       "metadata": {
         "pieces": "1 part",
-        "material": "Dark Blue ABS"
+        "material": "ABS"
       }
     },
     {
       "id": "arm_right",
       "name": "Arm Right",
       "filename": "body_right.glb",
-      "description": "Kenny's right arm and glove.",
+      "description": "Kenny's right arm and glove. Fixed to the body with 2 plastic dowels.",
       "order": 4,
       "metadata": {
         "pieces": "1 part",
-        "material": "Dark Blue ABS"
+        "material": "ABS"
       }
     },
     {
       "id": "legs",
       "name": "Legs & Torso",
       "filename": "legs.glb",
-      "description": "Torso, legs, and feet.",
+      "description": "Torso, legs, and feet. Printed in 7 pieces and filled with rocks for weight and stability.",
       "order": 5,
       "metadata": {
-        "pieces": "8 parts",
-        "material": "Dark Blue ABS"
+        "pieces": "7 parts",
+        "material": "ABS"
       }
     },
     {
       "id": "connectors",
       "name": "Connectors",
       "filename": "connectors.glb",
-      "description": "Dowels and pegs for joining parts.",
+      "description": "Dowels and pegs for joining parts. Each dowel features a flat side to enable vertical printing, which aligns the layer lines along the length for maximum strength where stress occurs.",
       "order": 6,
       "metadata": {
         "pieces": "11 parts",
-        "material": "Dark Blue ABS"
+        "material": "ABS"
       }
     }
   ],

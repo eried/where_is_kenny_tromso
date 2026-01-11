@@ -110,18 +110,87 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
     return Container(
       color: const Color(0xFF0f0f1a),
       child: ModelViewer(
+        key: const ValueKey('main_viewer'),
         src: modelUrl,
         alt: _config?.name ?? 'Kenny 3D Model',
         autoRotate: true,
-        autoRotateDelay: 10000, // 10 seconds before resuming rotation after interaction
-        rotationPerSecond: '10deg', // Slower rotation (was 30deg)
+        autoRotateDelay: 10000,
+        rotationPerSecond: '10deg',
         cameraControls: true,
         disableZoom: false,
+        disablePan: false,
+        disableTap: true,
+        touchAction: TouchAction.none,
+        interactionPrompt: InteractionPrompt.none,
+        interactionPromptStyle: InteractionPromptStyle.basic,
+        interactionPromptThreshold: 9999999,
         backgroundColor: const Color(0xFF0f0f1a),
         cameraOrbit: '0deg 75deg 105%',
         minCameraOrbit: 'auto auto 50%',
         maxCameraOrbit: 'auto auto 300%',
         exposure: 1.2,
+        relatedJs: '''
+          (function() {
+            const mv = document.querySelector('model-viewer');
+            if (!mv) return;
+
+            // Hide the dot/focus indicator in Shadow DOM
+            function hidePromptElements() {
+              try {
+                const shadow = mv.shadowRoot;
+                if (shadow) {
+                  // Inject CSS into shadow DOM to hide all prompt elements
+                  let style = shadow.querySelector('#hide-prompts-style');
+                  if (!style) {
+                    style = document.createElement('style');
+                    style.id = 'hide-prompts-style';
+                    style.textContent = `
+                      .interaction-prompt,
+                      [part="interaction-prompt"],
+                      .dot,
+                      .ring,
+                      .finger,
+                      #prompt,
+                      .prompt,
+                      [slot="interaction-prompt"],
+                      .default-prompt,
+                      .pan-target,
+                      #default-ar-button,
+                      .ar-button {
+                        display: none !important;
+                        opacity: 0 !important;
+                        visibility: hidden !important;
+                        pointer-events: none !important;
+                      }
+                    `;
+                    shadow.appendChild(style);
+                  }
+
+                  // Also directly hide elements if found
+                  const prompts = shadow.querySelectorAll('.interaction-prompt, .dot, .ring, .finger, #prompt, .prompt, .pan-target');
+                  prompts.forEach(el => {
+                    el.style.display = 'none';
+                    el.style.opacity = '0';
+                    el.style.visibility = 'hidden';
+                  });
+                }
+              } catch(e) {}
+            }
+
+            // Run immediately and on load
+            hidePromptElements();
+            mv.addEventListener('load', hidePromptElements);
+            mv.addEventListener('camera-change', hidePromptElements);
+
+            // Run periodically for first few seconds to catch late-rendered elements
+            let hideAttempts = 0;
+            const hideInterval = setInterval(() => {
+              hidePromptElements();
+              hideAttempts++;
+              if (hideAttempts > 20) clearInterval(hideInterval);
+            }, 100);
+          })();
+        ''',
       ),
     );
   }
@@ -295,7 +364,7 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                 // 3D Model View of the Part
                 // Increased flex so the 3D view gets more space
                 Expanded(
-                  flex: 19,
+                  flex: 16,
                   child: GestureDetector(
                     onTap: () {}, // Prevent tap from closing
                     child: Container(
@@ -322,13 +391,66 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                               rotationPerSecond: '30deg',
                               cameraControls: true,
                               disableZoom: false,
+                              disablePan: false,
+                              disableTap: true,
+                              touchAction: TouchAction.none,
+                              interactionPrompt: InteractionPrompt.none,
+                              interactionPromptStyle: InteractionPromptStyle.basic,
+                              interactionPromptThreshold: 9999999,
                               backgroundColor: const Color(0xFF0f0f1a),
                               cameraOrbit: '0deg 75deg 105%',
                               loading: _wireframeEnabled ? Loading.eager : Loading.auto,
-                              relatedJs: '''
+                            relatedJs: '''
                                 (function() {
                                   const mv = document.querySelector('model-viewer');
+                                  if (!mv) return;
                                   const STORAGE_KEY = 'kenny_camera_orbit_${part.id}';
+
+                                  // Hide the dot/focus indicator in Shadow DOM
+                                  function hidePromptElements() {
+                                    try {
+                                      const shadow = mv.shadowRoot;
+                                      if (shadow) {
+                                        let style = shadow.querySelector('#hide-prompts-style');
+                                        if (!style) {
+                                          style = document.createElement('style');
+                                          style.id = 'hide-prompts-style';
+                                          style.textContent = \`
+                                            .interaction-prompt,
+                                            [part="interaction-prompt"],
+                                            .dot, .ring, .finger,
+                                            #prompt, .prompt,
+                                            [slot="interaction-prompt"],
+                                            .default-prompt, .pan-target,
+                                            #default-ar-button, .ar-button {
+                                              display: none !important;
+                                              opacity: 0 !important;
+                                              visibility: hidden !important;
+                                              pointer-events: none !important;
+                                            }
+                                          \`;
+                                          shadow.appendChild(style);
+                                        }
+                                        const prompts = shadow.querySelectorAll('.interaction-prompt, .dot, .ring, .finger, #prompt, .prompt, .pan-target');
+                                        prompts.forEach(el => {
+                                          el.style.display = 'none';
+                                          el.style.opacity = '0';
+                                          el.style.visibility = 'hidden';
+                                        });
+                                      }
+                                    } catch(e) {}
+                                  }
+
+                                  // Run hiding periodically
+                                  hidePromptElements();
+                                  mv.addEventListener('load', hidePromptElements);
+                                  mv.addEventListener('camera-change', hidePromptElements);
+                                  let hideAttempts = 0;
+                                  const hideInterval = setInterval(() => {
+                                    hidePromptElements();
+                                    hideAttempts++;
+                                    if (hideAttempts > 20) clearInterval(hideInterval);
+                                  }, 100);
 
                                   // Save camera position on every camera change
                                   mv.addEventListener('camera-change', function() {
@@ -367,40 +489,28 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                               applied = true;
                                             }
                                           });
-
                                           if (applied) {
-                                            // Force multiple redraws to ensure wireframe shows
                                             if (val.renderer && val.camera) {
                                               val.renderer.render(val.scene, val.camera);
                                             }
-
-                                            // Trigger model-viewer's internal render
                                             mv.requestUpdate();
-
-                                            // Force camera nudge to trigger render
                                             const orbit = mv.getCameraOrbit();
                                             const epsilon = 0.0001;
                                             mv.cameraOrbit = (orbit.theta + epsilon) + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
-
-                                            // Restore after a tiny delay
                                             setTimeout(function() {
                                               mv.cameraOrbit = orbit.theta + 'rad ' + orbit.phi + 'rad ' + orbit.radius + 'm';
                                             }, 10);
-
                                             return true;
                                           }
                                         }
                                       }
-                                    } catch(e) { console.error('Wireframe error:', e); }
+                                    } catch(e) {}
                                     return false;
                                   }
-
-                                  // Keep trying until wireframe is applied and rendered
                                   let attempts = 0;
                                   function tryWireframe() {
                                     attempts++;
                                     if (enableWireframe()) {
-                                      // Keep forcing redraws for a bit to ensure it shows
                                       for (let i = 0; i < 5; i++) {
                                         setTimeout(function() {
                                           const orbit = mv.getCameraOrbit();
@@ -414,13 +524,10 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                       requestAnimationFrame(tryWireframe);
                                     }
                                   }
-
                                   mv.addEventListener('load', function() {
                                     restoreCamera();
                                     setTimeout(tryWireframe, 10);
                                   });
-
-                                  // Start trying immediately
                                   tryWireframe();
                                   ''' : '''
                                   mv.addEventListener('load', restoreCamera);
@@ -429,7 +536,7 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                 })();
                               ''',
                             ),
-                            // Wireframe toggle inside 3D viewer
+                            // Wireframe toggle button
                             Positioned(
                               bottom: 12,
                               right: 12,
@@ -482,15 +589,14 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                   ),
                 ),
 
-                // Part Details
-                // Reduced height (about 40% smaller than before)
-                Expanded(
-                  flex: 6,
+                // Part Details - compact info box
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
                   child: GestureDetector(
                     onTap: () {}, // Prevent tap from closing
                     child: Container(
-                      margin: const EdgeInsets.all(16),
-                      padding: const EdgeInsets.all(16),
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       decoration: BoxDecoration(
                         color: const Color(0xFF1a1a2e),
                         borderRadius: BorderRadius.circular(16),
@@ -509,64 +615,55 @@ class _ModelViewerScreenState extends State<ModelViewerScreen> {
                                   style: TextStyle(
                                     color: Colors.white.withValues(alpha: 0.85),
                                     fontSize: 13,
-                                    height: 1.4,
+                                    height: 1.3,
                                   ),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
+                                  softWrap: true,
                                 ),
                                 const SizedBox(height: 8),
                             ],
 
-                            // Metadata
+                            // Metadata - combine pieces and material on one line
                             if (part.metadata != null && part.metadata!.isNotEmpty) ...[
-                              Text(
-                                'Details',
-                                style: TextStyle(
-                                  color: Colors.orange.withValues(alpha: 0.8),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              ...part.metadata!.entries.map((entry) => Padding(
-                                padding: const EdgeInsets.only(bottom: 6),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SizedBox(
-                                      width: 100,
-                                      child: Text(
-                                        entry.key,
-                                        style: TextStyle(
-                                          color: Colors.white.withValues(alpha: 0.5),
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        entry.value.toString(),
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )),
-                            ],
+                              Builder(
+                                builder: (context) {
+                                  final pieces = part.metadata!['pieces'];
+                                  final material = part.metadata!['material'];
 
-                            // File info
-                            const SizedBox(height: 8),
-                            Text(
-                              part.filename,
-                              style: TextStyle(
-                                color: Colors.white.withValues(alpha: 0.3),
-                                fontSize: 11,
+                                  if (pieces != null && material != null) {
+                                    return Text(
+                                      '$pieces • printed in $material',
+                                      style: TextStyle(
+                                        color: Colors.orange.withValues(alpha: 0.9),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 0.3,
+                                      ),
+                                    );
+                                  }
+
+                                  // Fallback to regular display if not both present
+                                  return Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: part.metadata!.entries.map((entry) {
+                                      final key = entry.key;
+                                      final value = entry.value;
+                                      final display = key == 'material' ? 'printed in $value' : '$key: $value';
+
+                                      return Padding(
+                                        padding: const EdgeInsets.only(bottom: 6),
+                                        child: Text(
+                                          display,
+                                          style: TextStyle(
+                                            color: Colors.white.withValues(alpha: 0.7),
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      );
+                                    }).toList(),
+                                  );
+                                },
                               ),
-                            ),
+                            ],
                           ],
                         ),
                       ),

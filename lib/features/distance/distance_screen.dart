@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../services/location_service.dart';
 import '../../services/audio_service.dart';
 import '../../services/unit_converter.dart';
@@ -30,6 +32,12 @@ class _DistanceScreenState extends State<DistanceScreen> {
   String _currentMessage = "Mmmph mmph mmmph!";
   double _lastMessageDistance = -1;
 
+  // Ad banner state
+  BannerAd? _bannerAd;
+  bool _showAd = false;
+  Timer? _adTimer;
+  bool _isFirstOpen = true;
+
   // Distance threshold for "too far away" (100km)
   static const double _tooFarThreshold = 100000;
 
@@ -39,7 +47,7 @@ class _DistanceScreenState extends State<DistanceScreen> {
     "Where's Kenny?",
     "Oh my God, where's Kenny?!",
     "Kenny? KENNY!",
-    "Looking for the orange parka...",
+    "Looking for the golden statue...",
     "Scanning for muffled sounds...",
   ];
 
@@ -65,7 +73,54 @@ class _DistanceScreenState extends State<DistanceScreen> {
       }
     };
 
+    _checkFirstOpen();
     _startTracking();
+  }
+
+  Future<void> _checkFirstOpen() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasOpenedBefore = prefs.getBool('has_opened_before') ?? false;
+
+    setState(() {
+      _isFirstOpen = !hasOpenedBefore;
+    });
+
+    // Mark as opened
+    if (!hasOpenedBefore) {
+      await prefs.setBool('has_opened_before', true);
+    }
+
+    // If not first open, start timer to show ad after 30 seconds
+    if (!_isFirstOpen) {
+      _adTimer = Timer(const Duration(seconds: 30), () {
+        _loadAd();
+      });
+    }
+  }
+
+  void _loadAd() {
+    // Production ad unit ID
+    const adUnitId = 'ca-app-pub-1987794856464100/5192066510';
+
+    _bannerAd = BannerAd(
+      adUnitId: adUnitId,
+      size: AdSize.banner,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          if (mounted) {
+            setState(() {
+              _showAd = true;
+            });
+          }
+        },
+        onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        },
+      ),
+    );
+
+    _bannerAd?.load();
   }
 
   Future<void> _startTracking() async {
@@ -269,6 +324,8 @@ class _DistanceScreenState extends State<DistanceScreen> {
     _distanceSubscription?.cancel();
     _locationService.dispose();
     _audioService.dispose();
+    _adTimer?.cancel();
+    _bannerAd?.dispose();
     super.dispose();
   }
 
@@ -433,6 +490,13 @@ class _DistanceScreenState extends State<DistanceScreen> {
             ),
           ),
           const Spacer(),
+          // Ad banner (only shown after 30 seconds and not on first open)
+          if (_showAd && _bannerAd != null)
+            Container(
+              margin: const EdgeInsets.only(bottom: 16),
+              height: _bannerAd!.size.height.toDouble(),
+              child: AdWidget(ad: _bannerAd!),
+            ),
           // Controls
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

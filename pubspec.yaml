@@ -1,7 +1,7 @@
 name: where_is_kenny
 description: "Find Kenny from South Park! Distance tracker, soundboard, and 3D model explorer."
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+16
 
 environment:
   sdk: ^3.10.4
@@ -34,6 +34,9 @@ dependencies:
 
   # URL launcher for links
   url_launcher: ^6.3.0
+
+  # Ads
+  google_mobile_ads: ^5.2.0
 
 dev_dependencies:
   flutter_test:

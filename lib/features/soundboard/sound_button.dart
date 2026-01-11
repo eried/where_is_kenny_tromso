@@ -23,7 +23,6 @@ class _SoundButtonState extends State<SoundButton>
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
   bool _isPressed = false;
-  bool _shouldReverse = false;
 
   @override
   void initState() {
@@ -35,14 +34,6 @@ class _SoundButtonState extends State<SoundButton>
     _scaleAnimation = Tween<double>(begin: 1.0, end: 0.9).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
-
-    // When forward animation completes, reverse if needed
-    _controller.addStatusListener((status) {
-      if (status == AnimationStatus.completed && _shouldReverse) {
-        _shouldReverse = false;
-        _controller.reverse();
-      }
-    });
   }
 
   @override
@@ -51,32 +42,29 @@ class _SoundButtonState extends State<SoundButton>
     super.dispose();
   }
 
-  void _onTapDown(_) {
-    setState(() => _isPressed = true);
-    _shouldReverse = false;
-    _controller.forward();
-  }
-
-  void _onTapUp(_) {
-    setState(() => _isPressed = false);
+  void _onTapDown(TapDownDetails details) {
+    // Play sound immediately on press down
     widget.onPressed();
 
-    // If animation hasn't completed, wait for it to complete then reverse
-    if (_controller.status == AnimationStatus.forward) {
-      _shouldReverse = true;
-    } else {
-      _controller.reverse();
-    }
+    // Animate button press - always complete full cycle for visual feedback
+    setState(() => _isPressed = true);
+    _controller.forward().then((_) {
+      if (mounted) {
+        _controller.reverse().then((_) {
+          if (mounted) {
+            setState(() => _isPressed = false);
+          }
+        });
+      }
+    });
+  }
+
+  void _onTapUp(TapUpDetails details) {
+    // Animation will complete on its own
   }
 
   void _onTapCancel() {
-    setState(() => _isPressed = false);
-    // Still complete the push animation on cancel
-    if (_controller.status == AnimationStatus.forward) {
-      _shouldReverse = true;
-    } else {
-      _controller.reverse();
-    }
+    // Animation will complete on its own
   }
 
   @override

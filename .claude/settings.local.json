@@ -30,7 +30,14 @@
       "mcp__plugin_playwright_playwright__browser_wait_for",
       "mcp__plugin_playwright_playwright__browser_run_code",
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
-      "WebFetch(domain:www.nordlys.no)"
+      "WebFetch(domain:www.nordlys.no)",
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Bash(/tasks)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(flutter run)",
+      "Bash(flutter pub run:*)",
+      "Bash(xargs:*)"
     ]
   }
 }

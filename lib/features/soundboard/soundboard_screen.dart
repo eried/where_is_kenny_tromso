@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:typed_data';
-import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'sound_button.dart';
+import '../../services/audio_service.dart';
 
 class SoundboardScreen extends StatefulWidget {
   const SoundboardScreen({super.key});
@@ -15,106 +13,15 @@ class SoundboardScreen extends StatefulWidget {
 }
 
 class _SoundboardScreenState extends State<SoundboardScreen> {
-  final AudioPlayer _audioPlayer = AudioPlayer();
+  final AudioService _audioService = AudioService();
   List<SoundItem> _sounds = [];
   bool _isLoading = true;
   String? _error;
-  final Map<int, Uint8List> _placeholderSounds = {};
 
   @override
   void initState() {
     super.initState();
     _loadSounds();
-    _generatePlaceholderSounds();
-  }
-
-  void _generatePlaceholderSounds() {
-    // Generate unique placeholder sounds for each button
-    final frequencies = [440, 523, 587, 659, 784, 880]; // Musical notes
-    for (int i = 0; i < frequencies.length; i++) {
-      _placeholderSounds[i] = _generateMuffledSound(frequencies[i].toDouble(), i);
-    }
-  }
-
-  /// Generate a "muffled" Kenny-like sound
-  Uint8List _generateMuffledSound(double baseFreq, int variation) {
-    const sampleRate = 22050;
-    const durationMs = 500;
-    final numSamples = (sampleRate * durationMs / 1000).round();
-    final samples = Int16List(numSamples);
-
-    final random = math.Random(variation);
-
-    for (int i = 0; i < numSamples; i++) {
-      final t = i / sampleRate;
-
-      // Create a "muffled" sound with multiple frequency components
-      double sample = 0;
-
-      // Base tone with vibrato
-      final vibrato = 1 + 0.02 * math.sin(2 * math.pi * 5 * t);
-      sample += math.sin(2 * math.pi * baseFreq * vibrato * t) * 0.5;
-
-      // Add harmonics for richer sound
-      sample += math.sin(2 * math.pi * baseFreq * 2 * t) * 0.2;
-      sample += math.sin(2 * math.pi * baseFreq * 0.5 * t) * 0.3;
-
-      // Add some "muffled" noise
-      sample += (random.nextDouble() - 0.5) * 0.1;
-
-      // Envelope: attack, sustain, release
-      double envelope = 1.0;
-      final attackEnd = numSamples * 0.05;
-      final releaseStart = numSamples * 0.7;
-
-      if (i < attackEnd) {
-        envelope = i / attackEnd;
-      } else if (i > releaseStart) {
-        envelope = (numSamples - i) / (numSamples - releaseStart);
-      }
-
-      samples[i] = (sample * 32767 * 0.6 * envelope).round().clamp(-32768, 32767);
-    }
-
-    // Create WAV file
-    final wavData = ByteData(44 + numSamples * 2);
-
-    // RIFF header
-    wavData.setUint8(0, 0x52);
-    wavData.setUint8(1, 0x49);
-    wavData.setUint8(2, 0x46);
-    wavData.setUint8(3, 0x46);
-    wavData.setUint32(4, 36 + numSamples * 2, Endian.little);
-    wavData.setUint8(8, 0x57);
-    wavData.setUint8(9, 0x41);
-    wavData.setUint8(10, 0x56);
-    wavData.setUint8(11, 0x45);
-
-    // fmt chunk
-    wavData.setUint8(12, 0x66);
-    wavData.setUint8(13, 0x6D);
-    wavData.setUint8(14, 0x74);
-    wavData.setUint8(15, 0x20);
-    wavData.setUint32(16, 16, Endian.little);
-    wavData.setUint16(20, 1, Endian.little);
-    wavData.setUint16(22, 1, Endian.little);
-    wavData.setUint32(24, sampleRate, Endian.little);
-    wavData.setUint32(28, sampleRate * 2, Endian.little);
-    wavData.setUint16(32, 2, Endian.little);
-    wavData.setUint16(34, 16, Endian.little);
-
-    // data chunk
-    wavData.setUint8(36, 0x64);
-    wavData.setUint8(37, 0x61);
-    wavData.setUint8(38, 0x74);
-    wavData.setUint8(39, 0x61);
-    wavData.setUint32(40, numSamples * 2, Endian.little);
-
-    for (int i = 0; i < numSamples; i++) {
-      wavData.setInt16(44 + i * 2, samples[i], Endian.little);
-    }
-
-    return wavData.buffer.asUint8List();
   }
 
   Future<void> _loadSounds() async {
@@ -127,7 +34,7 @@ class _SoundboardScreenState extends State<SoundboardScreen> {
           .toList();
 
       // Shuffle the sounds for random order
-      soundsList.shuffle(math.Random());
+      soundsList.shuffle();
 
       setState(() {
         _sounds = soundsList;
@@ -136,7 +43,7 @@ class _SoundboardScreenState extends State<SoundboardScreen> {
     } catch (e) {
       // If config doesn't exist, use default sounds
       final defaultSounds = _getDefaultSounds();
-      defaultSounds.shuffle(math.Random());
+      defaultSounds.shuffle();
       setState(() {
         _sounds = defaultSounds;
         _isLoading = false;
@@ -186,28 +93,13 @@ class _SoundboardScreenState extends State<SoundboardScreen> {
   }
 
   Future<void> _playSound(SoundItem sound, int index) async {
-    try {
-      // Try to play the actual sound file first
-      await _audioPlayer.stop();
-      await _audioPlayer.play(AssetSource('sounds/${sound.file}'));
-    } catch (e) {
-      // Fall back to placeholder sound
-      try {
-        final placeholderIndex = index % _placeholderSounds.length;
-        final placeholderData = _placeholderSounds[placeholderIndex];
-        if (placeholderData != null) {
-          await _audioPlayer.stop();
-          await _audioPlayer.play(BytesSource(placeholderData));
-        }
-      } catch (e2) {
-        debugPrint('Sound error: $e2');
-      }
-    }
+    // Use AudioService which supports multiple simultaneous sounds
+    await _audioService.playSound(sound.id, 'sounds/${sound.file}');
   }
 
   @override
   void dispose() {
-    _audioPlayer.dispose();
+    _audioService.dispose();
     super.dispose();
   }
 
@@ -259,17 +151,19 @@ class _SoundboardScreenState extends State<SoundboardScreen> {
   }
 
   Color _getColorForIndex(int index) {
-    final colors = [
-      Colors.orange,
-      Colors.red,
-      Colors.purple,
-      Colors.blue,
-      Colors.green,
-      Colors.teal,
-      Colors.pink,
-      Colors.amber,
+    final orangeTones = [
+      const Color(0xFFFF6B35), // Bright orange
+      const Color(0xFFF77F00), // Orange
+      const Color(0xFFFF8C42), // Light orange
+      const Color(0xFFFF9E5C), // Peach orange
+      const Color(0xFFFFB347), // Pastel orange
+      const Color(0xFFFF8243), // Mango orange
+      const Color(0xFFFF7D47), // Coral orange
+      const Color(0xFFFFA500), // Classic orange
+      const Color(0xFFFF9052), // Soft orange
+      const Color(0xFFFF8533), // Deep orange
     ];
-    return colors[index % colors.length];
+    return orangeTones[index % orangeTones.length];
   }
 }
 

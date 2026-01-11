@@ -134,13 +134,12 @@ class _AboutScreenState extends State<AboutScreen> {
             _buildSection(
               'The Mystery on the Mountain',
               'In July 2025, hikers on Finnlandsfjellet mountain in Tromsø, Norway, '
-              'discovered something unusual: a golden-orange statue standing in a ring '
+              'discovered something unusual. A golden bronze statue standing in a ring '
               'of carefully arranged stones.\n\n'
               'Aina Wikestad Sundfær (52) was hiking with her dog when she spotted '
               'something shiny in the open landscape. At first, she thought it was '
-              'a Buddha or religious figure. But upon closer inspection, the unmistakable '
-              'orange parka and hidden face revealed the truth – it was Kenny McCormick '
-              'from South Park!\n\n'
+              'a Buddha or religious figure. But the hidden face and distinctive hood '
+              'revealed the truth. It was Kenny McCormick from South Park!\n\n'
               'The mysterious appearance made national news and became a summer sensation '
               'in northern Norway.',
             ),
@@ -153,16 +152,16 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              'The mystery was solved when the artist came forward: Erwin Ried, '
-              'a Chilean software engineer living in Tromsø.\n\n'
-              'However, Kenny had to "come out" earlier than planned when a local newspaper '
+              'The mystery was solved when the artist came forward. Erwin Ried, '
+              'a Chilean software engineer living in Tromsø, created the statue.\n\n'
+              'Kenny had to "come out" earlier than planned when a local newspaper '
               'discovered an old Reddit post about the statue\'s construction. The post sparked '
-              'an unexpected cultural divide – Americans criticized the idea of placing '
+              'an unexpected cultural divide. Americans criticized placing '
               'a statue in pristine nature, while Norwegians embraced it with enthusiasm. '
               'Some Norwegians even argued that Kenny "beriker naturen" (enriches nature), '
               'adding character to the mountain landscape.\n\n'
               'When asked why Kenny, Erwin explained:\n'
-              '"South Park is my favorite series! And I feel Kenny and Tromsø are a good '
+              '"South Park is my favorite series! I feel Kenny and Tromsø are a good '
               'match. He\'s going to love the snow, the northern lights (nordlys) and more."\n\n'
               'Together with his friend Cristophe Dierick, Erwin carried the 14 kg Kenny '
               'sculpture up to Finnlandsfjellet.',
@@ -178,15 +177,15 @@ class _AboutScreenState extends State<AboutScreen> {
             _buildSection('The Creation', ''),
             const SizedBox(height: 8),
             Text(
-              'This isn\'t just any statue – it\'s a labor of love and engineering:\n\n'
+              'This isn\'t just any statue. It\'s a labor of love and engineering:\n\n'
               '• 14 kilograms of ABS plastic\n'
               '• 3D printed over two weeks\n'
               '• Printed in multiple parts\n'
               '• Countless hours of assembly and gluing\n'
               '• Weather-resistant construction\n'
               '• Carried up the mountain by two people\n\n'
-              'The statue was designed to withstand the harsh Arctic conditions, '
-              'from freezing winters to midnight sun summers.\n\n'
+              'The statue was designed to withstand harsh Arctic conditions. '
+              'From freezing winters to midnight sun summers.\n\n'
               'See Credits section below for 3D model and printing details.',
               style: TextStyle(
                 fontSize: 15,
@@ -211,7 +210,7 @@ class _AboutScreenState extends State<AboutScreen> {
               'Henrik Romsaas, outdoor recreation advisor in Tromsø municipality, '
               'told Nordlys newspaper:\n\n'
               '"Kenny doesn\'t have permission to \'live\' on Finnlandsfjellet. '
-              'However, as long as there\'s no pollution from it, and it doesn\'t '
+              'However, as long as there\'s no pollution from it and it doesn\'t '
               'pose a danger to others or obstruct passage, I think it can just '
               'stay there until someone decides otherwise."',
             ),
@@ -233,6 +232,16 @@ class _AboutScreenState extends State<AboutScreen> {
             _buildSection('In the News', ''),
             const SizedBox(height: 12),
             _buildNewsLink(
+              'Dagbladet',
+              'Dukket opp - ler fortsatt',
+              'https://www.dagbladet.no/nyheter/dukket-opp-ler-fortsatt/83374210',
+            ),
+            _buildNewsLink(
+              'Dagbladet',
+              'Fjellsjokk: Kunstneren står fram',
+              'https://www.dagbladet.no/nyheter/fjellsjokk-star-fram/83378163',
+            ),
+            _buildNewsLink(
               'Nordlys',
               'Mysteriet er løst: Jeg tror Kenny kommer til å elske Tromsø',
               'https://www.nordlys.no/mysteriet-er-lost-jeg-tror-kenny-kommer-til-a-elske-tromso/s/5-34-2194006',
@@ -253,24 +262,9 @@ class _AboutScreenState extends State<AboutScreen> {
               'https://www.itromso.no/nyheter/i/QMVxpW/fjellskulptur-i-plast-skaper-kontrovers-visuell-forurensning',
             ),
             _buildNewsLink(
-              'Dagbladet',
-              'Dukket opp - ler fortsatt',
-              'https://www.dagbladet.no/nyheter/dukket-opp-ler-fortsatt/83374210',
-            ),
-            _buildNewsLink(
-              'Dagbladet',
-              'Fjellsjokk: Kunstneren står fram',
-              'https://www.dagbladet.no/nyheter/fjellsjokk-star-fram/83378163',
-            ),
-            _buildNewsLink(
-              'Nyhetssaker',
-              'South Park-statue på Finnlandsfjellet',
-              'https://www.nyhetssaker.no/artikler/2dd7d44e-1a9a-4901-82c1-416dd9e1167f',
-            ),
-            _buildNewsLink(
               'Reddit',
-              'Discussion about Kenny statue',
-              'https://www.reddit.com/search/?q=kenny+tromso',
+              'South Park Kenny statue discussion',
+              'https://www.reddit.com/r/southpark/comments/1m8w1cq/this_thing_was_randomly_placed_in_a_mountain_in/',
             ),
             const SizedBox(height: 24),
 
@@ -294,7 +288,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   }
                 },
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -303,25 +297,20 @@ class _AboutScreenState extends State<AboutScreen> {
                         Colors.orange.withValues(alpha: 0.3),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(16),
                     border: Border.all(
                       color: Colors.pink.withValues(alpha: 0.5),
                     ),
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.copy, color: Colors.pink.withValues(alpha: 0.9), size: 18),
-                      const SizedBox(width: 10),
-                      const Text(
-                        '#WhereIsKenny #KennyTromsø #Finnlandsfjellet #SouthPark #Tromso',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
+                  child: const Text(
+                    '#WhereIsKenny #KennyTromsø\n#Finnlandsfjellet #SouthPark #Tromso',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      height: 1.4,
+                    ),
                   ),
                 ),
               ),
@@ -343,7 +332,7 @@ class _AboutScreenState extends State<AboutScreen> {
             _buildSection(
               'Visit Kenny',
               'Kenny is waiting for you! Whether you\'re a South Park fan, a hiking '
-              'enthusiast, or just someone who appreciates creative art installations, '
+              'enthusiast, or someone who appreciates creative art installations, '
               'the trek to meet Kenny is worth it.\n\n'
               'Don\'t forget to:\n'
               '• Take a photo with Kenny\n'
