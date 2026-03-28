@@ -13,11 +13,7 @@ void main() async {
   // Initialize settings
   await settingsService.init();
 
-  // Set preferred orientations
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+  // Orientation will be set per-device in the app widget
 
   // Set system UI style
   SystemChrome.setSystemUIOverlayStyle(

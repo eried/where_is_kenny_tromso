@@ -1,0 +1,241 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - img
+      - progressbar
+      - generic: Loading Google Play Console
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Google Play Console logo" [ref=e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7771489537038540127/app-list
+          - button "Google Play Console logo" [ref=e8]
+        - generic [ref=e9]:
+          - button "Notifications Open notification center" [ref=e45]:
+            - img [ref=e49]: notifications
+            - generic [ref=e51]: Notifications
+          - generic [ref=e10]:
+            - button "Where Is Kenny" [ref=e414] [cursor=pointer]:
+              - generic [ref=e418]:
+                - img [ref=e420]
+                - generic [ref=e424]: Where Is Kenny
+            - button "Switch developer accounts" [ref=e14] [cursor=pointer]:
+              - img "Switch developer accounts" [ref=e16]
+    - navigation [ref=e53]:
+      - link "All apps" [ref=e426] [cursor=pointer]:
+        - /url: /console/u/0/developers/7771489537038540127/app-list
+        - img [ref=e428]: keyboard_backspace
+        - generic [ref=e429]: All apps
+      - list [ref=e54]:
+        - listitem "Dashboard" [ref=e432]:
+          - button "Dashboard" [ref=e433] [cursor=pointer]:
+            - img [ref=e436]: dashboard
+            - generic [ref=e437]: Dashboard
+        - listitem "Statistics" [ref=e440]:
+          - button "Statistics" [ref=e441] [cursor=pointer]:
+            - img [ref=e444]: bar_chart
+            - generic [ref=e445]: Statistics
+        - listitem "Publishing overview" [ref=e448]:
+          - button "Publishing overview" [ref=e449] [cursor=pointer]:
+            - img [ref=e452]: overview
+            - generic [ref=e453]: Publishing overview
+        - listitem "Test and release" [ref=e456]:
+          - button "Test and release" [ref=e457] [cursor=pointer]:
+            - img [ref=e460]: rocket_launch
+            - generic [ref=e461]: Test and release
+          - list [ref=e841]:
+            - generic [ref=e843]:
+              - listitem "Latest releases and bundles" [ref=e845]:
+                - button "Latest releases and bundles" [ref=e846] [cursor=pointer]:
+                  - generic [ref=e847]: Latest releases and bundles
+              - listitem "Production" [ref=e849]:
+                - button "Production" [ref=e850] [cursor=pointer]:
+                  - generic [ref=e851]: Production
+              - listitem "Testing" [ref=e853]:
+                - button "Testing" [ref=e854] [cursor=pointer]:
+                  - generic [ref=e855]: Testing
+                  - img [ref=e857]: expand_less
+                - list [ref=e1182]:
+                  - generic [ref=e1184]:
+                    - listitem "Open testing" [ref=e1186]:
+                      - button "Open testing" [ref=e1187] [cursor=pointer]:
+                        - generic [ref=e1188]: Open testing
+                    - listitem "Closed testing" [ref=e1190]:
+                      - button "Closed testing" [ref=e1191] [cursor=pointer]:
+                        - generic [ref=e1192]: Closed testing
+                    - listitem "Internal testing" [ref=e1194]:
+                      - button "Internal testing" [ref=e1195] [cursor=pointer]:
+                        - generic [ref=e1196]: Internal testing
+                    - listitem "Pre-launch report" [ref=e1198]:
+                      - button "Pre-launch report" [ref=e1199] [cursor=pointer]:
+                        - generic [ref=e1200]: Pre-launch report
+                        - img [ref=e1202]: expand_more
+                    - listitem "Internal app sharing" [ref=e1204]:
+                      - button "Internal app sharing" [ref=e1205] [cursor=pointer]:
+                        - generic [ref=e1206]: Internal app sharing
+              - listitem "Pre-registration" [ref=e859]:
+                - button "Pre-registration" [ref=e860] [cursor=pointer]:
+                  - generic [ref=e861]: Pre-registration
+              - listitem "App integrity" [ref=e863]:
+                - button "App integrity" [ref=e864] [cursor=pointer]:
+                  - generic [ref=e865]: App integrity
+              - listitem "Advanced settings" [ref=e867]:
+                - button "Advanced settings" [ref=e868] [cursor=pointer]:
+                  - generic [ref=e869]: Advanced settings
+        - listitem "Monitor and improve" [ref=e464]:
+          - button "Monitor and improve" [ref=e465] [cursor=pointer]:
+            - img [ref=e468]: vital_signs
+            - generic [ref=e469]: Monitor and improve
+        - listitem "Grow users" [ref=e472]:
+          - button "Grow users" [ref=e473] [cursor=pointer]:
+            - img [ref=e476]: finance_mode
+            - generic [ref=e477]: Grow users
+        - listitem "Monetize with Play" [ref=e480]:
+          - button "Monetize with Play" [ref=e481] [cursor=pointer]:
+            - img [ref=e484]: sell
+            - generic [ref=e485]: Monetize with Play
+    - generic [ref=e22]:
+      - generic [ref=e1285]:
+        - generic [ref=e1290]:
+          - generic:
+            - generic:
+              - link "Go back to Closed testing":
+                - /url: /console/u/0/developers/7771489537038540127/app/4976273519766682793/closed-testing?releaseType=defaultReleases
+                - img [ref=e1297] [cursor=pointer]: keyboard_backspace
+                - generic [ref=e1298] [cursor=pointer]: Closed testing
+          - generic [ref=e1302]:
+            - heading "Closed testing - Alpha" [level=1] [ref=e1307]
+            - button "Create new release" [disabled] [ref=e12299]:
+              - generic [ref=e12302]: Create new release
+        - generic [ref=e12305]:
+          - generic [ref=e12308]:
+            - heading "Set up closed testing track" [level=3] [ref=e12314]
+            - list [ref=e12319]:
+              - listitem [ref=e12320]: Inactive
+              - listitem [ref=e12321]: "Draft release: 1 (1.0.0)"
+              - listitem [ref=e12322]: 177 countries / regions
+              - listitem [ref=e12323]:
+                - text: Temporary app name 'com.eried.whereiskenny (unreviewed)'
+                - button "More information" [ref=e12326] [cursor=pointer]:
+                  - img [ref=e12327]: help
+          - generic [ref=e12328]:
+            - button "Hide 3 of 4 completed tasks for Set up closed testing track" [expanded] [ref=e12336]:
+              - generic [ref=e12339]: 3 of 4 complete
+              - img [ref=e12341]: expand_less
+            - generic [ref=e12347]:
+              - generic [ref=e12348]:
+                - generic [ref=e12349]: Set up your track
+                - generic [ref=e12350]:
+                  - generic [ref=e12352]:
+                    - img [ref=e12357]: check
+                    - generic [ref=e12359]: Select countries
+                  - generic [ref=e12361]:
+                    - img [ref=e12366]: check
+                    - generic [ref=e12368]: Select testers
+              - generic [ref=e12371]:
+                - generic [ref=e12372]: Create and roll out a release
+                - generic [ref=e12373]:
+                  - generic [ref=e12375]:
+                    - img [ref=e12380]: check
+                    - generic [ref=e12382]: Create a new release
+                  - button "Preview and confirm the release" [ref=e12390] [cursor=pointer]:
+                    - generic [ref=e12391]: Preview and confirm the release
+                    - img [ref=e12393]: chevron_right
+                  - button "Send the release to Google for review" [ref=e12400] [cursor=pointer]:
+                    - generic [ref=e12401]: Send the release to Google for review
+                    - img [ref=e12403]: chevron_right
+        - tablist [ref=e1437]:
+          - tab "Releases" [ref=e1438] [cursor=pointer]:
+            - generic [ref=e1439]: Releases
+          - tab "Countries / regions" [ref=e1441] [cursor=pointer]:
+            - generic [ref=e1442]: Countries / regions
+          - tab "Testers" [selected] [ref=e1444] [cursor=pointer]:
+            - generic [ref=e1445]: Testers
+        - generic [ref=e12101]:
+          - generic [ref=e12103]:
+            - heading "Testers" [level=2] [ref=e12112]
+            - generic [ref=e12117]:
+              - group "Testers" [ref=e12119]:
+                - generic [ref=e12122]: Testers
+                - generic [ref=e12124]:
+                  - paragraph [ref=e12125]: Choose who can access your test. You can select testers using email lists, or Google Groups.
+                  - generic [ref=e12126]:
+                    - generic [ref=e12128] [cursor=pointer]:
+                      - radio "Email lists" [ref=e12130]
+                      - generic [ref=e12134]: Email lists
+                    - generic [ref=e12178]:
+                      - generic [ref=e12179] [cursor=pointer]:
+                        - radio "Google Groups" [checked] [ref=e12181]
+                        - generic [ref=e12184]: Google Groups
+                      - generic [ref=e12257]:
+                        - paragraph [ref=e12258]: Email addresses
+                        - generic [ref=e12259]:
+                          - grid [ref=e12263]:
+                            - row "12testerslive@googlegroups.com Delete" [ref=e12279]:
+                              - gridcell "12testerslive@googlegroups.com Delete" [ref=e12280]:
+                                - generic [ref=e12281] [cursor=pointer]:
+                                  - generic [ref=e12283]: 12testerslive@googlegroups.com
+                                  - button "Delete 12testerslive@googlegroups.com" [ref=e12285]:
+                                    - img [ref=e12286]
+                              - gridcell [ref=e12265]:
+                                - textbox "Enter Google Group email addresses" [ref=e12266]:
+                                  - /placeholder: ""
+                          - generic [ref=e12267]: Enter Google Group email addresses. Only users who are members of the Google Groups you specify will be able to join your test.
+              - group "Feedback URL or email address" [ref=e12186]:
+                - generic [ref=e12189]: Feedback URL or email address
+                - generic [ref=e12192]:
+                  - textbox [ref=e12194]
+                  - generic [ref=e12195]:
+                    - paragraph [ref=e12196]: Let testers know how to provide you with feedback
+                    - generic [ref=e12197]:
+                      - generic [ref=e12198]: 0 / 512
+                      - generic [ref=e12199]: Text is 0 characters out of 512
+          - generic [ref=e12202]:
+            - heading "How testers join your test" [level=3] [ref=e12211]
+            - generic [ref=e12213]:
+              - paragraph [ref=e12214]: Links will be shown here when you publish your app.
+              - generic [ref=e12215]:
+                - group "Join on Android" [ref=e12217]:
+                  - generic [ref=e12220]: Join on Android
+                  - generic [ref=e12222]:
+                    - generic [ref=e12223]: Testers can join your test using Google Play on Android
+                    - generic [ref=e12225]:
+                      - generic:
+                        - 'button "Copy link: https://play.google.com/store/apps/details?id=com.eried.whereiskenny" [disabled]':
+                          - generic:
+                            - generic:
+                              - img: link
+                            - text: Copy link
+                - group "Join on the web" [ref=e12227]:
+                  - generic [ref=e12230]: Join on the web
+                  - generic [ref=e12232]:
+                    - generic [ref=e12233]: Testers can join your test on the web
+                    - generic [ref=e12235]:
+                      - generic:
+                        - 'button "Copy link: https://play.google.com/apps/testing/com.eried.whereiskenny" [disabled]':
+                          - generic:
+                            - generic:
+                              - img: link
+                            - text: Copy link
+          - generic [ref=e12243]:
+            - button "Discard" [disabled] [ref=e12405]:
+              - generic [ref=e12408]: Discard
+            - button "Save" [disabled] [ref=e12410]:
+              - generic [ref=e12413]: Save
+      - generic [ref=e30]:
+        - generic [ref=e832]:
+          - link "Product updates" [ref=e833] [cursor=pointer]:
+            - /url: https://play.google.com/console/about/whats-new/
+          - link "Status dashboard" [ref=e834] [cursor=pointer]:
+            - /url: https://status.play.google.com/
+          - link "Help" [ref=e835] [cursor=pointer]:
+            - /url: /console/u/0/developers/7771489537038540127/help-and-support?app=4976273519766682793
+        - generic [ref=e836]:
+          - generic [ref=e837]: © 2026 Google
+          - link "Privacy" [ref=e838] [cursor=pointer]:
+            - /url: https://www.google.com/policies/privacy/
+          - link "Developer Distribution Agreement" [ref=e839] [cursor=pointer]:
+            - /url: https://play.google.com/about/developer-distribution-agreement.html
+          - link "Terms of Service" [ref=e840] [cursor=pointer]:
+            - /url: https://play.google.com/about/console/terms-of-service/
+  - status [ref=e12414]

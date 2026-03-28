@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'features/distance/distance_screen.dart';
 import 'features/soundboard/soundboard_screen.dart';
 import 'features/model_viewer/model_viewer_screen.dart';
@@ -14,8 +15,34 @@ class WhereIsKennyApp extends StatelessWidget {
       title: 'Where Is Kenny?',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: const MainNavigationScreen(), // Direct to main screen - no in-app splash
+      home: const _OrientationWrapper(),
     );
+  }
+}
+
+class _OrientationWrapper extends StatelessWidget {
+  const _OrientationWrapper();
+
+  @override
+  Widget build(BuildContext context) {
+    final shortestSide = MediaQuery.of(context).size.shortestSide;
+    final isTablet = shortestSide >= 600;
+
+    if (isTablet) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+    } else {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    }
+
+    return const MainNavigationScreen();
   }
 }
 

@@ -77,6 +77,9 @@ class _AboutScreenState extends State<AboutScreen> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
+        child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 600),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -345,32 +348,52 @@ class _AboutScreenState extends State<AboutScreen> {
             // Credits
             _buildSection('Credits', ''),
             const SizedBox(height: 12),
-            _buildCreditLink(
-              icon: Icons.brush,
-              label: 'App & Statue',
-              name: 'Erwin Ried',
-              url: 'https://ried.cl',
-            ),
-            const SizedBox(height: 8),
-            _buildCreditLink(
-              icon: Icons.view_in_ar,
-              label: '3D Model',
-              name: 'JHN_K on Cults3D',
-              url: 'https://cults3d.com/en/3d-model/art/kenny-mccormick-south-park',
-            ),
-            const SizedBox(height: 8),
-            _buildCreditLink(
-              icon: Icons.print,
-              label: 'Printed on',
-              name: 'BambuLab H2D by @eried',
-              url: 'https://makerworld.com/en/@eried',
-            ),
-            const SizedBox(height: 8),
-            _buildCreditLink(
-              icon: Icons.volume_up,
-              label: 'Sound effects',
-              name: 'MyInstants.com',
-              url: 'https://www.myinstants.com/en/search/?name=kenny',
+            LayoutBuilder(
+              builder: (context, constraints) {
+                final isWide = constraints.maxWidth > 400;
+                final credits = [
+                  _buildCreditLink(
+                    icon: Icons.brush,
+                    label: 'App & Statue',
+                    name: 'Erwin Ried',
+                    url: 'https://ried.cl',
+                  ),
+                  _buildCreditLink(
+                    icon: Icons.view_in_ar,
+                    label: '3D Model',
+                    name: 'JHN_K on Cults3D',
+                    url: 'https://cults3d.com/en/3d-model/art/kenny-mccormick-south-park',
+                  ),
+                  _buildCreditLink(
+                    icon: Icons.print,
+                    label: 'Printed on',
+                    name: 'BambuLab H2D by @eried',
+                    url: 'https://makerworld.com/en/@eried',
+                  ),
+                  _buildCreditLink(
+                    icon: Icons.volume_up,
+                    label: 'Sound effects',
+                    name: 'MyInstants.com',
+                    url: 'https://www.myinstants.com/en/search/?name=kenny',
+                  ),
+                ];
+                if (isWide) {
+                  return Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: credits.map((c) => SizedBox(
+                      width: (constraints.maxWidth - 8) / 2,
+                      child: c,
+                    )).toList(),
+                  );
+                }
+                return Column(
+                  children: credits.map((c) => Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: c,
+                  )).toList(),
+                );
+              },
             ),
             const SizedBox(height: 32),
 
@@ -416,6 +439,8 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
             const SizedBox(height: 16),
           ],
+        ),
+        ),
         ),
       ),
     );

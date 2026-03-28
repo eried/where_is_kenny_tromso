@@ -1,0 +1,2178 @@
+- generic [ref=e1]:
+  - generic:
+    - generic:
+      - img
+      - progressbar
+      - generic: Loading Google Play Console
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "Google Play Console logo" [ref=e7] [cursor=pointer]:
+          - /url: /console/u/0/developers/7771489537038540127/app-list
+          - button "Google Play Console logo" [ref=e8]
+        - generic [ref=e9]:
+          - button "Notifications Open notification center" [ref=e45]:
+            - img [ref=e49]: notifications
+            - generic [ref=e51]: Notifications
+          - generic [ref=e10]:
+            - button "Where Is Kenny" [ref=e414] [cursor=pointer]:
+              - generic [ref=e418]:
+                - img [ref=e420]
+                - generic [ref=e424]: Where Is Kenny
+            - button "Switch developer accounts" [ref=e14] [cursor=pointer]:
+              - img "Switch developer accounts" [ref=e16]
+    - navigation [ref=e53]:
+      - link "All apps" [ref=e426] [cursor=pointer]:
+        - /url: /console/u/0/developers/7771489537038540127/app-list
+        - img [ref=e428]: keyboard_backspace
+        - generic [ref=e429]: All apps
+      - list [ref=e54]:
+        - listitem "Dashboard" [ref=e432]:
+          - button "Dashboard" [ref=e433] [cursor=pointer]:
+            - img [ref=e436]: dashboard
+            - generic [ref=e437]: Dashboard
+        - listitem "Statistics" [ref=e440]:
+          - button "Statistics" [ref=e441] [cursor=pointer]:
+            - img [ref=e444]: bar_chart
+            - generic [ref=e445]: Statistics
+        - listitem "Publishing overview" [ref=e448]:
+          - button "Publishing overview" [ref=e449] [cursor=pointer]:
+            - img [ref=e452]: overview
+            - generic [ref=e453]: Publishing overview
+        - listitem "Test and release" [ref=e456]:
+          - button "Test and release" [ref=e457] [cursor=pointer]:
+            - img [ref=e460]: rocket_launch
+            - generic [ref=e461]: Test and release
+          - list [ref=e841]:
+            - generic [ref=e843]:
+              - listitem "Latest releases and bundles" [ref=e845]:
+                - button "Latest releases and bundles" [ref=e846] [cursor=pointer]:
+                  - generic [ref=e847]: Latest releases and bundles
+              - listitem "Production" [ref=e849]:
+                - button "Production" [ref=e850] [cursor=pointer]:
+                  - generic [ref=e851]: Production
+              - listitem "Testing" [ref=e853]:
+                - button "Testing" [ref=e854] [cursor=pointer]:
+                  - generic [ref=e855]: Testing
+                  - img [ref=e857]: expand_less
+                - list [ref=e1182]:
+                  - generic [ref=e1184]:
+                    - listitem "Open testing" [ref=e1186]:
+                      - button "Open testing" [ref=e1187] [cursor=pointer]:
+                        - generic [ref=e1188]: Open testing
+                    - listitem "Closed testing" [ref=e1190]:
+                      - button "Closed testing" [ref=e1191] [cursor=pointer]:
+                        - generic [ref=e1192]: Closed testing
+                    - listitem "Internal testing" [ref=e1194]:
+                      - button "Internal testing" [ref=e1195] [cursor=pointer]:
+                        - generic [ref=e1196]: Internal testing
+                    - listitem "Pre-launch report" [ref=e1198]:
+                      - button "Pre-launch report" [ref=e1199] [cursor=pointer]:
+                        - generic [ref=e1200]: Pre-launch report
+                        - img [ref=e1202]: expand_more
+                    - listitem "Internal app sharing" [ref=e1204]:
+                      - button "Internal app sharing" [ref=e1205] [cursor=pointer]:
+                        - generic [ref=e1206]: Internal app sharing
+              - listitem "Pre-registration" [ref=e859]:
+                - button "Pre-registration" [ref=e860] [cursor=pointer]:
+                  - generic [ref=e861]: Pre-registration
+              - listitem "App integrity" [ref=e863]:
+                - button "App integrity" [ref=e864] [cursor=pointer]:
+                  - generic [ref=e865]: App integrity
+              - listitem "Advanced settings" [ref=e867]:
+                - button "Advanced settings" [ref=e868] [cursor=pointer]:
+                  - generic [ref=e869]: Advanced settings
+        - listitem "Monitor and improve" [ref=e464]:
+          - button "Monitor and improve" [ref=e465] [cursor=pointer]:
+            - img [ref=e468]: vital_signs
+            - generic [ref=e469]: Monitor and improve
+        - listitem "Grow users" [ref=e472]:
+          - button "Grow users" [ref=e473] [cursor=pointer]:
+            - img [ref=e476]: finance_mode
+            - generic [ref=e477]: Grow users
+        - listitem "Monetize with Play" [ref=e480]:
+          - button "Monetize with Play" [ref=e481] [cursor=pointer]:
+            - img [ref=e484]: sell
+            - generic [ref=e485]: Monetize with Play
+    - generic [ref=e22]:
+      - generic [ref=e1285]:
+        - generic [ref=e1290]:
+          - generic:
+            - generic:
+              - link "Go back to Closed testing":
+                - /url: /console/u/0/developers/7771489537038540127/app/4976273519766682793/closed-testing?releaseType=defaultReleases
+                - img [ref=e1297] [cursor=pointer]: keyboard_backspace
+                - generic [ref=e1298] [cursor=pointer]: Closed testing
+          - generic [ref=e1302]:
+            - heading "Closed testing - Alpha" [level=1] [ref=e1307]
+            - button "Create new release" [disabled] [ref=e5359]:
+              - generic [ref=e5362]: Create new release
+        - generic [ref=e5365]:
+          - generic [ref=e5368]:
+            - heading "Set up closed testing track" [level=3] [ref=e5374]
+            - list [ref=e5379]:
+              - listitem [ref=e5380]: Inactive
+              - listitem [ref=e5381]: "Draft release: 1 (1.0.0)"
+              - listitem [ref=e5382]: 177 countries / regions
+              - listitem [ref=e5383]:
+                - text: Temporary app name 'com.eried.whereiskenny (unreviewed)'
+                - button "More information" [ref=e5386] [cursor=pointer]:
+                  - img [ref=e5387]: help
+          - generic [ref=e5388]:
+            - button "Hide 2 of 4 completed tasks for Set up closed testing track" [expanded] [ref=e5396]:
+              - generic [ref=e5399]: 2 of 4 complete
+              - img [ref=e5401]: expand_less
+            - generic [ref=e5407]:
+              - generic [ref=e5408]:
+                - generic [ref=e5409]: Set up your track
+                - generic [ref=e5410]:
+                  - generic [ref=e5412]:
+                    - img [ref=e5417]: check
+                    - generic [ref=e5419]: Select countries
+                  - button "Select testers" [ref=e5427] [cursor=pointer]:
+                    - generic [ref=e5428]: Select testers
+                    - img [ref=e5430]: chevron_right
+              - generic [ref=e5433]:
+                - generic [ref=e5434]: Create and roll out a release
+                - generic [ref=e5435]:
+                  - generic [ref=e5437]:
+                    - img [ref=e5442]: check
+                    - generic [ref=e5444]: Create a new release
+                  - button "Preview and confirm the release" [ref=e5452] [cursor=pointer]:
+                    - generic [ref=e5453]: Preview and confirm the release
+                    - img [ref=e5455]: chevron_right
+                  - button "Send the release to Google for review" [ref=e5462] [cursor=pointer]:
+                    - generic [ref=e5463]: Send the release to Google for review
+                    - img [ref=e5465]: chevron_right
+        - tablist [ref=e1437]:
+          - tab "Releases" [ref=e1438] [cursor=pointer]:
+            - generic [ref=e1439]: Releases
+          - tab "Countries / regions" [selected] [ref=e1441] [cursor=pointer]:
+            - generic [ref=e1442]: Countries / regions
+          - tab "Testers" [ref=e1444] [cursor=pointer]:
+            - generic [ref=e1445]: Testers
+        - generic [ref=e1519]:
+          - generic [ref=e1524]:
+            - heading "Countries / regions" [level=2] [ref=e1528]
+            - button "Tooltip for \"Countries / regions\"" [ref=e1531] [cursor=pointer]:
+              - img [ref=e1532]: help
+          - generic [ref=e1561]:
+            - generic [ref=e1562]:
+              - generic [ref=e1566]:
+                - button "Filter selection" [ref=e1570] [cursor=pointer]:
+                  - generic [ref=e1573]: All countries / regions (0)
+                  - img [ref=e1575]: arrow_drop_down
+                - search "Search" [ref=e1577]:
+                  - generic [ref=e1579]:
+                    - generic:
+                      - img: search
+                    - generic: Search
+                    - textbox "Search" [ref=e1580]
+              - generic [ref=e1585]:
+                - generic:
+                  - button "Edit countries / regions" [disabled]:
+                    - generic: Edit countries / regions
+            - paragraph [ref=e1586]: If you sell subscriptions, make sure you set prices for the countries / regions you want to add
+            - grid "Countries table for adding and removing countries to/from track targeting" [ref=e1595]:
+              - row "Select all rows Country / region Status" [ref=e5466]:
+                - gridcell "Select all rows" [ref=e5467]:
+                  - checkbox "Select all rows" [checked] [ref=e5469] [cursor=pointer]:
+                    - img [ref=e5471]
+                - columnheader "Country / region" [ref=e5472] [cursor=pointer]
+                - columnheader "Status" [ref=e5473] [cursor=pointer]
+              - row "Albania Albania Not targeted" [ref=e5474]:
+                - gridcell "Albania" [ref=e5475]:
+                  - checkbox "Albania" [checked] [ref=e5477] [cursor=pointer]:
+                    - img [ref=e5479]
+                - gridcell "Albania" [ref=e5480]:
+                  - generic "Albania" [ref=e5483]:
+                    - generic [ref=e5485]: Albania
+                - gridcell "Not targeted" [ref=e5486]:
+                  - generic [ref=e5489]:
+                    - img [ref=e5493]: do_not_disturb_on
+                    - generic [ref=e5494]: Not targeted
+              - row "Algeria Algeria Not targeted" [ref=e5495]:
+                - gridcell "Algeria" [ref=e5496]:
+                  - checkbox "Algeria" [checked] [ref=e5498] [cursor=pointer]:
+                    - img [ref=e5500]
+                - gridcell "Algeria" [ref=e5501]:
+                  - generic "Algeria" [ref=e5504]:
+                    - generic [ref=e5506]: Algeria
+                - gridcell "Not targeted" [ref=e5507]:
+                  - generic [ref=e5510]:
+                    - img [ref=e5514]: do_not_disturb_on
+                    - generic [ref=e5515]: Not targeted
+              - row "Angola Angola Not targeted" [ref=e5516]:
+                - gridcell "Angola" [ref=e5517]:
+                  - checkbox "Angola" [checked] [ref=e5519] [cursor=pointer]:
+                    - img [ref=e5521]
+                - gridcell "Angola" [ref=e5522]:
+                  - generic "Angola" [ref=e5525]:
+                    - generic [ref=e5527]: Angola
+                - gridcell "Not targeted" [ref=e5528]:
+                  - generic [ref=e5531]:
+                    - img [ref=e5535]: do_not_disturb_on
+                    - generic [ref=e5536]: Not targeted
+              - row "Antigua & Barbuda Antigua & Barbuda Not targeted" [ref=e5537]:
+                - gridcell "Antigua & Barbuda" [ref=e5538]:
+                  - checkbox "Antigua & Barbuda" [checked] [ref=e5540] [cursor=pointer]:
+                    - img [ref=e5542]
+                - gridcell "Antigua & Barbuda" [ref=e5543]:
+                  - generic "Antigua & Barbuda" [ref=e5546]:
+                    - generic [ref=e5548]: Antigua & Barbuda
+                - gridcell "Not targeted" [ref=e5549]:
+                  - generic [ref=e5552]:
+                    - img [ref=e5556]: do_not_disturb_on
+                    - generic [ref=e5557]: Not targeted
+              - row "Argentina Argentina Not targeted" [ref=e5558]:
+                - gridcell "Argentina" [ref=e5559]:
+                  - checkbox "Argentina" [checked] [ref=e5561] [cursor=pointer]:
+                    - img [ref=e5563]
+                - gridcell "Argentina" [ref=e5564]:
+                  - generic "Argentina" [ref=e5567]:
+                    - generic [ref=e5569]: Argentina
+                - gridcell "Not targeted" [ref=e5570]:
+                  - generic [ref=e5573]:
+                    - img [ref=e5577]: do_not_disturb_on
+                    - generic [ref=e5578]: Not targeted
+              - row "Armenia Armenia Not targeted" [ref=e5579]:
+                - gridcell "Armenia" [ref=e5580]:
+                  - checkbox "Armenia" [checked] [ref=e5582] [cursor=pointer]:
+                    - img [ref=e5584]
+                - gridcell "Armenia" [ref=e5585]:
+                  - generic "Armenia" [ref=e5588]:
+                    - generic [ref=e5590]: Armenia
+                - gridcell "Not targeted" [ref=e5591]:
+                  - generic [ref=e5594]:
+                    - img [ref=e5598]: do_not_disturb_on
+                    - generic [ref=e5599]: Not targeted
+              - row "Aruba Aruba Not targeted" [ref=e5600]:
+                - gridcell "Aruba" [ref=e5601]:
+                  - checkbox "Aruba" [checked] [ref=e5603] [cursor=pointer]:
+                    - img [ref=e5605]
+                - gridcell "Aruba" [ref=e5606]:
+                  - generic "Aruba" [ref=e5609]:
+                    - generic [ref=e5611]: Aruba
+                - gridcell "Not targeted" [ref=e5612]:
+                  - generic [ref=e5615]:
+                    - img [ref=e5619]: do_not_disturb_on
+                    - generic [ref=e5620]: Not targeted
+              - row "Australia Australia Not targeted" [ref=e5621]:
+                - gridcell "Australia" [ref=e5622]:
+                  - checkbox "Australia" [checked] [ref=e5624] [cursor=pointer]:
+                    - img [ref=e5626]
+                - gridcell "Australia" [ref=e5627]:
+                  - generic "Australia" [ref=e5630]:
+                    - generic [ref=e5632]: Australia
+                - gridcell "Not targeted" [ref=e5633]:
+                  - generic [ref=e5636]:
+                    - img [ref=e5640]: do_not_disturb_on
+                    - generic [ref=e5641]: Not targeted
+              - row "Austria Austria Not targeted" [ref=e5642]:
+                - gridcell "Austria" [ref=e5643]:
+                  - checkbox "Austria" [checked] [ref=e5645] [cursor=pointer]:
+                    - img [ref=e5647]
+                - gridcell "Austria" [ref=e5648]:
+                  - generic "Austria" [ref=e5651]:
+                    - generic [ref=e5653]: Austria
+                - gridcell "Not targeted" [ref=e5654]:
+                  - generic [ref=e5657]:
+                    - img [ref=e5661]: do_not_disturb_on
+                    - generic [ref=e5662]: Not targeted
+              - row "Azerbaijan Azerbaijan Not targeted" [ref=e5663]:
+                - gridcell "Azerbaijan" [ref=e5664]:
+                  - checkbox "Azerbaijan" [checked] [ref=e5666] [cursor=pointer]:
+                    - img [ref=e5668]
+                - gridcell "Azerbaijan" [ref=e5669]:
+                  - generic "Azerbaijan" [ref=e5672]:
+                    - generic [ref=e5674]: Azerbaijan
+                - gridcell "Not targeted" [ref=e5675]:
+                  - generic [ref=e5678]:
+                    - img [ref=e5682]: do_not_disturb_on
+                    - generic [ref=e5683]: Not targeted
+              - row "Bahamas Bahamas Not targeted" [ref=e5684]:
+                - gridcell "Bahamas" [ref=e5685]:
+                  - checkbox "Bahamas" [checked] [ref=e5687] [cursor=pointer]:
+                    - img [ref=e5689]
+                - gridcell "Bahamas" [ref=e5690]:
+                  - generic "Bahamas" [ref=e5693]:
+                    - generic [ref=e5695]: Bahamas
+                - gridcell "Not targeted" [ref=e5696]:
+                  - generic [ref=e5699]:
+                    - img [ref=e5703]: do_not_disturb_on
+                    - generic [ref=e5704]: Not targeted
+              - row "Bahrain Bahrain Not targeted" [ref=e5705]:
+                - gridcell "Bahrain" [ref=e5706]:
+                  - checkbox "Bahrain" [checked] [ref=e5708] [cursor=pointer]:
+                    - img [ref=e5710]
+                - gridcell "Bahrain" [ref=e5711]:
+                  - generic "Bahrain" [ref=e5714]:
+                    - generic [ref=e5716]: Bahrain
+                - gridcell "Not targeted" [ref=e5717]:
+                  - generic [ref=e5720]:
+                    - img [ref=e5724]: do_not_disturb_on
+                    - generic [ref=e5725]: Not targeted
+              - row "Bangladesh Bangladesh Not targeted" [ref=e5726]:
+                - gridcell "Bangladesh" [ref=e5727]:
+                  - checkbox "Bangladesh" [checked] [ref=e5729] [cursor=pointer]:
+                    - img [ref=e5731]
+                - gridcell "Bangladesh" [ref=e5732]:
+                  - generic "Bangladesh" [ref=e5735]:
+                    - generic [ref=e5737]: Bangladesh
+                - gridcell "Not targeted" [ref=e5738]:
+                  - generic [ref=e5741]:
+                    - img [ref=e5745]: do_not_disturb_on
+                    - generic [ref=e5746]: Not targeted
+              - row "Belarus Belarus Not targeted" [ref=e5747]:
+                - gridcell "Belarus" [ref=e5748]:
+                  - checkbox "Belarus" [checked] [ref=e5750] [cursor=pointer]:
+                    - img [ref=e5752]
+                - gridcell "Belarus" [ref=e5753]:
+                  - generic "Belarus" [ref=e5756]:
+                    - generic [ref=e5758]: Belarus
+                - gridcell "Not targeted" [ref=e5759]:
+                  - generic [ref=e5762]:
+                    - img [ref=e5766]: do_not_disturb_on
+                    - generic [ref=e5767]: Not targeted
+              - row "Belgium Belgium Not targeted" [ref=e5768]:
+                - gridcell "Belgium" [ref=e5769]:
+                  - checkbox "Belgium" [checked] [ref=e5771] [cursor=pointer]:
+                    - img [ref=e5773]
+                - gridcell "Belgium" [ref=e5774]:
+                  - generic "Belgium" [ref=e5777]:
+                    - generic [ref=e5779]: Belgium
+                - gridcell "Not targeted" [ref=e5780]:
+                  - generic [ref=e5783]:
+                    - img [ref=e5787]: do_not_disturb_on
+                    - generic [ref=e5788]: Not targeted
+              - row "Belize Belize Not targeted" [ref=e5789]:
+                - gridcell "Belize" [ref=e5790]:
+                  - checkbox "Belize" [checked] [ref=e5792] [cursor=pointer]:
+                    - img [ref=e5794]
+                - gridcell "Belize" [ref=e5795]:
+                  - generic "Belize" [ref=e5798]:
+                    - generic [ref=e5800]: Belize
+                - gridcell "Not targeted" [ref=e5801]:
+                  - generic [ref=e5804]:
+                    - img [ref=e5808]: do_not_disturb_on
+                    - generic [ref=e5809]: Not targeted
+              - row "Benin Benin Not targeted" [ref=e5810]:
+                - gridcell "Benin" [ref=e5811]:
+                  - checkbox "Benin" [checked] [ref=e5813] [cursor=pointer]:
+                    - img [ref=e5815]
+                - gridcell "Benin" [ref=e5816]:
+                  - generic "Benin" [ref=e5819]:
+                    - generic [ref=e5821]: Benin
+                - gridcell "Not targeted" [ref=e5822]:
+                  - generic [ref=e5825]:
+                    - img [ref=e5829]: do_not_disturb_on
+                    - generic [ref=e5830]: Not targeted
+              - row "Bermuda Bermuda Not targeted" [ref=e5831]:
+                - gridcell "Bermuda" [ref=e5832]:
+                  - checkbox "Bermuda" [checked] [ref=e5834] [cursor=pointer]:
+                    - img [ref=e5836]
+                - gridcell "Bermuda" [ref=e5837]:
+                  - generic "Bermuda" [ref=e5840]:
+                    - generic [ref=e5842]: Bermuda
+                - gridcell "Not targeted" [ref=e5843]:
+                  - generic [ref=e5846]:
+                    - img [ref=e5850]: do_not_disturb_on
+                    - generic [ref=e5851]: Not targeted
+              - row "Bolivia Bolivia Not targeted" [ref=e5852]:
+                - gridcell "Bolivia" [ref=e5853]:
+                  - checkbox "Bolivia" [checked] [ref=e5855] [cursor=pointer]:
+                    - img [ref=e5857]
+                - gridcell "Bolivia" [ref=e5858]:
+                  - generic "Bolivia" [ref=e5861]:
+                    - generic [ref=e5863]: Bolivia
+                - gridcell "Not targeted" [ref=e5864]:
+                  - generic [ref=e5867]:
+                    - img [ref=e5871]: do_not_disturb_on
+                    - generic [ref=e5872]: Not targeted
+              - row "Bosnia & Herzegovina Bosnia & Herzegovina Not targeted" [ref=e5873]:
+                - gridcell "Bosnia & Herzegovina" [ref=e5874]:
+                  - checkbox "Bosnia & Herzegovina" [checked] [ref=e5876] [cursor=pointer]:
+                    - img [ref=e5878]
+                - gridcell "Bosnia & Herzegovina" [ref=e5879]:
+                  - generic "Bosnia & Herzegovina" [ref=e5882]:
+                    - generic [ref=e5884]: Bosnia & Herzegovina
+                - gridcell "Not targeted" [ref=e5885]:
+                  - generic [ref=e5888]:
+                    - img [ref=e5892]: do_not_disturb_on
+                    - generic [ref=e5893]: Not targeted
+              - row "Botswana Botswana Not targeted" [ref=e5894]:
+                - gridcell "Botswana" [ref=e5895]:
+                  - checkbox "Botswana" [checked] [ref=e5897] [cursor=pointer]:
+                    - img [ref=e5899]
+                - gridcell "Botswana" [ref=e5900]:
+                  - generic "Botswana" [ref=e5903]:
+                    - generic [ref=e5905]: Botswana
+                - gridcell "Not targeted" [ref=e5906]:
+                  - generic [ref=e5909]:
+                    - img [ref=e5913]: do_not_disturb_on
+                    - generic [ref=e5914]: Not targeted
+              - row "Brazil Brazil Not targeted" [ref=e5915]:
+                - gridcell "Brazil" [ref=e5916]:
+                  - checkbox "Brazil" [checked] [ref=e5918] [cursor=pointer]:
+                    - img [ref=e5920]
+                - gridcell "Brazil" [ref=e5921]:
+                  - generic "Brazil" [ref=e5924]:
+                    - generic [ref=e5926]: Brazil
+                - gridcell "Not targeted" [ref=e5927]:
+                  - generic [ref=e5930]:
+                    - img [ref=e5934]: do_not_disturb_on
+                    - generic [ref=e5935]: Not targeted
+              - row "British Virgin Islands British Virgin Islands Not targeted" [ref=e5936]:
+                - gridcell "British Virgin Islands" [ref=e5937]:
+                  - checkbox "British Virgin Islands" [checked] [ref=e5939] [cursor=pointer]:
+                    - img [ref=e5941]
+                - gridcell "British Virgin Islands" [ref=e5942]:
+                  - generic "British Virgin Islands" [ref=e5945]:
+                    - generic [ref=e5947]: British Virgin Islands
+                - gridcell "Not targeted" [ref=e5948]:
+                  - generic [ref=e5951]:
+                    - img [ref=e5955]: do_not_disturb_on
+                    - generic [ref=e5956]: Not targeted
+              - row "Bulgaria Bulgaria Not targeted" [ref=e5957]:
+                - gridcell "Bulgaria" [ref=e5958]:
+                  - checkbox "Bulgaria" [checked] [ref=e5960] [cursor=pointer]:
+                    - img [ref=e5962]
+                - gridcell "Bulgaria" [ref=e5963]:
+                  - generic "Bulgaria" [ref=e5966]:
+                    - generic [ref=e5968]: Bulgaria
+                - gridcell "Not targeted" [ref=e5969]:
+                  - generic [ref=e5972]:
+                    - img [ref=e5976]: do_not_disturb_on
+                    - generic [ref=e5977]: Not targeted
+              - row "Burkina Faso Burkina Faso Not targeted" [ref=e5978]:
+                - gridcell "Burkina Faso" [ref=e5979]:
+                  - checkbox "Burkina Faso" [checked] [ref=e5981] [cursor=pointer]:
+                    - img [ref=e5983]
+                - gridcell "Burkina Faso" [ref=e5984]:
+                  - generic "Burkina Faso" [ref=e5987]:
+                    - generic [ref=e5989]: Burkina Faso
+                - gridcell "Not targeted" [ref=e5990]:
+                  - generic [ref=e5993]:
+                    - img [ref=e5997]: do_not_disturb_on
+                    - generic [ref=e5998]: Not targeted
+              - row "Cambodia Cambodia Not targeted" [ref=e5999]:
+                - gridcell "Cambodia" [ref=e6000]:
+                  - checkbox "Cambodia" [checked] [ref=e6002] [cursor=pointer]:
+                    - img [ref=e6004]
+                - gridcell "Cambodia" [ref=e6005]:
+                  - generic "Cambodia" [ref=e6008]:
+                    - generic [ref=e6010]: Cambodia
+                - gridcell "Not targeted" [ref=e6011]:
+                  - generic [ref=e6014]:
+                    - img [ref=e6018]: do_not_disturb_on
+                    - generic [ref=e6019]: Not targeted
+              - row "Cameroon Cameroon Not targeted" [ref=e6020]:
+                - gridcell "Cameroon" [ref=e6021]:
+                  - checkbox "Cameroon" [checked] [ref=e6023] [cursor=pointer]:
+                    - img [ref=e6025]
+                - gridcell "Cameroon" [ref=e6026]:
+                  - generic "Cameroon" [ref=e6029]:
+                    - generic [ref=e6031]: Cameroon
+                - gridcell "Not targeted" [ref=e6032]:
+                  - generic [ref=e6035]:
+                    - img [ref=e6039]: do_not_disturb_on
+                    - generic [ref=e6040]: Not targeted
+              - row "Canada Canada Not targeted" [ref=e6041]:
+                - gridcell "Canada" [ref=e6042]:
+                  - checkbox "Canada" [checked] [ref=e6044] [cursor=pointer]:
+                    - img [ref=e6046]
+                - gridcell "Canada" [ref=e6047]:
+                  - generic "Canada" [ref=e6050]:
+                    - generic [ref=e6052]: Canada
+                - gridcell "Not targeted" [ref=e6053]:
+                  - generic [ref=e6056]:
+                    - img [ref=e6060]: do_not_disturb_on
+                    - generic [ref=e6061]: Not targeted
+              - row "Cape Verde Cape Verde Not targeted" [ref=e6062]:
+                - gridcell "Cape Verde" [ref=e6063]:
+                  - checkbox "Cape Verde" [checked] [ref=e6065] [cursor=pointer]:
+                    - img [ref=e6067]
+                - gridcell "Cape Verde" [ref=e6068]:
+                  - generic "Cape Verde" [ref=e6071]:
+                    - generic [ref=e6073]: Cape Verde
+                - gridcell "Not targeted" [ref=e6074]:
+                  - generic [ref=e6077]:
+                    - img [ref=e6081]: do_not_disturb_on
+                    - generic [ref=e6082]: Not targeted
+              - row "Cayman Islands Cayman Islands Not targeted" [ref=e6083]:
+                - gridcell "Cayman Islands" [ref=e6084]:
+                  - checkbox "Cayman Islands" [checked] [ref=e6086] [cursor=pointer]:
+                    - img [ref=e6088]
+                - gridcell "Cayman Islands" [ref=e6089]:
+                  - generic "Cayman Islands" [ref=e6092]:
+                    - generic [ref=e6094]: Cayman Islands
+                - gridcell "Not targeted" [ref=e6095]:
+                  - generic [ref=e6098]:
+                    - img [ref=e6102]: do_not_disturb_on
+                    - generic [ref=e6103]: Not targeted
+              - row "Chad Chad Not targeted" [ref=e6104]:
+                - gridcell "Chad" [ref=e6105]:
+                  - checkbox "Chad" [checked] [ref=e6107] [cursor=pointer]:
+                    - img [ref=e6109]
+                - gridcell "Chad" [ref=e6110]:
+                  - generic "Chad" [ref=e6113]:
+                    - generic [ref=e6115]: Chad
+                - gridcell "Not targeted" [ref=e6116]:
+                  - generic [ref=e6119]:
+                    - img [ref=e6123]: do_not_disturb_on
+                    - generic [ref=e6124]: Not targeted
+              - row "Chile Chile Not targeted" [ref=e6125]:
+                - gridcell "Chile" [ref=e6126]:
+                  - checkbox "Chile" [checked] [ref=e6128] [cursor=pointer]:
+                    - img [ref=e6130]
+                - gridcell "Chile" [ref=e6131]:
+                  - generic "Chile" [ref=e6134]:
+                    - generic [ref=e6136]: Chile
+                - gridcell "Not targeted" [ref=e6137]:
+                  - generic [ref=e6140]:
+                    - img [ref=e6144]: do_not_disturb_on
+                    - generic [ref=e6145]: Not targeted
+              - row "China China Not targeted" [ref=e6146]:
+                - gridcell "China" [ref=e6147]:
+                  - checkbox "China" [checked] [ref=e6149] [cursor=pointer]:
+                    - img [ref=e6151]
+                - gridcell "China" [ref=e6152]:
+                  - generic "China" [ref=e6155]:
+                    - generic [ref=e6157]: China
+                - gridcell "Not targeted" [ref=e6158]:
+                  - generic [ref=e6161]:
+                    - img [ref=e6165]: do_not_disturb_on
+                    - generic [ref=e6166]: Not targeted
+              - row "Colombia Colombia Not targeted" [ref=e6167]:
+                - gridcell "Colombia" [ref=e6168]:
+                  - checkbox "Colombia" [checked] [ref=e6170] [cursor=pointer]:
+                    - img [ref=e6172]
+                - gridcell "Colombia" [ref=e6173]:
+                  - generic "Colombia" [ref=e6176]:
+                    - generic [ref=e6178]: Colombia
+                - gridcell "Not targeted" [ref=e6179]:
+                  - generic [ref=e6182]:
+                    - img [ref=e6186]: do_not_disturb_on
+                    - generic [ref=e6187]: Not targeted
+              - row "Comoros Comoros Not targeted" [ref=e6188]:
+                - gridcell "Comoros" [ref=e6189]:
+                  - checkbox "Comoros" [checked] [ref=e6191] [cursor=pointer]:
+                    - img [ref=e6193]
+                - gridcell "Comoros" [ref=e6194]:
+                  - generic "Comoros" [ref=e6197]:
+                    - generic [ref=e6199]: Comoros
+                - gridcell "Not targeted" [ref=e6200]:
+                  - generic [ref=e6203]:
+                    - img [ref=e6207]: do_not_disturb_on
+                    - generic [ref=e6208]: Not targeted
+              - row "Congo - Brazzaville Congo - Brazzaville Not targeted" [ref=e6209]:
+                - gridcell "Congo - Brazzaville" [ref=e6210]:
+                  - checkbox "Congo - Brazzaville" [checked] [ref=e6212] [cursor=pointer]:
+                    - img [ref=e6214]
+                - gridcell "Congo - Brazzaville" [ref=e6215]:
+                  - generic "Congo - Brazzaville" [ref=e6218]:
+                    - generic [ref=e6220]: Congo - Brazzaville
+                - gridcell "Not targeted" [ref=e6221]:
+                  - generic [ref=e6224]:
+                    - img [ref=e6228]: do_not_disturb_on
+                    - generic [ref=e6229]: Not targeted
+              - row "Congo - Kinshasa Congo - Kinshasa Not targeted" [ref=e6230]:
+                - gridcell "Congo - Kinshasa" [ref=e6231]:
+                  - checkbox "Congo - Kinshasa" [checked] [ref=e6233] [cursor=pointer]:
+                    - img [ref=e6235]
+                - gridcell "Congo - Kinshasa" [ref=e6236]:
+                  - generic "Congo - Kinshasa" [ref=e6239]:
+                    - generic [ref=e6241]: Congo - Kinshasa
+                - gridcell "Not targeted" [ref=e6242]:
+                  - generic [ref=e6245]:
+                    - img [ref=e6249]: do_not_disturb_on
+                    - generic [ref=e6250]: Not targeted
+              - row "Costa Rica Costa Rica Not targeted" [ref=e6251]:
+                - gridcell "Costa Rica" [ref=e6252]:
+                  - checkbox "Costa Rica" [checked] [ref=e6254] [cursor=pointer]:
+                    - img [ref=e6256]
+                - gridcell "Costa Rica" [ref=e6257]:
+                  - generic "Costa Rica" [ref=e6260]:
+                    - generic [ref=e6262]: Costa Rica
+                - gridcell "Not targeted" [ref=e6263]:
+                  - generic [ref=e6266]:
+                    - img [ref=e6270]: do_not_disturb_on
+                    - generic [ref=e6271]: Not targeted
+              - row "Croatia Croatia Not targeted" [ref=e6272]:
+                - gridcell "Croatia" [ref=e6273]:
+                  - checkbox "Croatia" [checked] [ref=e6275] [cursor=pointer]:
+                    - img [ref=e6277]
+                - gridcell "Croatia" [ref=e6278]:
+                  - generic "Croatia" [ref=e6281]:
+                    - generic [ref=e6283]: Croatia
+                - gridcell "Not targeted" [ref=e6284]:
+                  - generic [ref=e6287]:
+                    - img [ref=e6291]: do_not_disturb_on
+                    - generic [ref=e6292]: Not targeted
+              - row "Cuba Cuba Not targeted" [ref=e6293]:
+                - gridcell "Cuba" [ref=e6294]:
+                  - checkbox "Cuba" [checked] [ref=e6296] [cursor=pointer]:
+                    - img [ref=e6298]
+                - gridcell "Cuba" [ref=e6299]:
+                  - generic "Cuba" [ref=e6302]:
+                    - generic [ref=e6304]: Cuba
+                - gridcell "Not targeted" [ref=e6305]:
+                  - generic [ref=e6308]:
+                    - img [ref=e6312]: do_not_disturb_on
+                    - generic [ref=e6313]: Not targeted
+              - row "Cyprus Cyprus Not targeted" [ref=e6314]:
+                - gridcell "Cyprus" [ref=e6315]:
+                  - checkbox "Cyprus" [checked] [ref=e6317] [cursor=pointer]:
+                    - img [ref=e6319]
+                - gridcell "Cyprus" [ref=e6320]:
+                  - generic "Cyprus" [ref=e6323]:
+                    - generic [ref=e6325]: Cyprus
+                - gridcell "Not targeted" [ref=e6326]:
+                  - generic [ref=e6329]:
+                    - img [ref=e6333]: do_not_disturb_on
+                    - generic [ref=e6334]: Not targeted
+              - row "Czechia Czechia Not targeted" [ref=e6335]:
+                - gridcell "Czechia" [ref=e6336]:
+                  - checkbox "Czechia" [checked] [ref=e6338] [cursor=pointer]:
+                    - img [ref=e6340]
+                - gridcell "Czechia" [ref=e6341]:
+                  - generic "Czechia" [ref=e6344]:
+                    - generic [ref=e6346]: Czechia
+                - gridcell "Not targeted" [ref=e6347]:
+                  - generic [ref=e6350]:
+                    - img [ref=e6354]: do_not_disturb_on
+                    - generic [ref=e6355]: Not targeted
+              - row "Côte d’Ivoire Côte d’Ivoire Not targeted" [ref=e6356]:
+                - gridcell "Côte d’Ivoire" [ref=e6357]:
+                  - checkbox "Côte d’Ivoire" [checked] [ref=e6359] [cursor=pointer]:
+                    - img [ref=e6361]
+                - gridcell "Côte d’Ivoire" [ref=e6362]:
+                  - generic "Côte d’Ivoire" [ref=e6365]:
+                    - generic [ref=e6367]: Côte d’Ivoire
+                - gridcell "Not targeted" [ref=e6368]:
+                  - generic [ref=e6371]:
+                    - img [ref=e6375]: do_not_disturb_on
+                    - generic [ref=e6376]: Not targeted
+              - row "Denmark Denmark Not targeted" [ref=e6377]:
+                - gridcell "Denmark" [ref=e6378]:
+                  - checkbox "Denmark" [checked] [ref=e6380] [cursor=pointer]:
+                    - img [ref=e6382]
+                - gridcell "Denmark" [ref=e6383]:
+                  - generic [ref=e6385]:
+                    - generic "Denmark" [ref=e6386]:
+                      - generic [ref=e6388]: Denmark
+                      - generic [ref=e6389]: Includes 2 locations
+                    - alert
+                - gridcell "Not targeted" [ref=e6390]:
+                  - generic [ref=e6393]:
+                    - img [ref=e6397]: do_not_disturb_on
+                    - generic [ref=e6398]: Not targeted
+              - row "Djibouti Djibouti Not targeted" [ref=e6399]:
+                - gridcell "Djibouti" [ref=e6400]:
+                  - checkbox "Djibouti" [checked] [ref=e6402] [cursor=pointer]:
+                    - img [ref=e6404]
+                - gridcell "Djibouti" [ref=e6405]:
+                  - generic "Djibouti" [ref=e6408]:
+                    - generic [ref=e6410]: Djibouti
+                - gridcell "Not targeted" [ref=e6411]:
+                  - generic [ref=e6414]:
+                    - img [ref=e6418]: do_not_disturb_on
+                    - generic [ref=e6419]: Not targeted
+              - row "Dominica Dominica Not targeted" [ref=e6420]:
+                - gridcell "Dominica" [ref=e6421]:
+                  - checkbox "Dominica" [checked] [ref=e6423] [cursor=pointer]:
+                    - img [ref=e6425]
+                - gridcell "Dominica" [ref=e6426]:
+                  - generic "Dominica" [ref=e6429]:
+                    - generic [ref=e6431]: Dominica
+                - gridcell "Not targeted" [ref=e6432]:
+                  - generic [ref=e6435]:
+                    - img [ref=e6439]: do_not_disturb_on
+                    - generic [ref=e6440]: Not targeted
+              - row "Dominican Republic Dominican Republic Not targeted" [ref=e6441]:
+                - gridcell "Dominican Republic" [ref=e6442]:
+                  - checkbox "Dominican Republic" [checked] [ref=e6444] [cursor=pointer]:
+                    - img [ref=e6446]
+                - gridcell "Dominican Republic" [ref=e6447]:
+                  - generic "Dominican Republic" [ref=e6450]:
+                    - generic [ref=e6452]: Dominican Republic
+                - gridcell "Not targeted" [ref=e6453]:
+                  - generic [ref=e6456]:
+                    - img [ref=e6460]: do_not_disturb_on
+                    - generic [ref=e6461]: Not targeted
+              - row "Ecuador Ecuador Not targeted" [ref=e6462]:
+                - gridcell "Ecuador" [ref=e6463]:
+                  - checkbox "Ecuador" [checked] [ref=e6465] [cursor=pointer]:
+                    - img [ref=e6467]
+                - gridcell "Ecuador" [ref=e6468]:
+                  - generic "Ecuador" [ref=e6471]:
+                    - generic [ref=e6473]: Ecuador
+                - gridcell "Not targeted" [ref=e6474]:
+                  - generic [ref=e6477]:
+                    - img [ref=e6481]: do_not_disturb_on
+                    - generic [ref=e6482]: Not targeted
+              - row "Egypt Egypt Not targeted" [ref=e6483]:
+                - gridcell "Egypt" [ref=e6484]:
+                  - checkbox "Egypt" [checked] [ref=e6486] [cursor=pointer]:
+                    - img [ref=e6488]
+                - gridcell "Egypt" [ref=e6489]:
+                  - generic "Egypt" [ref=e6492]:
+                    - generic [ref=e6494]: Egypt
+                - gridcell "Not targeted" [ref=e6495]:
+                  - generic [ref=e6498]:
+                    - img [ref=e6502]: do_not_disturb_on
+                    - generic [ref=e6503]: Not targeted
+              - row "El Salvador El Salvador Not targeted" [ref=e6504]:
+                - gridcell "El Salvador" [ref=e6505]:
+                  - checkbox "El Salvador" [checked] [ref=e6507] [cursor=pointer]:
+                    - img [ref=e6509]
+                - gridcell "El Salvador" [ref=e6510]:
+                  - generic "El Salvador" [ref=e6513]:
+                    - generic [ref=e6515]: El Salvador
+                - gridcell "Not targeted" [ref=e6516]:
+                  - generic [ref=e6519]:
+                    - img [ref=e6523]: do_not_disturb_on
+                    - generic [ref=e6524]: Not targeted
+              - row "Eritrea Eritrea Not targeted" [ref=e6525]:
+                - gridcell "Eritrea" [ref=e6526]:
+                  - checkbox "Eritrea" [checked] [ref=e6528] [cursor=pointer]:
+                    - img [ref=e6530]
+                - gridcell "Eritrea" [ref=e6531]:
+                  - generic "Eritrea" [ref=e6534]:
+                    - generic [ref=e6536]: Eritrea
+                - gridcell "Not targeted" [ref=e6537]:
+                  - generic [ref=e6540]:
+                    - img [ref=e6544]: do_not_disturb_on
+                    - generic [ref=e6545]: Not targeted
+              - row "Estonia Estonia Not targeted" [ref=e6546]:
+                - gridcell "Estonia" [ref=e6547]:
+                  - checkbox "Estonia" [checked] [ref=e6549] [cursor=pointer]:
+                    - img [ref=e6551]
+                - gridcell "Estonia" [ref=e6552]:
+                  - generic "Estonia" [ref=e6555]:
+                    - generic [ref=e6557]: Estonia
+                - gridcell "Not targeted" [ref=e6558]:
+                  - generic [ref=e6561]:
+                    - img [ref=e6565]: do_not_disturb_on
+                    - generic [ref=e6566]: Not targeted
+              - row "Fiji Fiji Not targeted" [ref=e6567]:
+                - gridcell "Fiji" [ref=e6568]:
+                  - checkbox "Fiji" [checked] [ref=e6570] [cursor=pointer]:
+                    - img [ref=e6572]
+                - gridcell "Fiji" [ref=e6573]:
+                  - generic "Fiji" [ref=e6576]:
+                    - generic [ref=e6578]: Fiji
+                - gridcell "Not targeted" [ref=e6579]:
+                  - generic [ref=e6582]:
+                    - img [ref=e6586]: do_not_disturb_on
+                    - generic [ref=e6587]: Not targeted
+              - row "Finland Finland Not targeted" [ref=e6588]:
+                - gridcell "Finland" [ref=e6589]:
+                  - checkbox "Finland" [checked] [ref=e6591] [cursor=pointer]:
+                    - img [ref=e6593]
+                - gridcell "Finland" [ref=e6594]:
+                  - generic [ref=e6596]:
+                    - generic "Finland" [ref=e6597]:
+                      - generic [ref=e6599]: Finland
+                      - generic [ref=e6600]: Includes 1 location
+                    - alert
+                - gridcell "Not targeted" [ref=e6601]:
+                  - generic [ref=e6604]:
+                    - img [ref=e6608]: do_not_disturb_on
+                    - generic [ref=e6609]: Not targeted
+              - row "France France Not targeted" [ref=e6610]:
+                - gridcell "France" [ref=e6611]:
+                  - checkbox "France" [checked] [ref=e6613] [cursor=pointer]:
+                    - img [ref=e6615]
+                - gridcell "France" [ref=e6616]:
+                  - generic [ref=e6618]:
+                    - generic "France" [ref=e6619]:
+                      - generic [ref=e6621]: France
+                      - generic [ref=e6622]: Includes 11 locations
+                    - alert
+                - gridcell "Not targeted" [ref=e6623]:
+                  - generic [ref=e6626]:
+                    - img [ref=e6630]: do_not_disturb_on
+                    - generic [ref=e6631]: Not targeted
+              - row "Gabon Gabon Not targeted" [ref=e6632]:
+                - gridcell "Gabon" [ref=e6633]:
+                  - checkbox "Gabon" [checked] [ref=e6635] [cursor=pointer]:
+                    - img [ref=e6637]
+                - gridcell "Gabon" [ref=e6638]:
+                  - generic "Gabon" [ref=e6641]:
+                    - generic [ref=e6643]: Gabon
+                - gridcell "Not targeted" [ref=e6644]:
+                  - generic [ref=e6647]:
+                    - img [ref=e6651]: do_not_disturb_on
+                    - generic [ref=e6652]: Not targeted
+              - row "Gambia Gambia Not targeted" [ref=e6653]:
+                - gridcell "Gambia" [ref=e6654]:
+                  - checkbox "Gambia" [checked] [ref=e6656] [cursor=pointer]:
+                    - img [ref=e6658]
+                - gridcell "Gambia" [ref=e6659]:
+                  - generic "Gambia" [ref=e6662]:
+                    - generic [ref=e6664]: Gambia
+                - gridcell "Not targeted" [ref=e6665]:
+                  - generic [ref=e6668]:
+                    - img [ref=e6672]: do_not_disturb_on
+                    - generic [ref=e6673]: Not targeted
+              - row "Georgia Georgia Not targeted" [ref=e6674]:
+                - gridcell "Georgia" [ref=e6675]:
+                  - checkbox "Georgia" [checked] [ref=e6677] [cursor=pointer]:
+                    - img [ref=e6679]
+                - gridcell "Georgia" [ref=e6680]:
+                  - generic "Georgia" [ref=e6683]:
+                    - generic [ref=e6685]: Georgia
+                - gridcell "Not targeted" [ref=e6686]:
+                  - generic [ref=e6689]:
+                    - img [ref=e6693]: do_not_disturb_on
+                    - generic [ref=e6694]: Not targeted
+              - row "Germany Germany Not targeted" [ref=e6695]:
+                - gridcell "Germany" [ref=e6696]:
+                  - checkbox "Germany" [checked] [ref=e6698] [cursor=pointer]:
+                    - img [ref=e6700]
+                - gridcell "Germany" [ref=e6701]:
+                  - generic "Germany" [ref=e6704]:
+                    - generic [ref=e6706]: Germany
+                - gridcell "Not targeted" [ref=e6707]:
+                  - generic [ref=e6710]:
+                    - img [ref=e6714]: do_not_disturb_on
+                    - generic [ref=e6715]: Not targeted
+              - row "Ghana Ghana Not targeted" [ref=e6716]:
+                - gridcell "Ghana" [ref=e6717]:
+                  - checkbox "Ghana" [checked] [ref=e6719] [cursor=pointer]:
+                    - img [ref=e6721]
+                - gridcell "Ghana" [ref=e6722]:
+                  - generic "Ghana" [ref=e6725]:
+                    - generic [ref=e6727]: Ghana
+                - gridcell "Not targeted" [ref=e6728]:
+                  - generic [ref=e6731]:
+                    - img [ref=e6735]: do_not_disturb_on
+                    - generic [ref=e6736]: Not targeted
+              - row "Gibraltar Gibraltar Not targeted" [ref=e6737]:
+                - gridcell "Gibraltar" [ref=e6738]:
+                  - checkbox "Gibraltar" [checked] [ref=e6740] [cursor=pointer]:
+                    - img [ref=e6742]
+                - gridcell "Gibraltar" [ref=e6743]:
+                  - generic "Gibraltar" [ref=e6746]:
+                    - generic [ref=e6748]: Gibraltar
+                - gridcell "Not targeted" [ref=e6749]:
+                  - generic [ref=e6752]:
+                    - img [ref=e6756]: do_not_disturb_on
+                    - generic [ref=e6757]: Not targeted
+              - row "Greece Greece Not targeted" [ref=e6758]:
+                - gridcell "Greece" [ref=e6759]:
+                  - checkbox "Greece" [checked] [ref=e6761] [cursor=pointer]:
+                    - img [ref=e6763]
+                - gridcell "Greece" [ref=e6764]:
+                  - generic "Greece" [ref=e6767]:
+                    - generic [ref=e6769]: Greece
+                - gridcell "Not targeted" [ref=e6770]:
+                  - generic [ref=e6773]:
+                    - img [ref=e6777]: do_not_disturb_on
+                    - generic [ref=e6778]: Not targeted
+              - row "Grenada Grenada Not targeted" [ref=e6779]:
+                - gridcell "Grenada" [ref=e6780]:
+                  - checkbox "Grenada" [checked] [ref=e6782] [cursor=pointer]:
+                    - img [ref=e6784]
+                - gridcell "Grenada" [ref=e6785]:
+                  - generic "Grenada" [ref=e6788]:
+                    - generic [ref=e6790]: Grenada
+                - gridcell "Not targeted" [ref=e6791]:
+                  - generic [ref=e6794]:
+                    - img [ref=e6798]: do_not_disturb_on
+                    - generic [ref=e6799]: Not targeted
+              - row "Guatemala Guatemala Not targeted" [ref=e6800]:
+                - gridcell "Guatemala" [ref=e6801]:
+                  - checkbox "Guatemala" [checked] [ref=e6803] [cursor=pointer]:
+                    - img [ref=e6805]
+                - gridcell "Guatemala" [ref=e6806]:
+                  - generic "Guatemala" [ref=e6809]:
+                    - generic [ref=e6811]: Guatemala
+                - gridcell "Not targeted" [ref=e6812]:
+                  - generic [ref=e6815]:
+                    - img [ref=e6819]: do_not_disturb_on
+                    - generic [ref=e6820]: Not targeted
+              - row "Guinea Guinea Not targeted" [ref=e6821]:
+                - gridcell "Guinea" [ref=e6822]:
+                  - checkbox "Guinea" [checked] [ref=e6824] [cursor=pointer]:
+                    - img [ref=e6826]
+                - gridcell "Guinea" [ref=e6827]:
+                  - generic "Guinea" [ref=e6830]:
+                    - generic [ref=e6832]: Guinea
+                - gridcell "Not targeted" [ref=e6833]:
+                  - generic [ref=e6836]:
+                    - img [ref=e6840]: do_not_disturb_on
+                    - generic [ref=e6841]: Not targeted
+              - row "Guinea-Bissau Guinea-Bissau Not targeted" [ref=e6842]:
+                - gridcell "Guinea-Bissau" [ref=e6843]:
+                  - checkbox "Guinea-Bissau" [checked] [ref=e6845] [cursor=pointer]:
+                    - img [ref=e6847]
+                - gridcell "Guinea-Bissau" [ref=e6848]:
+                  - generic "Guinea-Bissau" [ref=e6851]:
+                    - generic [ref=e6853]: Guinea-Bissau
+                - gridcell "Not targeted" [ref=e6854]:
+                  - generic [ref=e6857]:
+                    - img [ref=e6861]: do_not_disturb_on
+                    - generic [ref=e6862]: Not targeted
+              - row "Haiti Haiti Not targeted" [ref=e6863]:
+                - gridcell "Haiti" [ref=e6864]:
+                  - checkbox "Haiti" [checked] [ref=e6866] [cursor=pointer]:
+                    - img [ref=e6868]
+                - gridcell "Haiti" [ref=e6869]:
+                  - generic "Haiti" [ref=e6872]:
+                    - generic [ref=e6874]: Haiti
+                - gridcell "Not targeted" [ref=e6875]:
+                  - generic [ref=e6878]:
+                    - img [ref=e6882]: do_not_disturb_on
+                    - generic [ref=e6883]: Not targeted
+              - row "Honduras Honduras Not targeted" [ref=e6884]:
+                - gridcell "Honduras" [ref=e6885]:
+                  - checkbox "Honduras" [checked] [ref=e6887] [cursor=pointer]:
+                    - img [ref=e6889]
+                - gridcell "Honduras" [ref=e6890]:
+                  - generic "Honduras" [ref=e6893]:
+                    - generic [ref=e6895]: Honduras
+                - gridcell "Not targeted" [ref=e6896]:
+                  - generic [ref=e6899]:
+                    - img [ref=e6903]: do_not_disturb_on
+                    - generic [ref=e6904]: Not targeted
+              - row "Hong Kong Hong Kong Not targeted" [ref=e6905]:
+                - gridcell "Hong Kong" [ref=e6906]:
+                  - checkbox "Hong Kong" [checked] [ref=e6908] [cursor=pointer]:
+                    - img [ref=e6910]
+                - gridcell "Hong Kong" [ref=e6911]:
+                  - generic "Hong Kong" [ref=e6914]:
+                    - generic [ref=e6916]: Hong Kong
+                - gridcell "Not targeted" [ref=e6917]:
+                  - generic [ref=e6920]:
+                    - img [ref=e6924]: do_not_disturb_on
+                    - generic [ref=e6925]: Not targeted
+              - row "Hungary Hungary Not targeted" [ref=e6926]:
+                - gridcell "Hungary" [ref=e6927]:
+                  - checkbox "Hungary" [checked] [ref=e6929] [cursor=pointer]:
+                    - img [ref=e6931]
+                - gridcell "Hungary" [ref=e6932]:
+                  - generic "Hungary" [ref=e6935]:
+                    - generic [ref=e6937]: Hungary
+                - gridcell "Not targeted" [ref=e6938]:
+                  - generic [ref=e6941]:
+                    - img [ref=e6945]: do_not_disturb_on
+                    - generic [ref=e6946]: Not targeted
+              - row "Iceland Iceland Not targeted" [ref=e6947]:
+                - gridcell "Iceland" [ref=e6948]:
+                  - checkbox "Iceland" [checked] [ref=e6950] [cursor=pointer]:
+                    - img [ref=e6952]
+                - gridcell "Iceland" [ref=e6953]:
+                  - generic "Iceland" [ref=e6956]:
+                    - generic [ref=e6958]: Iceland
+                - gridcell "Not targeted" [ref=e6959]:
+                  - generic [ref=e6962]:
+                    - img [ref=e6966]: do_not_disturb_on
+                    - generic [ref=e6967]: Not targeted
+              - row "India India Not targeted" [ref=e6968]:
+                - gridcell "India" [ref=e6969]:
+                  - checkbox "India" [checked] [ref=e6971] [cursor=pointer]:
+                    - img [ref=e6973]
+                - gridcell "India" [ref=e6974]:
+                  - generic "India" [ref=e6977]:
+                    - generic [ref=e6979]: India
+                - gridcell "Not targeted" [ref=e6980]:
+                  - generic [ref=e6983]:
+                    - img [ref=e6987]: do_not_disturb_on
+                    - generic [ref=e6988]: Not targeted
+              - row "Indonesia Indonesia Not targeted" [ref=e6989]:
+                - gridcell "Indonesia" [ref=e6990]:
+                  - checkbox "Indonesia" [checked] [ref=e6992] [cursor=pointer]:
+                    - img [ref=e6994]
+                - gridcell "Indonesia" [ref=e6995]:
+                  - generic "Indonesia" [ref=e6998]:
+                    - generic [ref=e7000]: Indonesia
+                - gridcell "Not targeted" [ref=e7001]:
+                  - generic [ref=e7004]:
+                    - img [ref=e7008]: do_not_disturb_on
+                    - generic [ref=e7009]: Not targeted
+              - row "Iran Iran Not targeted" [ref=e7010]:
+                - gridcell "Iran" [ref=e7011]:
+                  - checkbox "Iran" [checked] [ref=e7013] [cursor=pointer]:
+                    - img [ref=e7015]
+                - gridcell "Iran" [ref=e7016]:
+                  - generic "Iran" [ref=e7019]:
+                    - generic [ref=e7021]: Iran
+                - gridcell "Not targeted" [ref=e7022]:
+                  - generic [ref=e7025]:
+                    - img [ref=e7029]: do_not_disturb_on
+                    - generic [ref=e7030]: Not targeted
+              - row "Iraq Iraq Not targeted" [ref=e7031]:
+                - gridcell "Iraq" [ref=e7032]:
+                  - checkbox "Iraq" [checked] [ref=e7034] [cursor=pointer]:
+                    - img [ref=e7036]
+                - gridcell "Iraq" [ref=e7037]:
+                  - generic "Iraq" [ref=e7040]:
+                    - generic [ref=e7042]: Iraq
+                - gridcell "Not targeted" [ref=e7043]:
+                  - generic [ref=e7046]:
+                    - img [ref=e7050]: do_not_disturb_on
+                    - generic [ref=e7051]: Not targeted
+              - row "Ireland Ireland Not targeted" [ref=e7052]:
+                - gridcell "Ireland" [ref=e7053]:
+                  - checkbox "Ireland" [checked] [ref=e7055] [cursor=pointer]:
+                    - img [ref=e7057]
+                - gridcell "Ireland" [ref=e7058]:
+                  - generic "Ireland" [ref=e7061]:
+                    - generic [ref=e7063]: Ireland
+                - gridcell "Not targeted" [ref=e7064]:
+                  - generic [ref=e7067]:
+                    - img [ref=e7071]: do_not_disturb_on
+                    - generic [ref=e7072]: Not targeted
+              - row "Israel Israel Not targeted" [ref=e7073]:
+                - gridcell "Israel" [ref=e7074]:
+                  - checkbox "Israel" [checked] [ref=e7076] [cursor=pointer]:
+                    - img [ref=e7078]
+                - gridcell "Israel" [ref=e7079]:
+                  - generic "Israel" [ref=e7082]:
+                    - generic [ref=e7084]: Israel
+                - gridcell "Not targeted" [ref=e7085]:
+                  - generic [ref=e7088]:
+                    - img [ref=e7092]: do_not_disturb_on
+                    - generic [ref=e7093]: Not targeted
+              - row "Italy Italy Not targeted" [ref=e7094]:
+                - gridcell "Italy" [ref=e7095]:
+                  - checkbox "Italy" [checked] [ref=e7097] [cursor=pointer]:
+                    - img [ref=e7099]
+                - gridcell "Italy" [ref=e7100]:
+                  - generic "Italy" [ref=e7103]:
+                    - generic [ref=e7105]: Italy
+                - gridcell "Not targeted" [ref=e7106]:
+                  - generic [ref=e7109]:
+                    - img [ref=e7113]: do_not_disturb_on
+                    - generic [ref=e7114]: Not targeted
+              - row "Jamaica Jamaica Not targeted" [ref=e7115]:
+                - gridcell "Jamaica" [ref=e7116]:
+                  - checkbox "Jamaica" [checked] [ref=e7118] [cursor=pointer]:
+                    - img [ref=e7120]
+                - gridcell "Jamaica" [ref=e7121]:
+                  - generic "Jamaica" [ref=e7124]:
+                    - generic [ref=e7126]: Jamaica
+                - gridcell "Not targeted" [ref=e7127]:
+                  - generic [ref=e7130]:
+                    - img [ref=e7134]: do_not_disturb_on
+                    - generic [ref=e7135]: Not targeted
+              - row "Japan Japan Not targeted" [ref=e7136]:
+                - gridcell "Japan" [ref=e7137]:
+                  - checkbox "Japan" [checked] [ref=e7139] [cursor=pointer]:
+                    - img [ref=e7141]
+                - gridcell "Japan" [ref=e7142]:
+                  - generic "Japan" [ref=e7145]:
+                    - generic [ref=e7147]: Japan
+                - gridcell "Not targeted" [ref=e7148]:
+                  - generic [ref=e7151]:
+                    - img [ref=e7155]: do_not_disturb_on
+                    - generic [ref=e7156]: Not targeted
+              - row "Jordan Jordan Not targeted" [ref=e7157]:
+                - gridcell "Jordan" [ref=e7158]:
+                  - checkbox "Jordan" [checked] [ref=e7160] [cursor=pointer]:
+                    - img [ref=e7162]
+                - gridcell "Jordan" [ref=e7163]:
+                  - generic "Jordan" [ref=e7166]:
+                    - generic [ref=e7168]: Jordan
+                - gridcell "Not targeted" [ref=e7169]:
+                  - generic [ref=e7172]:
+                    - img [ref=e7176]: do_not_disturb_on
+                    - generic [ref=e7177]: Not targeted
+              - row "Kazakhstan Kazakhstan Not targeted" [ref=e7178]:
+                - gridcell "Kazakhstan" [ref=e7179]:
+                  - checkbox "Kazakhstan" [checked] [ref=e7181] [cursor=pointer]:
+                    - img [ref=e7183]
+                - gridcell "Kazakhstan" [ref=e7184]:
+                  - generic "Kazakhstan" [ref=e7187]:
+                    - generic [ref=e7189]: Kazakhstan
+                - gridcell "Not targeted" [ref=e7190]:
+                  - generic [ref=e7193]:
+                    - img [ref=e7197]: do_not_disturb_on
+                    - generic [ref=e7198]: Not targeted
+              - row "Kenya Kenya Not targeted" [ref=e7199]:
+                - gridcell "Kenya" [ref=e7200]:
+                  - checkbox "Kenya" [checked] [ref=e7202] [cursor=pointer]:
+                    - img [ref=e7204]
+                - gridcell "Kenya" [ref=e7205]:
+                  - generic "Kenya" [ref=e7208]:
+                    - generic [ref=e7210]: Kenya
+                - gridcell "Not targeted" [ref=e7211]:
+                  - generic [ref=e7214]:
+                    - img [ref=e7218]: do_not_disturb_on
+                    - generic [ref=e7219]: Not targeted
+              - row "Kuwait Kuwait Not targeted" [ref=e7220]:
+                - gridcell "Kuwait" [ref=e7221]:
+                  - checkbox "Kuwait" [checked] [ref=e7223] [cursor=pointer]:
+                    - img [ref=e7225]
+                - gridcell "Kuwait" [ref=e7226]:
+                  - generic "Kuwait" [ref=e7229]:
+                    - generic [ref=e7231]: Kuwait
+                - gridcell "Not targeted" [ref=e7232]:
+                  - generic [ref=e7235]:
+                    - img [ref=e7239]: do_not_disturb_on
+                    - generic [ref=e7240]: Not targeted
+              - row "Kyrgyzstan Kyrgyzstan Not targeted" [ref=e7241]:
+                - gridcell "Kyrgyzstan" [ref=e7242]:
+                  - checkbox "Kyrgyzstan" [checked] [ref=e7244] [cursor=pointer]:
+                    - img [ref=e7246]
+                - gridcell "Kyrgyzstan" [ref=e7247]:
+                  - generic "Kyrgyzstan" [ref=e7250]:
+                    - generic [ref=e7252]: Kyrgyzstan
+                - gridcell "Not targeted" [ref=e7253]:
+                  - generic [ref=e7256]:
+                    - img [ref=e7260]: do_not_disturb_on
+                    - generic [ref=e7261]: Not targeted
+              - row "Laos Laos Not targeted" [ref=e7262]:
+                - gridcell "Laos" [ref=e7263]:
+                  - checkbox "Laos" [checked] [ref=e7265] [cursor=pointer]:
+                    - img [ref=e7267]
+                - gridcell "Laos" [ref=e7268]:
+                  - generic "Laos" [ref=e7271]:
+                    - generic [ref=e7273]: Laos
+                - gridcell "Not targeted" [ref=e7274]:
+                  - generic [ref=e7277]:
+                    - img [ref=e7281]: do_not_disturb_on
+                    - generic [ref=e7282]: Not targeted
+              - row "Latvia Latvia Not targeted" [ref=e7283]:
+                - gridcell "Latvia" [ref=e7284]:
+                  - checkbox "Latvia" [checked] [ref=e7286] [cursor=pointer]:
+                    - img [ref=e7288]
+                - gridcell "Latvia" [ref=e7289]:
+                  - generic "Latvia" [ref=e7292]:
+                    - generic [ref=e7294]: Latvia
+                - gridcell "Not targeted" [ref=e7295]:
+                  - generic [ref=e7298]:
+                    - img [ref=e7302]: do_not_disturb_on
+                    - generic [ref=e7303]: Not targeted
+              - row "Lebanon Lebanon Not targeted" [ref=e7304]:
+                - gridcell "Lebanon" [ref=e7305]:
+                  - checkbox "Lebanon" [checked] [ref=e7307] [cursor=pointer]:
+                    - img [ref=e7309]
+                - gridcell "Lebanon" [ref=e7310]:
+                  - generic "Lebanon" [ref=e7313]:
+                    - generic [ref=e7315]: Lebanon
+                - gridcell "Not targeted" [ref=e7316]:
+                  - generic [ref=e7319]:
+                    - img [ref=e7323]: do_not_disturb_on
+                    - generic [ref=e7324]: Not targeted
+              - row "Liberia Liberia Not targeted" [ref=e7325]:
+                - gridcell "Liberia" [ref=e7326]:
+                  - checkbox "Liberia" [checked] [ref=e7328] [cursor=pointer]:
+                    - img [ref=e7330]
+                - gridcell "Liberia" [ref=e7331]:
+                  - generic "Liberia" [ref=e7334]:
+                    - generic [ref=e7336]: Liberia
+                - gridcell "Not targeted" [ref=e7337]:
+                  - generic [ref=e7340]:
+                    - img [ref=e7344]: do_not_disturb_on
+                    - generic [ref=e7345]: Not targeted
+              - row "Libya Libya Not targeted" [ref=e7346]:
+                - gridcell "Libya" [ref=e7347]:
+                  - checkbox "Libya" [checked] [ref=e7349] [cursor=pointer]:
+                    - img [ref=e7351]
+                - gridcell "Libya" [ref=e7352]:
+                  - generic "Libya" [ref=e7355]:
+                    - generic [ref=e7357]: Libya
+                - gridcell "Not targeted" [ref=e7358]:
+                  - generic [ref=e7361]:
+                    - img [ref=e7365]: do_not_disturb_on
+                    - generic [ref=e7366]: Not targeted
+              - row "Liechtenstein Liechtenstein Not targeted" [ref=e7367]:
+                - gridcell "Liechtenstein" [ref=e7368]:
+                  - checkbox "Liechtenstein" [checked] [ref=e7370] [cursor=pointer]:
+                    - img [ref=e7372]
+                - gridcell "Liechtenstein" [ref=e7373]:
+                  - generic "Liechtenstein" [ref=e7376]:
+                    - generic [ref=e7378]: Liechtenstein
+                - gridcell "Not targeted" [ref=e7379]:
+                  - generic [ref=e7382]:
+                    - img [ref=e7386]: do_not_disturb_on
+                    - generic [ref=e7387]: Not targeted
+              - row "Lithuania Lithuania Not targeted" [ref=e7388]:
+                - gridcell "Lithuania" [ref=e7389]:
+                  - checkbox "Lithuania" [checked] [ref=e7391] [cursor=pointer]:
+                    - img [ref=e7393]
+                - gridcell "Lithuania" [ref=e7394]:
+                  - generic "Lithuania" [ref=e7397]:
+                    - generic [ref=e7399]: Lithuania
+                - gridcell "Not targeted" [ref=e7400]:
+                  - generic [ref=e7403]:
+                    - img [ref=e7407]: do_not_disturb_on
+                    - generic [ref=e7408]: Not targeted
+              - row "Luxembourg Luxembourg Not targeted" [ref=e7409]:
+                - gridcell "Luxembourg" [ref=e7410]:
+                  - checkbox "Luxembourg" [checked] [ref=e7412] [cursor=pointer]:
+                    - img [ref=e7414]
+                - gridcell "Luxembourg" [ref=e7415]:
+                  - generic "Luxembourg" [ref=e7418]:
+                    - generic [ref=e7420]: Luxembourg
+                - gridcell "Not targeted" [ref=e7421]:
+                  - generic [ref=e7424]:
+                    - img [ref=e7428]: do_not_disturb_on
+                    - generic [ref=e7429]: Not targeted
+              - row "Macao Macao Not targeted" [ref=e7430]:
+                - gridcell "Macao" [ref=e7431]:
+                  - checkbox "Macao" [checked] [ref=e7433] [cursor=pointer]:
+                    - img [ref=e7435]
+                - gridcell "Macao" [ref=e7436]:
+                  - generic "Macao" [ref=e7439]:
+                    - generic [ref=e7441]: Macao
+                - gridcell "Not targeted" [ref=e7442]:
+                  - generic [ref=e7445]:
+                    - img [ref=e7449]: do_not_disturb_on
+                    - generic [ref=e7450]: Not targeted
+              - row "Malaysia Malaysia Not targeted" [ref=e7451]:
+                - gridcell "Malaysia" [ref=e7452]:
+                  - checkbox "Malaysia" [checked] [ref=e7454] [cursor=pointer]:
+                    - img [ref=e7456]
+                - gridcell "Malaysia" [ref=e7457]:
+                  - generic "Malaysia" [ref=e7460]:
+                    - generic [ref=e7462]: Malaysia
+                - gridcell "Not targeted" [ref=e7463]:
+                  - generic [ref=e7466]:
+                    - img [ref=e7470]: do_not_disturb_on
+                    - generic [ref=e7471]: Not targeted
+              - row "Maldives Maldives Not targeted" [ref=e7472]:
+                - gridcell "Maldives" [ref=e7473]:
+                  - checkbox "Maldives" [checked] [ref=e7475] [cursor=pointer]:
+                    - img [ref=e7477]
+                - gridcell "Maldives" [ref=e7478]:
+                  - generic "Maldives" [ref=e7481]:
+                    - generic [ref=e7483]: Maldives
+                - gridcell "Not targeted" [ref=e7484]:
+                  - generic [ref=e7487]:
+                    - img [ref=e7491]: do_not_disturb_on
+                    - generic [ref=e7492]: Not targeted
+              - row "Mali Mali Not targeted" [ref=e7493]:
+                - gridcell "Mali" [ref=e7494]:
+                  - checkbox "Mali" [checked] [ref=e7496] [cursor=pointer]:
+                    - img [ref=e7498]
+                - gridcell "Mali" [ref=e7499]:
+                  - generic "Mali" [ref=e7502]:
+                    - generic [ref=e7504]: Mali
+                - gridcell "Not targeted" [ref=e7505]:
+                  - generic [ref=e7508]:
+                    - img [ref=e7512]: do_not_disturb_on
+                    - generic [ref=e7513]: Not targeted
+              - row "Malta Malta Not targeted" [ref=e7514]:
+                - gridcell "Malta" [ref=e7515]:
+                  - checkbox "Malta" [checked] [ref=e7517] [cursor=pointer]:
+                    - img [ref=e7519]
+                - gridcell "Malta" [ref=e7520]:
+                  - generic "Malta" [ref=e7523]:
+                    - generic [ref=e7525]: Malta
+                - gridcell "Not targeted" [ref=e7526]:
+                  - generic [ref=e7529]:
+                    - img [ref=e7533]: do_not_disturb_on
+                    - generic [ref=e7534]: Not targeted
+              - row "Mauritius Mauritius Not targeted" [ref=e7535]:
+                - gridcell "Mauritius" [ref=e7536]:
+                  - checkbox "Mauritius" [checked] [ref=e7538] [cursor=pointer]:
+                    - img [ref=e7540]
+                - gridcell "Mauritius" [ref=e7541]:
+                  - generic "Mauritius" [ref=e7544]:
+                    - generic [ref=e7546]: Mauritius
+                - gridcell "Not targeted" [ref=e7547]:
+                  - generic [ref=e7550]:
+                    - img [ref=e7554]: do_not_disturb_on
+                    - generic [ref=e7555]: Not targeted
+              - row "Mexico Mexico Not targeted" [ref=e7556]:
+                - gridcell "Mexico" [ref=e7557]:
+                  - checkbox "Mexico" [checked] [ref=e7559] [cursor=pointer]:
+                    - img [ref=e7561]
+                - gridcell "Mexico" [ref=e7562]:
+                  - generic "Mexico" [ref=e7565]:
+                    - generic [ref=e7567]: Mexico
+                - gridcell "Not targeted" [ref=e7568]:
+                  - generic [ref=e7571]:
+                    - img [ref=e7575]: do_not_disturb_on
+                    - generic [ref=e7576]: Not targeted
+              - row "Micronesia Micronesia Not targeted" [ref=e7577]:
+                - gridcell "Micronesia" [ref=e7578]:
+                  - checkbox "Micronesia" [checked] [ref=e7580] [cursor=pointer]:
+                    - img [ref=e7582]
+                - gridcell "Micronesia" [ref=e7583]:
+                  - generic "Micronesia" [ref=e7586]:
+                    - generic [ref=e7588]: Micronesia
+                - gridcell "Not targeted" [ref=e7589]:
+                  - generic [ref=e7592]:
+                    - img [ref=e7596]: do_not_disturb_on
+                    - generic [ref=e7597]: Not targeted
+              - row "Moldova Moldova Not targeted" [ref=e7598]:
+                - gridcell "Moldova" [ref=e7599]:
+                  - checkbox "Moldova" [checked] [ref=e7601] [cursor=pointer]:
+                    - img [ref=e7603]
+                - gridcell "Moldova" [ref=e7604]:
+                  - generic "Moldova" [ref=e7607]:
+                    - generic [ref=e7609]: Moldova
+                - gridcell "Not targeted" [ref=e7610]:
+                  - generic [ref=e7613]:
+                    - img [ref=e7617]: do_not_disturb_on
+                    - generic [ref=e7618]: Not targeted
+              - row "Monaco Monaco Not targeted" [ref=e7619]:
+                - gridcell "Monaco" [ref=e7620]:
+                  - checkbox "Monaco" [checked] [ref=e7622] [cursor=pointer]:
+                    - img [ref=e7624]
+                - gridcell "Monaco" [ref=e7625]:
+                  - generic "Monaco" [ref=e7628]:
+                    - generic [ref=e7630]: Monaco
+                - gridcell "Not targeted" [ref=e7631]:
+                  - generic [ref=e7634]:
+                    - img [ref=e7638]: do_not_disturb_on
+                    - generic [ref=e7639]: Not targeted
+              - row "Mongolia Mongolia Not targeted" [ref=e7640]:
+                - gridcell "Mongolia" [ref=e7641]:
+                  - checkbox "Mongolia" [checked] [ref=e7643] [cursor=pointer]:
+                    - img [ref=e7645]
+                - gridcell "Mongolia" [ref=e7646]:
+                  - generic "Mongolia" [ref=e7649]:
+                    - generic [ref=e7651]: Mongolia
+                - gridcell "Not targeted" [ref=e7652]:
+                  - generic [ref=e7655]:
+                    - img [ref=e7659]: do_not_disturb_on
+                    - generic [ref=e7660]: Not targeted
+              - row "Morocco Morocco Not targeted" [ref=e7661]:
+                - gridcell "Morocco" [ref=e7662]:
+                  - checkbox "Morocco" [checked] [ref=e7664] [cursor=pointer]:
+                    - img [ref=e7666]
+                - gridcell "Morocco" [ref=e7667]:
+                  - generic "Morocco" [ref=e7670]:
+                    - generic [ref=e7672]: Morocco
+                - gridcell "Not targeted" [ref=e7673]:
+                  - generic [ref=e7676]:
+                    - img [ref=e7680]: do_not_disturb_on
+                    - generic [ref=e7681]: Not targeted
+              - row "Mozambique Mozambique Not targeted" [ref=e7682]:
+                - gridcell "Mozambique" [ref=e7683]:
+                  - checkbox "Mozambique" [checked] [ref=e7685] [cursor=pointer]:
+                    - img [ref=e7687]
+                - gridcell "Mozambique" [ref=e7688]:
+                  - generic "Mozambique" [ref=e7691]:
+                    - generic [ref=e7693]: Mozambique
+                - gridcell "Not targeted" [ref=e7694]:
+                  - generic [ref=e7697]:
+                    - img [ref=e7701]: do_not_disturb_on
+                    - generic [ref=e7702]: Not targeted
+              - row "Myanmar (Burma) Myanmar (Burma) Not targeted" [ref=e7703]:
+                - gridcell "Myanmar (Burma)" [ref=e7704]:
+                  - checkbox "Myanmar (Burma)" [checked] [ref=e7706] [cursor=pointer]:
+                    - img [ref=e7708]
+                - gridcell "Myanmar (Burma)" [ref=e7709]:
+                  - generic "Myanmar (Burma)" [ref=e7712]:
+                    - generic [ref=e7714]: Myanmar (Burma)
+                - gridcell "Not targeted" [ref=e7715]:
+                  - generic [ref=e7718]:
+                    - img [ref=e7722]: do_not_disturb_on
+                    - generic [ref=e7723]: Not targeted
+              - row "Namibia Namibia Not targeted" [ref=e7724]:
+                - gridcell "Namibia" [ref=e7725]:
+                  - checkbox "Namibia" [checked] [ref=e7727] [cursor=pointer]:
+                    - img [ref=e7729]
+                - gridcell "Namibia" [ref=e7730]:
+                  - generic "Namibia" [ref=e7733]:
+                    - generic [ref=e7735]: Namibia
+                - gridcell "Not targeted" [ref=e7736]:
+                  - generic [ref=e7739]:
+                    - img [ref=e7743]: do_not_disturb_on
+                    - generic [ref=e7744]: Not targeted
+              - row "Nepal Nepal Not targeted" [ref=e7745]:
+                - gridcell "Nepal" [ref=e7746]:
+                  - checkbox "Nepal" [checked] [ref=e7748] [cursor=pointer]:
+                    - img [ref=e7750]
+                - gridcell "Nepal" [ref=e7751]:
+                  - generic "Nepal" [ref=e7754]:
+                    - generic [ref=e7756]: Nepal
+                - gridcell "Not targeted" [ref=e7757]:
+                  - generic [ref=e7760]:
+                    - img [ref=e7764]: do_not_disturb_on
+                    - generic [ref=e7765]: Not targeted
+              - row "Netherlands Netherlands Not targeted" [ref=e7766]:
+                - gridcell "Netherlands" [ref=e7767]:
+                  - checkbox "Netherlands" [checked] [ref=e7769] [cursor=pointer]:
+                    - img [ref=e7771]
+                - gridcell "Netherlands" [ref=e7772]:
+                  - generic "Netherlands" [ref=e7775]:
+                    - generic [ref=e7777]: Netherlands
+                - gridcell "Not targeted" [ref=e7778]:
+                  - generic [ref=e7781]:
+                    - img [ref=e7785]: do_not_disturb_on
+                    - generic [ref=e7786]: Not targeted
+              - row "New Zealand New Zealand Not targeted" [ref=e7787]:
+                - gridcell "New Zealand" [ref=e7788]:
+                  - checkbox "New Zealand" [checked] [ref=e7790] [cursor=pointer]:
+                    - img [ref=e7792]
+                - gridcell "New Zealand" [ref=e7793]:
+                  - generic "New Zealand" [ref=e7796]:
+                    - generic [ref=e7798]: New Zealand
+                - gridcell "Not targeted" [ref=e7799]:
+                  - generic [ref=e7802]:
+                    - img [ref=e7806]: do_not_disturb_on
+                    - generic [ref=e7807]: Not targeted
+              - row "Nicaragua Nicaragua Not targeted" [ref=e7808]:
+                - gridcell "Nicaragua" [ref=e7809]:
+                  - checkbox "Nicaragua" [checked] [ref=e7811] [cursor=pointer]:
+                    - img [ref=e7813]
+                - gridcell "Nicaragua" [ref=e7814]:
+                  - generic "Nicaragua" [ref=e7817]:
+                    - generic [ref=e7819]: Nicaragua
+                - gridcell "Not targeted" [ref=e7820]:
+                  - generic [ref=e7823]:
+                    - img [ref=e7827]: do_not_disturb_on
+                    - generic [ref=e7828]: Not targeted
+              - row "Niger Niger Not targeted" [ref=e7829]:
+                - gridcell "Niger" [ref=e7830]:
+                  - checkbox "Niger" [checked] [ref=e7832] [cursor=pointer]:
+                    - img [ref=e7834]
+                - gridcell "Niger" [ref=e7835]:
+                  - generic "Niger" [ref=e7838]:
+                    - generic [ref=e7840]: Niger
+                - gridcell "Not targeted" [ref=e7841]:
+                  - generic [ref=e7844]:
+                    - img [ref=e7848]: do_not_disturb_on
+                    - generic [ref=e7849]: Not targeted
+              - row "Nigeria Nigeria Not targeted" [ref=e7850]:
+                - gridcell "Nigeria" [ref=e7851]:
+                  - checkbox "Nigeria" [checked] [ref=e7853] [cursor=pointer]:
+                    - img [ref=e7855]
+                - gridcell "Nigeria" [ref=e7856]:
+                  - generic "Nigeria" [ref=e7859]:
+                    - generic [ref=e7861]: Nigeria
+                - gridcell "Not targeted" [ref=e7862]:
+                  - generic [ref=e7865]:
+                    - img [ref=e7869]: do_not_disturb_on
+                    - generic [ref=e7870]: Not targeted
+              - row "North Macedonia North Macedonia Not targeted" [ref=e7871]:
+                - gridcell "North Macedonia" [ref=e7872]:
+                  - checkbox "North Macedonia" [checked] [ref=e7874] [cursor=pointer]:
+                    - img [ref=e7876]
+                - gridcell "North Macedonia" [ref=e7877]:
+                  - generic "North Macedonia" [ref=e7880]:
+                    - generic [ref=e7882]: North Macedonia
+                - gridcell "Not targeted" [ref=e7883]:
+                  - generic [ref=e7886]:
+                    - img [ref=e7890]: do_not_disturb_on
+                    - generic [ref=e7891]: Not targeted
+              - row "Norway Norway Not targeted" [ref=e7892]:
+                - gridcell "Norway" [ref=e7893]:
+                  - checkbox "Norway" [checked] [ref=e7895] [cursor=pointer]:
+                    - img [ref=e7897]
+                - gridcell "Norway" [ref=e7898]:
+                  - generic [ref=e7900]:
+                    - generic "Norway" [ref=e7901]:
+                      - generic [ref=e7903]: Norway
+                      - generic [ref=e7904]: Includes 1 location
+                    - alert
+                - gridcell "Not targeted" [ref=e7905]:
+                  - generic [ref=e7908]:
+                    - img [ref=e7912]: do_not_disturb_on
+                    - generic [ref=e7913]: Not targeted
+              - row "Oman Oman Not targeted" [ref=e7914]:
+                - gridcell "Oman" [ref=e7915]:
+                  - checkbox "Oman" [checked] [ref=e7917] [cursor=pointer]:
+                    - img [ref=e7919]
+                - gridcell "Oman" [ref=e7920]:
+                  - generic "Oman" [ref=e7923]:
+                    - generic [ref=e7925]: Oman
+                - gridcell "Not targeted" [ref=e7926]:
+                  - generic [ref=e7929]:
+                    - img [ref=e7933]: do_not_disturb_on
+                    - generic [ref=e7934]: Not targeted
+              - row "Pakistan Pakistan Not targeted" [ref=e7935]:
+                - gridcell "Pakistan" [ref=e7936]:
+                  - checkbox "Pakistan" [checked] [ref=e7938] [cursor=pointer]:
+                    - img [ref=e7940]
+                - gridcell "Pakistan" [ref=e7941]:
+                  - generic "Pakistan" [ref=e7944]:
+                    - generic [ref=e7946]: Pakistan
+                - gridcell "Not targeted" [ref=e7947]:
+                  - generic [ref=e7950]:
+                    - img [ref=e7954]: do_not_disturb_on
+                    - generic [ref=e7955]: Not targeted
+              - row "Panama Panama Not targeted" [ref=e7956]:
+                - gridcell "Panama" [ref=e7957]:
+                  - checkbox "Panama" [checked] [ref=e7959] [cursor=pointer]:
+                    - img [ref=e7961]
+                - gridcell "Panama" [ref=e7962]:
+                  - generic "Panama" [ref=e7965]:
+                    - generic [ref=e7967]: Panama
+                - gridcell "Not targeted" [ref=e7968]:
+                  - generic [ref=e7971]:
+                    - img [ref=e7975]: do_not_disturb_on
+                    - generic [ref=e7976]: Not targeted
+              - row "Papua New Guinea Papua New Guinea Not targeted" [ref=e7977]:
+                - gridcell "Papua New Guinea" [ref=e7978]:
+                  - checkbox "Papua New Guinea" [checked] [ref=e7980] [cursor=pointer]:
+                    - img [ref=e7982]
+                - gridcell "Papua New Guinea" [ref=e7983]:
+                  - generic "Papua New Guinea" [ref=e7986]:
+                    - generic [ref=e7988]: Papua New Guinea
+                - gridcell "Not targeted" [ref=e7989]:
+                  - generic [ref=e7992]:
+                    - img [ref=e7996]: do_not_disturb_on
+                    - generic [ref=e7997]: Not targeted
+              - row "Paraguay Paraguay Not targeted" [ref=e7998]:
+                - gridcell "Paraguay" [ref=e7999]:
+                  - checkbox "Paraguay" [checked] [ref=e8001] [cursor=pointer]:
+                    - img [ref=e8003]
+                - gridcell "Paraguay" [ref=e8004]:
+                  - generic "Paraguay" [ref=e8007]:
+                    - generic [ref=e8009]: Paraguay
+                - gridcell "Not targeted" [ref=e8010]:
+                  - generic [ref=e8013]:
+                    - img [ref=e8017]: do_not_disturb_on
+                    - generic [ref=e8018]: Not targeted
+              - row "Peru Peru Not targeted" [ref=e8019]:
+                - gridcell "Peru" [ref=e8020]:
+                  - checkbox "Peru" [checked] [ref=e8022] [cursor=pointer]:
+                    - img [ref=e8024]
+                - gridcell "Peru" [ref=e8025]:
+                  - generic "Peru" [ref=e8028]:
+                    - generic [ref=e8030]: Peru
+                - gridcell "Not targeted" [ref=e8031]:
+                  - generic [ref=e8034]:
+                    - img [ref=e8038]: do_not_disturb_on
+                    - generic [ref=e8039]: Not targeted
+              - row "Philippines Philippines Not targeted" [ref=e8040]:
+                - gridcell "Philippines" [ref=e8041]:
+                  - checkbox "Philippines" [checked] [ref=e8043] [cursor=pointer]:
+                    - img [ref=e8045]
+                - gridcell "Philippines" [ref=e8046]:
+                  - generic "Philippines" [ref=e8049]:
+                    - generic [ref=e8051]: Philippines
+                - gridcell "Not targeted" [ref=e8052]:
+                  - generic [ref=e8055]:
+                    - img [ref=e8059]: do_not_disturb_on
+                    - generic [ref=e8060]: Not targeted
+              - row "Poland Poland Not targeted" [ref=e8061]:
+                - gridcell "Poland" [ref=e8062]:
+                  - checkbox "Poland" [checked] [ref=e8064] [cursor=pointer]:
+                    - img [ref=e8066]
+                - gridcell "Poland" [ref=e8067]:
+                  - generic "Poland" [ref=e8070]:
+                    - generic [ref=e8072]: Poland
+                - gridcell "Not targeted" [ref=e8073]:
+                  - generic [ref=e8076]:
+                    - img [ref=e8080]: do_not_disturb_on
+                    - generic [ref=e8081]: Not targeted
+              - row "Portugal Portugal Not targeted" [ref=e8082]:
+                - gridcell "Portugal" [ref=e8083]:
+                  - checkbox "Portugal" [checked] [ref=e8085] [cursor=pointer]:
+                    - img [ref=e8087]
+                - gridcell "Portugal" [ref=e8088]:
+                  - generic "Portugal" [ref=e8091]:
+                    - generic [ref=e8093]: Portugal
+                - gridcell "Not targeted" [ref=e8094]:
+                  - generic [ref=e8097]:
+                    - img [ref=e8101]: do_not_disturb_on
+                    - generic [ref=e8102]: Not targeted
+              - row "Qatar Qatar Not targeted" [ref=e8103]:
+                - gridcell "Qatar" [ref=e8104]:
+                  - checkbox "Qatar" [checked] [ref=e8106] [cursor=pointer]:
+                    - img [ref=e8108]
+                - gridcell "Qatar" [ref=e8109]:
+                  - generic "Qatar" [ref=e8112]:
+                    - generic [ref=e8114]: Qatar
+                - gridcell "Not targeted" [ref=e8115]:
+                  - generic [ref=e8118]:
+                    - img [ref=e8122]: do_not_disturb_on
+                    - generic [ref=e8123]: Not targeted
+              - row "Romania Romania Not targeted" [ref=e8124]:
+                - gridcell "Romania" [ref=e8125]:
+                  - checkbox "Romania" [checked] [ref=e8127] [cursor=pointer]:
+                    - img [ref=e8129]
+                - gridcell "Romania" [ref=e8130]:
+                  - generic "Romania" [ref=e8133]:
+                    - generic [ref=e8135]: Romania
+                - gridcell "Not targeted" [ref=e8136]:
+                  - generic [ref=e8139]:
+                    - img [ref=e8143]: do_not_disturb_on
+                    - generic [ref=e8144]: Not targeted
+              - row "Russia Russia Not targeted" [ref=e8145]:
+                - gridcell "Russia" [ref=e8146]:
+                  - checkbox "Russia" [checked] [ref=e8148] [cursor=pointer]:
+                    - img [ref=e8150]
+                - gridcell "Russia" [ref=e8151]:
+                  - generic "Russia" [ref=e8154]:
+                    - generic [ref=e8156]: Russia
+                - gridcell "Not targeted" [ref=e8157]:
+                  - generic [ref=e8160]:
+                    - img [ref=e8164]: do_not_disturb_on
+                    - generic [ref=e8165]: Not targeted
+              - row "Rwanda Rwanda Not targeted" [ref=e8166]:
+                - gridcell "Rwanda" [ref=e8167]:
+                  - checkbox "Rwanda" [checked] [ref=e8169] [cursor=pointer]:
+                    - img [ref=e8171]
+                - gridcell "Rwanda" [ref=e8172]:
+                  - generic "Rwanda" [ref=e8175]:
+                    - generic [ref=e8177]: Rwanda
+                - gridcell "Not targeted" [ref=e8178]:
+                  - generic [ref=e8181]:
+                    - img [ref=e8185]: do_not_disturb_on
+                    - generic [ref=e8186]: Not targeted
+              - row "Samoa Samoa Not targeted" [ref=e8187]:
+                - gridcell "Samoa" [ref=e8188]:
+                  - checkbox "Samoa" [checked] [ref=e8190] [cursor=pointer]:
+                    - img [ref=e8192]
+                - gridcell "Samoa" [ref=e8193]:
+                  - generic "Samoa" [ref=e8196]:
+                    - generic [ref=e8198]: Samoa
+                - gridcell "Not targeted" [ref=e8199]:
+                  - generic [ref=e8202]:
+                    - img [ref=e8206]: do_not_disturb_on
+                    - generic [ref=e8207]: Not targeted
+              - row "San Marino San Marino Not targeted" [ref=e8208]:
+                - gridcell "San Marino" [ref=e8209]:
+                  - checkbox "San Marino" [checked] [ref=e8211] [cursor=pointer]:
+                    - img [ref=e8213]
+                - gridcell "San Marino" [ref=e8214]:
+                  - generic "San Marino" [ref=e8217]:
+                    - generic [ref=e8219]: San Marino
+                - gridcell "Not targeted" [ref=e8220]:
+                  - generic [ref=e8223]:
+                    - img [ref=e8227]: do_not_disturb_on
+                    - generic [ref=e8228]: Not targeted
+              - row "Saudi Arabia Saudi Arabia Not targeted" [ref=e8229]:
+                - gridcell "Saudi Arabia" [ref=e8230]:
+                  - checkbox "Saudi Arabia" [checked] [ref=e8232] [cursor=pointer]:
+                    - img [ref=e8234]
+                - gridcell "Saudi Arabia" [ref=e8235]:
+                  - generic "Saudi Arabia" [ref=e8238]:
+                    - generic [ref=e8240]: Saudi Arabia
+                - gridcell "Not targeted" [ref=e8241]:
+                  - generic [ref=e8244]:
+                    - img [ref=e8248]: do_not_disturb_on
+                    - generic [ref=e8249]: Not targeted
+              - row "Senegal Senegal Not targeted" [ref=e8250]:
+                - gridcell "Senegal" [ref=e8251]:
+                  - checkbox "Senegal" [checked] [ref=e8253] [cursor=pointer]:
+                    - img [ref=e8255]
+                - gridcell "Senegal" [ref=e8256]:
+                  - generic "Senegal" [ref=e8259]:
+                    - generic [ref=e8261]: Senegal
+                - gridcell "Not targeted" [ref=e8262]:
+                  - generic [ref=e8265]:
+                    - img [ref=e8269]: do_not_disturb_on
+                    - generic [ref=e8270]: Not targeted
+              - row "Serbia Serbia Not targeted" [ref=e8271]:
+                - gridcell "Serbia" [ref=e8272]:
+                  - checkbox "Serbia" [checked] [ref=e8274] [cursor=pointer]:
+                    - img [ref=e8276]
+                - gridcell "Serbia" [ref=e8277]:
+                  - generic "Serbia" [ref=e8280]:
+                    - generic [ref=e8282]: Serbia
+                - gridcell "Not targeted" [ref=e8283]:
+                  - generic [ref=e8286]:
+                    - img [ref=e8290]: do_not_disturb_on
+                    - generic [ref=e8291]: Not targeted
+              - row "Seychelles Seychelles Not targeted" [ref=e8292]:
+                - gridcell "Seychelles" [ref=e8293]:
+                  - checkbox "Seychelles" [checked] [ref=e8295] [cursor=pointer]:
+                    - img [ref=e8297]
+                - gridcell "Seychelles" [ref=e8298]:
+                  - generic "Seychelles" [ref=e8301]:
+                    - generic [ref=e8303]: Seychelles
+                - gridcell "Not targeted" [ref=e8304]:
+                  - generic [ref=e8307]:
+                    - img [ref=e8311]: do_not_disturb_on
+                    - generic [ref=e8312]: Not targeted
+              - row "Sierra Leone Sierra Leone Not targeted" [ref=e8313]:
+                - gridcell "Sierra Leone" [ref=e8314]:
+                  - checkbox "Sierra Leone" [checked] [ref=e8316] [cursor=pointer]:
+                    - img [ref=e8318]
+                - gridcell "Sierra Leone" [ref=e8319]:
+                  - generic "Sierra Leone" [ref=e8322]:
+                    - generic [ref=e8324]: Sierra Leone
+                - gridcell "Not targeted" [ref=e8325]:
+                  - generic [ref=e8328]:
+                    - img [ref=e8332]: do_not_disturb_on
+                    - generic [ref=e8333]: Not targeted
+              - row "Singapore Singapore Not targeted" [ref=e8334]:
+                - gridcell "Singapore" [ref=e8335]:
+                  - checkbox "Singapore" [checked] [ref=e8337] [cursor=pointer]:
+                    - img [ref=e8339]
+                - gridcell "Singapore" [ref=e8340]:
+                  - generic "Singapore" [ref=e8343]:
+                    - generic [ref=e8345]: Singapore
+                - gridcell "Not targeted" [ref=e8346]:
+                  - generic [ref=e8349]:
+                    - img [ref=e8353]: do_not_disturb_on
+                    - generic [ref=e8354]: Not targeted
+              - row "Slovakia Slovakia Not targeted" [ref=e8355]:
+                - gridcell "Slovakia" [ref=e8356]:
+                  - checkbox "Slovakia" [checked] [ref=e8358] [cursor=pointer]:
+                    - img [ref=e8360]
+                - gridcell "Slovakia" [ref=e8361]:
+                  - generic "Slovakia" [ref=e8364]:
+                    - generic [ref=e8366]: Slovakia
+                - gridcell "Not targeted" [ref=e8367]:
+                  - generic [ref=e8370]:
+                    - img [ref=e8374]: do_not_disturb_on
+                    - generic [ref=e8375]: Not targeted
+              - row "Slovenia Slovenia Not targeted" [ref=e8376]:
+                - gridcell "Slovenia" [ref=e8377]:
+                  - checkbox "Slovenia" [checked] [ref=e8379] [cursor=pointer]:
+                    - img [ref=e8381]
+                - gridcell "Slovenia" [ref=e8382]:
+                  - generic "Slovenia" [ref=e8385]:
+                    - generic [ref=e8387]: Slovenia
+                - gridcell "Not targeted" [ref=e8388]:
+                  - generic [ref=e8391]:
+                    - img [ref=e8395]: do_not_disturb_on
+                    - generic [ref=e8396]: Not targeted
+              - row "Solomon Islands Solomon Islands Not targeted" [ref=e8397]:
+                - gridcell "Solomon Islands" [ref=e8398]:
+                  - checkbox "Solomon Islands" [checked] [ref=e8400] [cursor=pointer]:
+                    - img [ref=e8402]
+                - gridcell "Solomon Islands" [ref=e8403]:
+                  - generic "Solomon Islands" [ref=e8406]:
+                    - generic [ref=e8408]: Solomon Islands
+                - gridcell "Not targeted" [ref=e8409]:
+                  - generic [ref=e8412]:
+                    - img [ref=e8416]: do_not_disturb_on
+                    - generic [ref=e8417]: Not targeted
+              - row "Somalia Somalia Not targeted" [ref=e8418]:
+                - gridcell "Somalia" [ref=e8419]:
+                  - checkbox "Somalia" [checked] [ref=e8421] [cursor=pointer]:
+                    - img [ref=e8423]
+                - gridcell "Somalia" [ref=e8424]:
+                  - generic "Somalia" [ref=e8427]:
+                    - generic [ref=e8429]: Somalia
+                - gridcell "Not targeted" [ref=e8430]:
+                  - generic [ref=e8433]:
+                    - img [ref=e8437]: do_not_disturb_on
+                    - generic [ref=e8438]: Not targeted
+              - row "South Africa South Africa Not targeted" [ref=e8439]:
+                - gridcell "South Africa" [ref=e8440]:
+                  - checkbox "South Africa" [checked] [ref=e8442] [cursor=pointer]:
+                    - img [ref=e8444]
+                - gridcell "South Africa" [ref=e8445]:
+                  - generic "South Africa" [ref=e8448]:
+                    - generic [ref=e8450]: South Africa
+                - gridcell "Not targeted" [ref=e8451]:
+                  - generic [ref=e8454]:
+                    - img [ref=e8458]: do_not_disturb_on
+                    - generic [ref=e8459]: Not targeted
+              - row "South Korea South Korea Not targeted" [ref=e8460]:
+                - gridcell "South Korea" [ref=e8461]:
+                  - checkbox "South Korea" [checked] [ref=e8463] [cursor=pointer]:
+                    - img [ref=e8465]
+                - gridcell "South Korea" [ref=e8466]:
+                  - generic "South Korea" [ref=e8469]:
+                    - generic [ref=e8471]: South Korea
+                - gridcell "Not targeted" [ref=e8472]:
+                  - generic [ref=e8475]:
+                    - img [ref=e8479]: do_not_disturb_on
+                    - generic [ref=e8480]: Not targeted
+              - row "Spain Spain Not targeted" [ref=e8481]:
+                - gridcell "Spain" [ref=e8482]:
+                  - checkbox "Spain" [checked] [ref=e8484] [cursor=pointer]:
+                    - img [ref=e8486]
+                - gridcell "Spain" [ref=e8487]:
+                  - generic "Spain" [ref=e8490]:
+                    - generic [ref=e8492]: Spain
+                - gridcell "Not targeted" [ref=e8493]:
+                  - generic [ref=e8496]:
+                    - img [ref=e8500]: do_not_disturb_on
+                    - generic [ref=e8501]: Not targeted
+              - row "Sri Lanka Sri Lanka Not targeted" [ref=e8502]:
+                - gridcell "Sri Lanka" [ref=e8503]:
+                  - checkbox "Sri Lanka" [checked] [ref=e8505] [cursor=pointer]:
+                    - img [ref=e8507]
+                - gridcell "Sri Lanka" [ref=e8508]:
+                  - generic "Sri Lanka" [ref=e8511]:
+                    - generic [ref=e8513]: Sri Lanka
+                - gridcell "Not targeted" [ref=e8514]:
+                  - generic [ref=e8517]:
+                    - img [ref=e8521]: do_not_disturb_on
+                    - generic [ref=e8522]: Not targeted
+              - row "St. Kitts & Nevis St. Kitts & Nevis Not targeted" [ref=e8523]:
+                - gridcell "St. Kitts & Nevis" [ref=e8524]:
+                  - checkbox "St. Kitts & Nevis" [checked] [ref=e8526] [cursor=pointer]:
+                    - img [ref=e8528]
+                - gridcell "St. Kitts & Nevis" [ref=e8529]:
+                  - generic "St. Kitts & Nevis" [ref=e8532]:
+                    - generic [ref=e8534]: St. Kitts & Nevis
+                - gridcell "Not targeted" [ref=e8535]:
+                  - generic [ref=e8538]:
+                    - img [ref=e8542]: do_not_disturb_on
+                    - generic [ref=e8543]: Not targeted
+              - row "St. Lucia St. Lucia Not targeted" [ref=e8544]:
+                - gridcell "St. Lucia" [ref=e8545]:
+                  - checkbox "St. Lucia" [checked] [ref=e8547] [cursor=pointer]:
+                    - img [ref=e8549]
+                - gridcell "St. Lucia" [ref=e8550]:
+                  - generic "St. Lucia" [ref=e8553]:
+                    - generic [ref=e8555]: St. Lucia
+                - gridcell "Not targeted" [ref=e8556]:
+                  - generic [ref=e8559]:
+                    - img [ref=e8563]: do_not_disturb_on
+                    - generic [ref=e8564]: Not targeted
+              - row "Sudan Sudan Not targeted" [ref=e8565]:
+                - gridcell "Sudan" [ref=e8566]:
+                  - checkbox "Sudan" [checked] [ref=e8568] [cursor=pointer]:
+                    - img [ref=e8570]
+                - gridcell "Sudan" [ref=e8571]:
+                  - generic "Sudan" [ref=e8574]:
+                    - generic [ref=e8576]: Sudan
+                - gridcell "Not targeted" [ref=e8577]:
+                  - generic [ref=e8580]:
+                    - img [ref=e8584]: do_not_disturb_on
+                    - generic [ref=e8585]: Not targeted
+              - row "Suriname Suriname Not targeted" [ref=e8586]:
+                - gridcell "Suriname" [ref=e8587]:
+                  - checkbox "Suriname" [checked] [ref=e8589] [cursor=pointer]:
+                    - img [ref=e8591]
+                - gridcell "Suriname" [ref=e8592]:
+                  - generic "Suriname" [ref=e8595]:
+                    - generic [ref=e8597]: Suriname
+                - gridcell "Not targeted" [ref=e8598]:
+                  - generic [ref=e8601]:
+                    - img [ref=e8605]: do_not_disturb_on
+                    - generic [ref=e8606]: Not targeted
+              - row "Sweden Sweden Not targeted" [ref=e8607]:
+                - gridcell "Sweden" [ref=e8608]:
+                  - checkbox "Sweden" [checked] [ref=e8610] [cursor=pointer]:
+                    - img [ref=e8612]
+                - gridcell "Sweden" [ref=e8613]:
+                  - generic "Sweden" [ref=e8616]:
+                    - generic [ref=e8618]: Sweden
+                - gridcell "Not targeted" [ref=e8619]:
+                  - generic [ref=e8622]:
+                    - img [ref=e8626]: do_not_disturb_on
+                    - generic [ref=e8627]: Not targeted
+              - row "Switzerland Switzerland Not targeted" [ref=e8628]:
+                - gridcell "Switzerland" [ref=e8629]:
+                  - checkbox "Switzerland" [checked] [ref=e8631] [cursor=pointer]:
+                    - img [ref=e8633]
+                - gridcell "Switzerland" [ref=e8634]:
+                  - generic "Switzerland" [ref=e8637]:
+                    - generic [ref=e8639]: Switzerland
+                - gridcell "Not targeted" [ref=e8640]:
+                  - generic [ref=e8643]:
+                    - img [ref=e8647]: do_not_disturb_on
+                    - generic [ref=e8648]: Not targeted
+              - row "Taiwan Taiwan Not targeted" [ref=e8649]:
+                - gridcell "Taiwan" [ref=e8650]:
+                  - checkbox "Taiwan" [checked] [ref=e8652] [cursor=pointer]:
+                    - img [ref=e8654]
+                - gridcell "Taiwan" [ref=e8655]:
+                  - generic "Taiwan" [ref=e8658]:
+                    - generic [ref=e8660]: Taiwan
+                - gridcell "Not targeted" [ref=e8661]:
+                  - generic [ref=e8664]:
+                    - img [ref=e8668]: do_not_disturb_on
+                    - generic [ref=e8669]: Not targeted
+              - row "Tajikistan Tajikistan Not targeted" [ref=e8670]:
+                - gridcell "Tajikistan" [ref=e8671]:
+                  - checkbox "Tajikistan" [checked] [ref=e8673] [cursor=pointer]:
+                    - img [ref=e8675]
+                - gridcell "Tajikistan" [ref=e8676]:
+                  - generic "Tajikistan" [ref=e8679]:
+                    - generic [ref=e8681]: Tajikistan
+                - gridcell "Not targeted" [ref=e8682]:
+                  - generic [ref=e8685]:
+                    - img [ref=e8689]: do_not_disturb_on
+                    - generic [ref=e8690]: Not targeted
+              - row "Tanzania Tanzania Not targeted" [ref=e8691]:
+                - gridcell "Tanzania" [ref=e8692]:
+                  - checkbox "Tanzania" [checked] [ref=e8694] [cursor=pointer]:
+                    - img [ref=e8696]
+                - gridcell "Tanzania" [ref=e8697]:
+                  - generic "Tanzania" [ref=e8700]:
+                    - generic [ref=e8702]: Tanzania
+                - gridcell "Not targeted" [ref=e8703]:
+                  - generic [ref=e8706]:
+                    - img [ref=e8710]: do_not_disturb_on
+                    - generic [ref=e8711]: Not targeted
+              - row "Thailand Thailand Not targeted" [ref=e8712]:
+                - gridcell "Thailand" [ref=e8713]:
+                  - checkbox "Thailand" [checked] [ref=e8715] [cursor=pointer]:
+                    - img [ref=e8717]
+                - gridcell "Thailand" [ref=e8718]:
+                  - generic "Thailand" [ref=e8721]:
+                    - generic [ref=e8723]: Thailand
+                - gridcell "Not targeted" [ref=e8724]:
+                  - generic [ref=e8727]:
+                    - img [ref=e8731]: do_not_disturb_on
+                    - generic [ref=e8732]: Not targeted
+              - row "Togo Togo Not targeted" [ref=e8733]:
+                - gridcell "Togo" [ref=e8734]:
+                  - checkbox "Togo" [checked] [ref=e8736] [cursor=pointer]:
+                    - img [ref=e8738]
+                - gridcell "Togo" [ref=e8739]:
+                  - generic "Togo" [ref=e8742]:
+                    - generic [ref=e8744]: Togo
+                - gridcell "Not targeted" [ref=e8745]:
+                  - generic [ref=e8748]:
+                    - img [ref=e8752]: do_not_disturb_on
+                    - generic [ref=e8753]: Not targeted
+              - row "Tonga Tonga Not targeted" [ref=e8754]:
+                - gridcell "Tonga" [ref=e8755]:
+                  - checkbox "Tonga" [checked] [ref=e8757] [cursor=pointer]:
+                    - img [ref=e8759]
+                - gridcell "Tonga" [ref=e8760]:
+                  - generic "Tonga" [ref=e8763]:
+                    - generic [ref=e8765]: Tonga
+                - gridcell "Not targeted" [ref=e8766]:
+                  - generic [ref=e8769]:
+                    - img [ref=e8773]: do_not_disturb_on
+                    - generic [ref=e8774]: Not targeted
+              - row "Trinidad & Tobago Trinidad & Tobago Not targeted" [ref=e8775]:
+                - gridcell "Trinidad & Tobago" [ref=e8776]:
+                  - checkbox "Trinidad & Tobago" [checked] [ref=e8778] [cursor=pointer]:
+                    - img [ref=e8780]
+                - gridcell "Trinidad & Tobago" [ref=e8781]:
+                  - generic "Trinidad & Tobago" [ref=e8784]:
+                    - generic [ref=e8786]: Trinidad & Tobago
+                - gridcell "Not targeted" [ref=e8787]:
+                  - generic [ref=e8790]:
+                    - img [ref=e8794]: do_not_disturb_on
+                    - generic [ref=e8795]: Not targeted
+              - row "Tunisia Tunisia Not targeted" [ref=e8796]:
+                - gridcell "Tunisia" [ref=e8797]:
+                  - checkbox "Tunisia" [checked] [ref=e8799] [cursor=pointer]:
+                    - img [ref=e8801]
+                - gridcell "Tunisia" [ref=e8802]:
+                  - generic "Tunisia" [ref=e8805]:
+                    - generic [ref=e8807]: Tunisia
+                - gridcell "Not targeted" [ref=e8808]:
+                  - generic [ref=e8811]:
+                    - img [ref=e8815]: do_not_disturb_on
+                    - generic [ref=e8816]: Not targeted
+              - row "Turkmenistan Turkmenistan Not targeted" [ref=e8817]:
+                - gridcell "Turkmenistan" [ref=e8818]:
+                  - checkbox "Turkmenistan" [checked] [ref=e8820] [cursor=pointer]:
+                    - img [ref=e8822]
+                - gridcell "Turkmenistan" [ref=e8823]:
+                  - generic "Turkmenistan" [ref=e8826]:
+                    - generic [ref=e8828]: Turkmenistan
+                - gridcell "Not targeted" [ref=e8829]:
+                  - generic [ref=e8832]:
+                    - img [ref=e8836]: do_not_disturb_on
+                    - generic [ref=e8837]: Not targeted
+              - row "Turks & Caicos Islands Turks & Caicos Islands Not targeted" [ref=e8838]:
+                - gridcell "Turks & Caicos Islands" [ref=e8839]:
+                  - checkbox "Turks & Caicos Islands" [checked] [ref=e8841] [cursor=pointer]:
+                    - img [ref=e8843]
+                - gridcell "Turks & Caicos Islands" [ref=e8844]:
+                  - generic "Turks & Caicos Islands" [ref=e8847]:
+                    - generic [ref=e8849]: Turks & Caicos Islands
+                - gridcell "Not targeted" [ref=e8850]:
+                  - generic [ref=e8853]:
+                    - img [ref=e8857]: do_not_disturb_on
+                    - generic [ref=e8858]: Not targeted
+              - row "Türkiye Türkiye Not targeted" [ref=e8859]:
+                - gridcell "Türkiye" [ref=e8860]:
+                  - checkbox "Türkiye" [checked] [ref=e8862] [cursor=pointer]:
+                    - img [ref=e8864]
+                - gridcell "Türkiye" [ref=e8865]:
+                  - generic "Türkiye" [ref=e8868]:
+                    - generic [ref=e8870]: Türkiye
+                - gridcell "Not targeted" [ref=e8871]:
+                  - generic [ref=e8874]:
+                    - img [ref=e8878]: do_not_disturb_on
+                    - generic [ref=e8879]: Not targeted
+              - row "Uganda Uganda Not targeted" [ref=e8880]:
+                - gridcell "Uganda" [ref=e8881]:
+                  - checkbox "Uganda" [checked] [ref=e8883] [cursor=pointer]:
+                    - img [ref=e8885]
+                - gridcell "Uganda" [ref=e8886]:
+                  - generic "Uganda" [ref=e8889]:
+                    - generic [ref=e8891]: Uganda
+                - gridcell "Not targeted" [ref=e8892]:
+                  - generic [ref=e8895]:
+                    - img [ref=e8899]: do_not_disturb_on
+                    - generic [ref=e8900]: Not targeted
+              - row "Ukraine Ukraine Not targeted" [ref=e8901]:
+                - gridcell "Ukraine" [ref=e8902]:
+                  - checkbox "Ukraine" [checked] [ref=e8904] [cursor=pointer]:
+                    - img [ref=e8906]
+                - gridcell "Ukraine" [ref=e8907]:
+                  - generic "Ukraine" [ref=e8910]:
+                    - generic [ref=e8912]: Ukraine
+                - gridcell "Not targeted" [ref=e8913]:
+                  - generic [ref=e8916]:
+                    - img [ref=e8920]: do_not_disturb_on
+                    - generic [ref=e8921]: Not targeted
+              - row "United Arab Emirates United Arab Emirates Not targeted" [ref=e8922]:
+                - gridcell "United Arab Emirates" [ref=e8923]:
+                  - checkbox "United Arab Emirates" [checked] [ref=e8925] [cursor=pointer]:
+                    - img [ref=e8927]
+                - gridcell "United Arab Emirates" [ref=e8928]:
+                  - generic "United Arab Emirates" [ref=e8931]:
+                    - generic [ref=e8933]: United Arab Emirates
+                - gridcell "Not targeted" [ref=e8934]:
+                  - generic [ref=e8937]:
+                    - img [ref=e8941]: do_not_disturb_on
+                    - generic [ref=e8942]: Not targeted
+              - row "United Kingdom United Kingdom Not targeted" [ref=e8943]:
+                - gridcell "United Kingdom" [ref=e8944]:
+                  - checkbox "United Kingdom" [checked] [ref=e8946] [cursor=pointer]:
+                    - img [ref=e8948]
+                - gridcell "United Kingdom" [ref=e8949]:
+                  - generic "United Kingdom" [ref=e8952]:
+                    - generic [ref=e8954]: United Kingdom
+                - gridcell "Not targeted" [ref=e8955]:
+                  - generic [ref=e8958]:
+                    - img [ref=e8962]: do_not_disturb_on
+                    - generic [ref=e8963]: Not targeted
+              - row "United States United States Not targeted" [ref=e8964]:
+                - gridcell "United States" [ref=e8965]:
+                  - checkbox "United States" [checked] [ref=e8967] [cursor=pointer]:
+                    - img [ref=e8969]
+                - gridcell "United States" [ref=e8970]:
+                  - generic [ref=e8972]:
+                    - generic "United States" [ref=e8973]:
+                      - generic [ref=e8975]: United States
+                      - generic [ref=e8976]: Includes 7 locations
+                    - alert
+                - gridcell "Not targeted" [ref=e8977]:
+                  - generic [ref=e8980]:
+                    - img [ref=e8984]: do_not_disturb_on
+                    - generic [ref=e8985]: Not targeted
+              - row "Uruguay Uruguay Not targeted" [ref=e8986]:
+                - gridcell "Uruguay" [ref=e8987]:
+                  - checkbox "Uruguay" [checked] [ref=e8989] [cursor=pointer]:
+                    - img [ref=e8991]
+                - gridcell "Uruguay" [ref=e8992]:
+                  - generic "Uruguay" [ref=e8995]:
+                    - generic [ref=e8997]: Uruguay
+                - gridcell "Not targeted" [ref=e8998]:
+                  - generic [ref=e9001]:
+                    - img [ref=e9005]: do_not_disturb_on
+                    - generic [ref=e9006]: Not targeted
+              - row "Uzbekistan Uzbekistan Not targeted" [ref=e9007]:
+                - gridcell "Uzbekistan" [ref=e9008]:
+                  - checkbox "Uzbekistan" [checked] [ref=e9010] [cursor=pointer]:
+                    - img [ref=e9012]
+                - gridcell "Uzbekistan" [ref=e9013]:
+                  - generic "Uzbekistan" [ref=e9016]:
+                    - generic [ref=e9018]: Uzbekistan
+                - gridcell "Not targeted" [ref=e9019]:
+                  - generic [ref=e9022]:
+                    - img [ref=e9026]: do_not_disturb_on
+                    - generic [ref=e9027]: Not targeted
+              - row "Vanuatu Vanuatu Not targeted" [ref=e9028]:
+                - gridcell "Vanuatu" [ref=e9029]:
+                  - checkbox "Vanuatu" [checked] [ref=e9031] [cursor=pointer]:
+                    - img [ref=e9033]
+                - gridcell "Vanuatu" [ref=e9034]:
+                  - generic "Vanuatu" [ref=e9037]:
+                    - generic [ref=e9039]: Vanuatu
+                - gridcell "Not targeted" [ref=e9040]:
+                  - generic [ref=e9043]:
+                    - img [ref=e9047]: do_not_disturb_on
+                    - generic [ref=e9048]: Not targeted
+              - row "Vatican City Vatican City Not targeted" [ref=e9049]:
+                - gridcell "Vatican City" [ref=e9050]:
+                  - checkbox "Vatican City" [checked] [ref=e9052] [cursor=pointer]:
+                    - img [ref=e9054]
+                - gridcell "Vatican City" [ref=e9055]:
+                  - generic "Vatican City" [ref=e9058]:
+                    - generic [ref=e9060]: Vatican City
+                - gridcell "Not targeted" [ref=e9061]:
+                  - generic [ref=e9064]:
+                    - img [ref=e9068]: do_not_disturb_on
+                    - generic [ref=e9069]: Not targeted
+              - row "Venezuela Venezuela Not targeted" [ref=e9070]:
+                - gridcell "Venezuela" [ref=e9071]:
+                  - checkbox "Venezuela" [checked] [ref=e9073] [cursor=pointer]:
+                    - img [ref=e9075]
+                - gridcell "Venezuela" [ref=e9076]:
+                  - generic "Venezuela" [ref=e9079]:
+                    - generic [ref=e9081]: Venezuela
+                - gridcell "Not targeted" [ref=e9082]:
+                  - generic [ref=e9085]:
+                    - img [ref=e9089]: do_not_disturb_on
+                    - generic [ref=e9090]: Not targeted
+              - row "Vietnam Vietnam Not targeted" [ref=e9091]:
+                - gridcell "Vietnam" [ref=e9092]:
+                  - checkbox "Vietnam" [checked] [ref=e9094] [cursor=pointer]:
+                    - img [ref=e9096]
+                - gridcell "Vietnam" [ref=e9097]:
+                  - generic "Vietnam" [ref=e9100]:
+                    - generic [ref=e9102]: Vietnam
+                - gridcell "Not targeted" [ref=e9103]:
+                  - generic [ref=e9106]:
+                    - img [ref=e9110]: do_not_disturb_on
+                    - generic [ref=e9111]: Not targeted
+              - row "Yemen Yemen Not targeted" [ref=e9112]:
+                - gridcell "Yemen" [ref=e9113]:
+                  - checkbox "Yemen" [checked] [ref=e9115] [cursor=pointer]:
+                    - img [ref=e9117]
+                - gridcell "Yemen" [ref=e9118]:
+                  - generic "Yemen" [ref=e9121]:
+                    - generic [ref=e9123]: Yemen
+                - gridcell "Not targeted" [ref=e9124]:
+                  - generic [ref=e9127]:
+                    - img [ref=e9131]: do_not_disturb_on
+                    - generic [ref=e9132]: Not targeted
+              - row "Zambia Zambia Not targeted" [ref=e9133]:
+                - gridcell "Zambia" [ref=e9134]:
+                  - checkbox "Zambia" [checked] [ref=e9136] [cursor=pointer]:
+                    - img [ref=e9138]
+                - gridcell "Zambia" [ref=e9139]:
+                  - generic "Zambia" [ref=e9142]:
+                    - generic [ref=e9144]: Zambia
+                - gridcell "Not targeted" [ref=e9145]:
+                  - generic [ref=e9148]:
+                    - img [ref=e9152]: do_not_disturb_on
+                    - generic [ref=e9153]: Not targeted
+              - row "Zimbabwe Zimbabwe Not targeted" [ref=e9154]:
+                - gridcell "Zimbabwe" [ref=e9155]:
+                  - checkbox "Zimbabwe" [checked] [ref=e9157] [cursor=pointer]:
+                    - img [ref=e9159]
+                - gridcell "Zimbabwe" [ref=e9160]:
+                  - generic "Zimbabwe" [ref=e9163]:
+                    - generic [ref=e9165]: Zimbabwe
+                - gridcell "Not targeted" [ref=e9166]:
+                  - generic [ref=e9169]:
+                    - img [ref=e9173]: do_not_disturb_on
+                    - generic [ref=e9174]: Not targeted
+              - row "Rest of World Rest of World Not targeted" [ref=e9175]:
+                - gridcell "Rest of World" [ref=e9176]:
+                  - checkbox "Rest of World" [checked] [ref=e9178] [cursor=pointer]:
+                    - img [ref=e9180]
+                - gridcell "Rest of World" [ref=e9181]:
+                  - generic "Rest of World" [ref=e9184]:
+                    - generic [ref=e9186]: Rest of World
+                - gridcell "Not targeted" [ref=e9187]:
+                  - generic [ref=e9190]:
+                    - img [ref=e9194]: do_not_disturb_on
+                    - generic [ref=e9195]: Not targeted
+            - generic [ref=e5329]:
+              - generic [ref=e5348]: If you save, changes will be saved in Publishing overview, ready for you to send for review
+              - generic [ref=e5333]:
+                - button "Discard" [ref=e5350]:
+                  - generic [ref=e5353]: Discard
+                - button "Save" [ref=e5355]:
+                  - generic [ref=e5358]: Save
+      - generic [ref=e30]:
+        - generic [ref=e832]:
+          - link "Product updates" [ref=e833] [cursor=pointer]:
+            - /url: https://play.google.com/console/about/whats-new/
+          - link "Status dashboard" [ref=e834] [cursor=pointer]:
+            - /url: https://status.play.google.com/
+          - link "Help" [ref=e835] [cursor=pointer]:
+            - /url: /console/u/0/developers/7771489537038540127/help-and-support?app=4976273519766682793
+        - generic [ref=e836]:
+          - generic [ref=e837]: © 2026 Google
+          - link "Privacy" [ref=e838] [cursor=pointer]:
+            - /url: https://www.google.com/policies/privacy/
+          - link "Developer Distribution Agreement" [ref=e839] [cursor=pointer]:
+            - /url: https://play.google.com/about/developer-distribution-agreement.html
+          - link "Terms of Service" [ref=e840] [cursor=pointer]:
+            - /url: https://play.google.com/about/console/terms-of-service/
+  - dialog "Go to Publishing overview? Close" [ref=e9200]:
+    - generic [ref=e9201]:
+      - heading "Go to Publishing overview?" [level=1] [ref=e9202]
+      - button "Close" [ref=e9203] [cursor=pointer]:
+        - img [ref=e9206]: close
+    - generic [ref=e9208]: Your change has been saved. To send it to Google for review, go to Publishing overview.
+    - generic [ref=e9214]:
+      - button "Not now" [ref=e9215]:
+        - generic [ref=e9218]: Not now
+      - button "Go to overview" [active] [ref=e9219]:
+        - generic [ref=e9222]: Go to overview

@@ -425,149 +425,154 @@ class _DistanceScreenState extends State<DistanceScreen> {
     final accuracy = _currentDistance?.accuracy ?? 0;
     final accuracyColor = accuracy < 20 ? Colors.green : (accuracy < 50 ? Colors.orange : Colors.red);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          const SizedBox(height: 40),
-          // Header with info button
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 500),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
             children: [
-              const SizedBox(width: 48),
-              Expanded(
-                child: Text(
-                  'Distance to Kenny',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        color: Colors.white70,
-                        letterSpacing: 2,
-                      ),
-                ),
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.info_outline,
-                  color: Colors.white.withValues(alpha: 0.6),
-                ),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const AboutScreen()),
-                  );
-                },
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Finnlandsfjellet, Tromsø',
-            style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.4),
-              fontSize: 14,
-            ),
-          ),
-          const Spacer(),
-          // Main distance display or "too far" message
-          if (isTooFar)
-            _buildTooFarMessage()
-          else
-            AnimatedDistanceDisplayFancy(
-              distanceMeters: distance,
-              unitSystem: _unitSystem,
-            ),
-          const SizedBox(height: 24),
-          // Direction indicator with random message
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 300),
-            child: Text(
-              _currentMessage,
-              key: ValueKey(_currentMessage),
-              style: const TextStyle(
-                color: Colors.white54,
-                fontSize: 18,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          const Spacer(),
-          // Ad banner (only shown after 30 seconds and not on first open)
-          if (_showAd && _bannerAd != null)
-            Container(
-              margin: const EdgeInsets.only(bottom: 16),
-              height: _bannerAd!.size.height.toDouble(),
-              child: AdWidget(ad: _bannerAd!),
-            ),
-          // Controls
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              // Unit toggle
-              Column(
+              const SizedBox(height: 40),
+              // Header with info button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: _toggleUnits,
-                    iconSize: 48,
-                    icon: Icon(
-                      _unitSystem == UnitSystem.metric
-                          ? Icons.straighten
-                          : Icons.square_foot,
-                      color: Colors.white70,
+                  const SizedBox(width: 48),
+                  Expanded(
+                    child: Text(
+                      'Distance to Kenny',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                            color: Colors.white70,
+                            letterSpacing: 2,
+                          ),
                     ),
                   ),
-                  Text(
-                    _unitSystem == UnitSystem.metric ? 'Metric' : 'Imperial',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.white54,
+                  IconButton(
+                    icon: Icon(
+                      Icons.info_outline,
+                      color: Colors.white.withValues(alpha: 0.6),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => const AboutScreen()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'Finnlandsfjellet, Tromsø',
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.4),
+                  fontSize: 14,
+                ),
+              ),
+              const Spacer(),
+              // Main distance display or "too far" message
+              if (isTooFar)
+                _buildTooFarMessage()
+              else
+                AnimatedDistanceDisplayFancy(
+                  distanceMeters: distance,
+                  unitSystem: _unitSystem,
+                ),
+              const SizedBox(height: 24),
+              // Direction indicator with random message
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                child: Text(
+                  _currentMessage,
+                  key: ValueKey(_currentMessage),
+                  style: const TextStyle(
+                    color: Colors.white54,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const Spacer(),
+              // Ad banner (only shown after 30 seconds and not on first open)
+              if (_showAd && _bannerAd != null)
+                Container(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  height: _bannerAd!.size.height.toDouble(),
+                  child: AdWidget(ad: _bannerAd!),
+                ),
+              // Controls
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Unit toggle
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: _toggleUnits,
+                        iconSize: 48,
+                        icon: Icon(
+                          _unitSystem == UnitSystem.metric
+                              ? Icons.straighten
+                              : Icons.square_foot,
+                          color: Colors.white70,
+                        ),
+                      ),
+                      Text(
+                        _unitSystem == UnitSystem.metric ? 'Metric' : 'Imperial',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.white54,
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Proximity beeper
+                  ProximityBeeperToggle(
+                    audioService: _audioService,
+                    distanceMeters: distance,
+                    initialEnabled: _soundEnabled,
+                    onToggled: _onSoundToggled,
+                  ),
+                  // Accuracy indicator (tappable)
+                  GestureDetector(
+                    onTap: _showAccuracyInfo,
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(color: accuracyColor, width: 2),
+                          ),
+                          child: Center(
+                            child: Text(
+                              accuracy.toStringAsFixed(0),
+                              style: TextStyle(
+                                color: accuracyColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Accuracy (m)',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: accuracyColor.withValues(alpha: 0.8),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-              // Proximity beeper
-              ProximityBeeperToggle(
-                audioService: _audioService,
-                distanceMeters: distance,
-                initialEnabled: _soundEnabled,
-                onToggled: _onSoundToggled,
-              ),
-              // Accuracy indicator (tappable)
-              GestureDetector(
-                onTap: _showAccuracyInfo,
-                child: Column(
-                  children: [
-                    Container(
-                      width: 48,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: accuracyColor, width: 2),
-                      ),
-                      child: Center(
-                        child: Text(
-                          accuracy.toStringAsFixed(0),
-                          style: TextStyle(
-                            color: accuracyColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      'Accuracy (m)',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: accuracyColor.withValues(alpha: 0.8),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const SizedBox(height: 40),
             ],
           ),
-          const SizedBox(height: 40),
-        ],
+        ),
       ),
     );
   }
