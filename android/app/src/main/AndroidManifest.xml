@@ -7,6 +7,9 @@
     <!-- Internet for web view (3D model viewer) -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Advertising ID for AdMob -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
     <application
         android:label="Where Is Kenny"
         android:name="${applicationName}"

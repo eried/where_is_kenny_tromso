@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(adb devices)",
+      "mcp__plugin_playwright_playwright__browser_console_messages"
+    ]
+  }
+}

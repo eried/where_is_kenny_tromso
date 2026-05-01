@@ -64,7 +64,9 @@
       "Bash(JAVA_HOME=\"/c/Program Files/Android/Android Studio/jbr\" PATH=\"$JAVA_HOME/bin:$PATH\" \"$LOCALAPPDATA/Android/Sdk/cmdline-tools/latest/bin/avdmanager.bat\" list avd)",
       "WebFetch(domain:github.com)",
       "mcp__plugin_playwright_playwright__browser_press_key",
-      "mcp__plugin_playwright_playwright__browser_fill_form"
+      "mcp__plugin_playwright_playwright__browser_fill_form",
+      "Bash(python3 *)",
+      "Bash(python D:/GitHub/where_is_kenny_tromso/analyze_transcripts.py)"
     ]
   }
 }
